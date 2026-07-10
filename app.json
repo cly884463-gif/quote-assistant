@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/quote/index",
+    "pages/summary/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "日常报价",
+    "navigationBarBackgroundColor": "#111827",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5f1e8"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

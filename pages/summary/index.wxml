@@ -1,0 +1,66 @@
+<view class="summary-page">
+  <view class="settings card">
+    <view class="field">
+      <text>物流方式</text>
+      <picker class="select" mode="selector" range="{{logisticsOptions}}" value="{{logisticsIndex}}" bindchange="onLogisticsChange">
+        <view>{{logistics}}</view>
+      </picker>
+    </view>
+    <view class="field">
+      <text>送货方式</text>
+      <picker class="select" mode="selector" range="{{deliveryOptions}}" value="{{deliveryIndex}}" bindchange="onDeliveryChange">
+        <view>{{delivery}}</view>
+      </picker>
+    </view>
+    <view class="field">
+      <text>税点</text>
+      <picker class="select" mode="selector" range="{{taxOptions}}" value="{{taxIndex}}" bindchange="onTaxChange">
+        <view>{{taxText}}</view>
+      </picker>
+    </view>
+    <button class="export-btn" bindtap="exportQuoteImage">导出报价图片</button>
+  </view>
+
+  <scroll-view class="sheet-wrap" scroll-x>
+    <view class="sheet">
+      <view class="top-row">
+        <text class="top-logistics">物流方式：{{logistics}}</text>
+        <text class="top-delivery">送货方式：{{delivery}}</text>
+      </view>
+      <view class="row header">
+        <text wx:for="{{summaryColumns}}" wx:key="key">{{item.label}}</text>
+      </view>
+      <view class="row" wx:for="{{quote.rows}}" wx:key="id">
+        <text>{{item.model}}</text>
+        <text>{{item.category}}</text>
+        <text>{{item.name}}</text>
+        <text>{{item.spec}}</text>
+        <text>{{item.workTimes}}</text>
+        <text>{{item.coverage}}</text>
+        <text>{{item.unit}}</text>
+        <text>{{item.quantity}}</text>
+        <text class="green">¥{{item.dealerPrice}}</text>
+        <text class="green">¥{{item.amount}}</text>
+      </view>
+      <view class="total-row">
+        <text class="total-label">合计（不含税）：</text>
+        <text class="total-value">¥{{quote.subtotal}}</text>
+      </view>
+      <view class="total-row">
+        <text class="total-label">发票税金（{{quote.taxRate}}%）：</text>
+        <text class="total-value">¥{{quote.tax}}</text>
+      </view>
+      <view class="total-row strong">
+        <text class="total-label">含税报价：</text>
+        <text class="total-value">¥{{quote.total}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="notes card">
+    <view class="notes-title">注意事项</view>
+    <text wx:for="{{noticeItems}}" wx:key="*this">{{item}}</text>
+  </view>
+
+  <canvas class="export-canvas" canvas-id="quoteCanvas" style="width: {{exportCanvasWidth}}px; height: {{exportCanvasHeight}}px;"></canvas>
+</view>

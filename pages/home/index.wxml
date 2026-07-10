@@ -1,0 +1,56 @@
+<view class="home">
+  <image class="hero-bg" src="/assets/interior-bg.jpg" mode="aspectFill" />
+  <view class="shade"></view>
+
+  <view class="topbar">
+    <view>
+      <text class="eyebrow">BUYTO SML</text>
+      <view class="title">日常报价</view>
+    </view>
+    <view class="quote-actions">
+      <button class="create-btn" bindtap="createDealerQuote">创建经销商批发报价</button>
+      <button class="create-btn" bindtap="createChannelQuote">创建渠道合作报价</button>
+    </view>
+  </view>
+
+  <view class="hero-copy">
+    <view class="headline">装修材料报价助手</view>
+    <view class="subline">从产品卡片到报价清单，一次完成。</view>
+  </view>
+
+  <view class="product-panel">
+    <view class="panel-title">材料分类</view>
+    <view class="category-list">
+      <view class="category-section" wx:for="{{categoryGroups}}" wx:key="category">
+        <view class="category-head" data-category="{{item.category}}" bindtap="toggleCategory">
+          <view>
+            <text class="category-name">{{item.category}}</text>
+            <text class="category-count">{{item.products.length}} 款材料</text>
+          </view>
+          <text class="category-arrow">{{item.open ? '收起' : '展开'}}</text>
+        </view>
+
+        <view class="product-list" wx:if="{{item.open}}">
+          <view class="product-card card" wx:for="{{item.products}}" wx:for-item="product" wx:key="id">
+            <view class="card-head">
+              <text class="model">{{product.model}}</text>
+              <text class="category">{{product.specs.length}}规格</text>
+            </view>
+            <view class="name">{{product.name}}</view>
+            <view class="spec-table">
+              <view class="spec-head">
+                <text>规格</text>
+                <text>涂布率</text>
+                <text>经销商</text>
+                <text>渠道</text>
+              </view>
+              <view class="spec-row" wx:for="{{product.specRows}}" wx:for-item="row" wx:for-index="rowIndex" wx:key="spec">
+                <text wx:for="{{row.cells}}" wx:for-item="cell" wx:for-index="cellIndex" wx:key="cellIndex">{{cell}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

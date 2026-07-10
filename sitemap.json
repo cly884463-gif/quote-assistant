@@ -1,0 +1,9 @@
+{
+  "desc": "internal quotation tool sitemap",
+  "rules": [
+    {
+      "action": "disallow",
+      "page": "*"
+    }
+  ]
+}

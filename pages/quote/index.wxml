@@ -1,0 +1,33 @@
+<view class="quote-page">
+  <view class="sticky-head">
+    <input class="search" placeholder="搜索型号 / 类别 / 产品名称 / 规格" value="{{keyword}}" bindinput="onSearch" />
+    <view class="quote-status">
+      <text>已选 {{selectedCount}} 项</text>
+      <button class="summary-btn" bindtap="goSummary">生成清单</button>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="quote-card card {{item.isAdded ? 'is-added' : ''}}" wx:for="{{products}}" wx:key="id">
+      <view class="card-head">
+        <text class="model">{{item.model}}</text>
+        <text class="price">¥{{item.dealerPrice}}/{{item.unit}}</text>
+      </view>
+      <view class="name">{{item.name}}</view>
+      <view class="desc">{{item.category}} · 施工{{item.workTimes}}次 · {{item.coverage}}㎡/{{item.unit}}</view>
+
+      <view class="controls">
+        <picker class="picker" mode="selector" range="{{item.specs}}" data-id="{{item.id}}" bindchange="onSpecChange">
+          <view>规格：{{item.selectedSpec}}</view>
+        </picker>
+        <view class="qty-stepper">
+          <button class="step-btn" data-id="{{item.id}}" data-delta="-1" bindtap="onQuantityStep">-</button>
+          <input class="qty" type="number" value="{{item.quantity}}" data-id="{{item.id}}" bindfocus="onQuantityFocus" bindinput="onQuantityInput" bindblur="onQuantityBlur" />
+          <button class="step-btn" data-id="{{item.id}}" data-delta="1" bindtap="onQuantityStep">+</button>
+        </view>
+      </view>
+
+      <button class="add-btn {{item.isAdded && item.quantity == 0 ? 'delete-btn' : ''}}" data-id="{{item.id}}" bindtap="addItem">{{item.isAdded && item.quantity == 0 ? '删除' : item.isAdded ? '更新' : '添加'}}</button>
+    </view>
+  </view>
+</view>

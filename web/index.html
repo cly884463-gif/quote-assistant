@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>装修材料报价助手</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <img class="hero-bg" src="../assets/interior-bg.jpg" alt="">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div>
+          <h1>装修材料报价助手</h1>
+          <p>从产品卡片到报价清单，一次完成。</p>
+        </div>
+        <div class="quote-actions">
+          <button class="primary-action" data-start-quote="dealer">创建经销商批发报价</button>
+          <button class="primary-action secondary" data-start-quote="channel">创建渠道合作报价</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="view is-active" id="homeView">
+        <div class="section-head">
+          <div>
+            <h2>经销商批发报价</h2>
+            <p>按材料类别查看产品，卡片内展示全部规格及两套价格。</p>
+          </div>
+          <input class="search-input" id="homeSearch" placeholder="搜索型号 / 类别 / 产品名称 / 规格">
+        </div>
+        <div class="category-list" id="homeCategories"></div>
+      </section>
+
+      <section class="view" id="quoteView">
+        <div class="sticky-bar">
+          <button class="text-btn" id="backHomeBtn">返回首页</button>
+          <input class="search-input" id="quoteSearch" placeholder="搜索型号 / 类别 / 产品名称 / 规格">
+          <div class="selected-bar">
+            <span id="selectedCount">已选 0 项</span>
+            <button class="summary-btn" id="goSummaryBtn">生成清单</button>
+          </div>
+        </div>
+        <div class="quote-list" id="quoteProducts"></div>
+      </section>
+
+      <section class="view" id="summaryView">
+        <div class="summary-toolbar card">
+          <button class="text-btn" id="backQuoteBtn">返回报价</button>
+          <label>物流方式
+            <select id="logisticsSelect"></select>
+          </label>
+          <label>送货方式
+            <select id="deliverySelect"></select>
+          </label>
+          <label>税点
+            <select id="taxSelect"></select>
+          </label>
+          <button class="export-btn" id="exportImageBtn">导出报价图片</button>
+        </div>
+
+        <div class="sheet-scroll">
+          <div class="quote-sheet" id="quoteSheet"></div>
+        </div>
+        <div class="notes card" id="noticeList"></div>
+      </section>
+    </main>
+  </div>
+
+  <canvas id="exportCanvas" class="export-canvas"></canvas>
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
