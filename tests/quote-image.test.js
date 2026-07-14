@@ -25,6 +25,7 @@ const model = buildQuoteImageModel({
     tax: 4.2,
     total: 424.2
   },
+  remark: "测试备注",
   noticeItems: ["1、测试注意事项"]
 });
 
@@ -41,6 +42,9 @@ assert.strictEqual(model.rows[0][0], "DT-103");
 assert.strictEqual(model.rows[0][8], "¥84");
 assert.strictEqual(model.rows[0][9], "¥420");
 assert.deepStrictEqual(model.totalRows[2], ["含税报价：", "¥424.20"]);
+assert.deepStrictEqual(model.remarkRow, ["备注：", "测试备注"]);
+assert.strictEqual(model.noticeTitle, "注意事项");
+assert.strictEqual(model.noticeTitleHeight, 34);
 assert.strictEqual(model.notices[0], "1、测试注意事项");
 assert.ok(model.height > 260);
 

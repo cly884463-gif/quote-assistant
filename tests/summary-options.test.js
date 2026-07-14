@@ -25,6 +25,7 @@ assert.deepStrictEqual(deliveryOptions, [
 assert.deepStrictEqual(taxOptions, ["1%", "3%", "13%"]);
 assert.strictEqual(noticeItems.length, 6);
 assert.strictEqual(noticeItems[0], "1、订单报价不含安装、不含税、不含运费、全款订单发货。如需开票请按含税报价支付货款（默认普票，如需其他票类请与业务人员沟通）");
-assert.strictEqual(noticeItems[5], "5、定制产品确认下单付款后不退不换。");
+assert.strictEqual(noticeItems[4], "5、定制产品确认下单付款后不退不换。");
+assert.ok(noticeItems[5].startsWith("6、所有产品的施工"));
 
 console.log("summary options ok");

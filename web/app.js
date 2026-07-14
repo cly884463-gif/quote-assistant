@@ -21,9 +21,27 @@
     "2、报价单默认普通物流自提方式发货，如需送货上门请提前和业务员沟通备注。",
     "3、自提+送货方式收到货物后，先验货，货物无磨损、破碎、结冻等情况再签收，如有损坏现象请及时与对接业务人及时联系反馈。",
     "4、退换货政策：在不影响工厂二次销售的情况下，自实际收到商品之日起7日内可退货；15天可换货，退换货运费由客户承担，换货产品按照订单金额的8折处理。",
-    "6、所有产品的施工，如非我方负责，施工前一定要和业务员沟通施工流程及细节，并按照业务员的建议和指导按步骤进行；如客户擅自按照自己的想法施工导致了后续不理想的效果，我方不予处理。",
-    "5、定制产品确认下单付款后不退不换。"
+    "5、定制产品确认下单付款后不退不换。",
+    "6、所有产品的施工，如非我方负责，施工前一定要和业务员沟通施工流程及细节，并按照业务员的建议和指导按步骤进行；如客户擅自按照自己的想法施工导致了后续不理想的效果，我方不予处理。"
   ];
+
+  const CUSTOM_TINTING_PRODUCT_ID = "custom-tinting-paste";
+  const CUSTOM_TINTING_FEE_ID = "fee-custom-tinting";
+  const CUSTOM_TINTING_FEE_ITEM = {
+    id: CUSTOM_TINTING_FEE_ID,
+    model: "FEE-001",
+    category: "陶釉特调色浆",
+    name: "特调调色费",
+    spec: "人工费",
+    selectedSpec: "人工费",
+    workTimes: "",
+    coverage: "",
+    unit: "项",
+    quantity: 1,
+    dealerPrice: 50,
+    costPerSquare: "",
+    remark: "陶釉特调色浆自动调色费"
+  };
 
   const summaryColumnKeys = [
     "model",
@@ -51,10 +69,12 @@
     quoteKeyword: "",
     logistics: logisticsOptions[0],
     delivery: deliveryOptions[0],
-    taxText: taxOptions[0]
+    taxText: taxOptions[0],
+    remark: ""
   };
 
   const el = {};
+  const quoteOpenCategories = {};
 
   function escapeHtml(value) {
     return String(value == null ? "" : value)
@@ -71,6 +91,12 @@
   }
 
   function formatMoney(value) {
+    if (value === "" || value === null || typeof value === "undefined") {
+      return "可填";
+    }
+    if (!Number.isFinite(Number(value))) {
+      return String(value);
+    }
     return `¥${money(value)}`;
   }
 
@@ -174,14 +200,38 @@
     }, {});
   }
 
+  function normalizeProductName(name) {
+    return String(name || "")
+      .replace(/罩面/g, "")
+      .replace(/[（）()\s]/g, "")
+      .toLowerCase();
+  }
+
+  function setIfEmpty(map, key, value) {
+    if (key && !map[key]) {
+      map[key] = value;
+    }
+  }
+
   function buildChannelSpecMap(channelProducts) {
     const map = {};
     (channelProducts || []).forEach((product) => {
       (product.specOptions || []).forEach((option) => {
-        map[`${product.id}|${option.spec}`] = option;
+        setIfEmpty(map, `${product.id}|${option.spec}`, option);
+        setIfEmpty(map, `${product.model}|${product.name}|${option.spec}`, option);
+        setIfEmpty(map, `${product.name}|${option.spec}`, option);
+        setIfEmpty(map, `${normalizeProductName(product.name)}|${option.spec}`, option);
       });
     });
     return map;
+  }
+
+  function findChannelOption(map, product, option) {
+    return map[`${product.id}|${option.spec}`]
+      || map[`${product.model}|${product.name}|${option.spec}`]
+      || map[`${product.name}|${option.spec}`]
+      || map[`${normalizeProductName(product.name)}|${option.spec}`]
+      || {};
   }
 
   function buildHomeCards() {
@@ -190,12 +240,12 @@
     const channelMap = buildChannelSpecMap(channelProducts);
     return dealerProducts.map((product) => {
       const specRows = (product.specOptions || []).map((option) => {
-        const channel = channelMap[`${product.id}|${option.spec}`] || {};
+        const channel = findChannelOption(channelMap, product, option);
         return {
           spec: option.spec,
           coverageText: option.packageSpec || `${option.coverage || ""}㎡/${option.unit || ""}`,
           dealerPrice: option.dealerPrice,
-          channelPrice: channel.dealerPrice || ""
+          channelPrice: product.allowCustomPrice ? "可填" : (channel.dealerPrice || "")
         };
       });
       return Object.assign({}, product, { specRows });
@@ -219,7 +269,7 @@
 
   function applyAddedState(product) {
     const quoteItem = state.quoteItems.find((item) => getItemKey(item) === getItemKey(product));
-    return Object.assign({}, product, {
+    return Object.assign({}, product, quoteItem || {}, {
       quantity: quoteItem ? quoteItem.quantity : 0,
       isAdded: Boolean(quoteItem)
     });
@@ -264,6 +314,29 @@
     state.quoteItems = state.quoteItems.filter((item) => getItemKey(item) !== key);
   }
 
+  function syncCustomTintingFee() {
+    const hasCustomTinting = state.quoteItems.some((item) => (
+      item.id === CUSTOM_TINTING_PRODUCT_ID
+      && Number(item.quantity) > 0
+      && Number(item.dealerPrice) > 0
+    ));
+    const hasFee = state.quoteItems.some((item) => item.id === CUSTOM_TINTING_FEE_ID);
+    if (hasCustomTinting && !hasFee) {
+      state.quoteItems.push(Object.assign({}, CUSTOM_TINTING_FEE_ITEM));
+    }
+    if (!hasCustomTinting && hasFee) {
+      state.quoteItems = state.quoteItems.filter((item) => item.id !== CUSTOM_TINTING_FEE_ID);
+    }
+  }
+
+  function isCustomTintingProduct(product) {
+    return product && product.id === CUSTOM_TINTING_PRODUCT_ID;
+  }
+
+  function hasValidCustomPrice(product) {
+    return Number(product.dealerPrice) > 0;
+  }
+
   function calculateQuote() {
     const taxRate = parseTaxRate(state.taxText);
     const rows = state.quoteItems.map((item) => {
@@ -300,8 +373,8 @@
   function renderHome() {
     const products = filterProducts(buildHomeCards(), state.homeKeyword);
     const groups = groupByCategory(products);
-    el.homeCategories.innerHTML = Object.keys(groups).map((category, index) => `
-      <article class="category-panel ${index === 0 ? "is-open" : ""}">
+    el.homeCategories.innerHTML = Object.keys(groups).map((category) => `
+      <article class="category-panel">
         <button class="category-toggle" data-category-toggle>
           <strong>${escapeHtml(category)}</strong>
           <span>${groups[category].length} 个产品</span>
@@ -340,8 +413,30 @@
 
   function renderQuote() {
     const products = buildQuoteCards();
+    const groups = groupByCategory(products);
+    const categories = Object.keys(groups);
     el.selectedCount.textContent = `已选 ${state.quoteItems.length} 项`;
-    el.quoteProducts.innerHTML = products.map(renderQuoteCard).join("");
+    el.quoteCategoryTabs.innerHTML = categories.map((category) => `
+      <button class="quote-category-tab" data-quote-category-target="${escapeHtml(category)}">
+        ${escapeHtml(category)}
+      </button>
+    `).join("");
+    el.quoteProducts.innerHTML = categories.map((category) => {
+      if (typeof quoteOpenCategories[category] === "undefined") {
+        quoteOpenCategories[category] = false;
+      }
+      return `
+        <article class="quote-category-panel ${quoteOpenCategories[category] ? "is-open" : ""}" data-quote-category="${escapeHtml(category)}">
+          <button class="quote-category-toggle" data-quote-category-toggle="${escapeHtml(category)}">
+            <strong>${escapeHtml(category)}</strong>
+            <span>${groups[category].length} 个产品</span>
+          </button>
+          <div class="quote-category-body">
+            ${groups[category].map(renderQuoteCard).join("")}
+          </div>
+        </article>
+      `;
+    }).join("");
   }
 
   function renderQuoteCard(product) {
@@ -358,6 +453,11 @@
         <div class="quote-desc" data-role="desc">${escapeHtml(product.category)} · 施工${escapeHtml(product.workTimes)}次 · ${escapeHtml(product.coverage)}㎡/${escapeHtml(product.unit)}</div>
         <div class="quote-controls">
           <select class="spec-select" data-action="spec">${optionHtml}</select>
+          ${product.allowCustomPrice ? `
+            <label class="custom-price-control">单价
+              <input data-action="custom-price" type="number" min="0" step="0.01" placeholder="请输入单价" value="${escapeHtml(product.dealerPrice)}">
+            </label>
+          ` : ""}
           <div class="qty-stepper">
             <button data-action="step" data-delta="-1">-</button>
             <input data-action="quantity" type="number" min="0" value="${escapeHtml(product.quantity)}">
@@ -376,7 +476,12 @@
     const source = getCatalog().products.find((product) => product.id === id);
     const specIndex = Number(card.querySelector("[data-action='spec']").value) || 0;
     const quantity = card.querySelector("[data-action='quantity']").value;
-    return Object.assign(selectSpecOption(source, specIndex), { quantity });
+    const product = selectSpecOption(source, specIndex);
+    const customPriceInput = card.querySelector("[data-action='custom-price']");
+    return Object.assign(product, {
+      quantity,
+      dealerPrice: customPriceInput ? customPriceInput.value : product.dealerPrice
+    });
   }
 
   function updateSelectedCount() {
@@ -411,7 +516,12 @@
       updateQuoteCard(card, product);
       return;
     }
+    if (isCustomTintingProduct(product) && !hasValidCustomPrice(product)) {
+      updateQuoteCard(card, product);
+      return;
+    }
     upsertQuoteItem(product);
+    syncCustomTintingFee();
     updateQuoteCard(card, product);
   }
 
@@ -441,6 +551,7 @@
       <div class="sheet-total"><span class="label">合计（不含税）：</span><span class="value">${formatMoney(quote.subtotal)}</span></div>
       <div class="sheet-total"><span class="label">发票税金（${quote.taxRate}%）：</span><span class="value">${formatMoney(quote.tax)}</span></div>
       <div class="sheet-total"><span class="label"><strong>含税报价：</strong></span><span class="value">${formatMoney(quote.total)}</span></div>
+      <div class="sheet-remark"><span class="label">备注：</span><span class="value">${escapeHtml(state.remark)}</span></div>
     `;
   }
 
@@ -464,6 +575,24 @@
     return currentY + lineHeight;
   }
 
+  function isWeChatBrowser() {
+    return /MicroMessenger/i.test(navigator.userAgent || "");
+  }
+
+  function showExportPreview(imageUrl) {
+    el.exportPreviewImage.src = imageUrl;
+    el.exportPreviewTip.textContent = isWeChatBrowser()
+      ? "微信内不支持网页直接下载文件，请长按图片保存，或点右上角用浏览器打开后下载。"
+      : "图片已生成，若未自动下载，也可以右键或长按图片保存。";
+    el.exportPreview.classList.add("is-open");
+    el.exportPreview.setAttribute("aria-hidden", "false");
+  }
+
+  function closeExportPreview() {
+    el.exportPreview.classList.remove("is-open");
+    el.exportPreview.setAttribute("aria-hidden", "true");
+  }
+
   function exportQuoteImage() {
     const quote = calculateQuote();
     const canvas = document.getElementById("exportCanvas");
@@ -471,8 +600,9 @@
     const tableWidth = widths.reduce((sum, width) => sum + width, 0);
     const rowHeight = 34;
     const noteHeight = 24;
-    const totalRows = 1 + 1 + quote.rows.length + 3;
-    const height = totalRows * rowHeight + noticeItems.length * noteHeight + 28;
+    const noticeTitleHeight = 38;
+    const totalRows = 1 + 1 + quote.rows.length + 4;
+    const height = totalRows * rowHeight + noticeTitleHeight + noticeItems.length * noteHeight + 28;
     canvas.width = tableWidth;
     canvas.height = height;
     const ctx = canvas.getContext("2d");
@@ -527,17 +657,30 @@
       y += rowHeight;
     });
 
+    cell("备注：", 0, y, widths[0], rowHeight, "", "center");
+    cell(state.remark, widths[0], y, tableWidth - widths[0], rowHeight, "", "left");
+    y += rowHeight;
+
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
+    ctx.font = "bold 18px Microsoft YaHei, sans-serif";
+    ctx.fillStyle = "#111827";
+    ctx.fillText("注意事项", 8, y + 8);
+    y += noticeTitleHeight;
     ctx.font = "12px Microsoft YaHei, sans-serif";
     noticeItems.forEach((item) => {
       y = drawText(ctx, item, 8, y + 5, tableWidth - 16, 18);
     });
 
-    const link = document.createElement("a");
-    link.download = `${state.quoteType === "channel" ? "渠道合作报价" : "经销商批发报价"}.png`;
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+    const imageUrl = canvas.toDataURL("image/png");
+    showExportPreview(imageUrl);
+
+    if (!isWeChatBrowser()) {
+      const link = document.createElement("a");
+      link.download = `${state.quoteType === "channel" ? "渠道合作报价" : "经销商批发报价"}.png`;
+      link.href = imageUrl;
+      link.click();
+    }
   }
 
   function bindEvents() {
@@ -569,6 +712,30 @@
       }
     });
 
+    el.quoteCategoryTabs.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-quote-category-target]");
+      if (!button) {
+        return;
+      }
+      const category = button.dataset.quoteCategoryTarget;
+      quoteOpenCategories[category] = true;
+      renderQuote();
+      const panel = Array.from(el.quoteProducts.querySelectorAll("[data-quote-category]"))
+        .find((item) => item.dataset.quoteCategory === category);
+      if (panel) {
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+
+    el.quoteProducts.addEventListener("click", (event) => {
+      const toggle = event.target.closest("[data-quote-category-toggle]");
+      if (toggle) {
+        const category = toggle.dataset.quoteCategoryToggle;
+        quoteOpenCategories[category] = !quoteOpenCategories[category];
+        toggle.closest(".quote-category-panel").classList.toggle("is-open", quoteOpenCategories[category]);
+      }
+    });
+
     el.quoteProducts.addEventListener("change", (event) => {
       const card = event.target.closest(".quote-card");
       if (!card) {
@@ -584,7 +751,7 @@
     });
 
     el.quoteProducts.addEventListener("input", (event) => {
-      if (event.target.dataset.action === "quantity") {
+      if (event.target.dataset.action === "quantity" || event.target.dataset.action === "custom-price") {
         syncAddedProduct(event.target.closest(".quote-card"));
       }
     });
@@ -608,6 +775,7 @@
         const addedProduct = applyAddedState(product);
         if (addedProduct.isAdded && quantity === 0) {
           removeQuoteItem(product);
+          syncCustomTintingFee();
           renderQuote();
           toast("已删除");
           return;
@@ -616,7 +784,12 @@
           toast("请先填写数量");
           return;
         }
+        if (isCustomTintingProduct(product) && !hasValidCustomPrice(product)) {
+          toast("请先填写单价");
+          return;
+        }
         upsertQuoteItem(product);
+        syncCustomTintingFee();
         renderQuote();
         toast(addedProduct.isAdded ? "已更新报价" : "已加入报价");
       }
@@ -641,13 +814,24 @@
       state.taxText = event.target.value;
       renderSummary();
     });
+    el.summaryRemark.addEventListener("input", (event) => {
+      state.remark = event.target.value;
+      renderSummary();
+    });
     el.exportImageBtn.addEventListener("click", exportQuoteImage);
+    el.closeExportPreview.addEventListener("click", closeExportPreview);
+    el.exportPreview.addEventListener("click", (event) => {
+      if (event.target === el.exportPreview) {
+        closeExportPreview();
+      }
+    });
   }
 
   async function init() {
     Object.assign(el, {
       homeCategories: document.getElementById("homeCategories"),
       quoteProducts: document.getElementById("quoteProducts"),
+      quoteCategoryTabs: document.getElementById("quoteCategoryTabs"),
       selectedCount: document.getElementById("selectedCount"),
       homeSearch: document.getElementById("homeSearch"),
       quoteSearch: document.getElementById("quoteSearch"),
@@ -657,9 +841,14 @@
       logisticsSelect: document.getElementById("logisticsSelect"),
       deliverySelect: document.getElementById("deliverySelect"),
       taxSelect: document.getElementById("taxSelect"),
+      summaryRemark: document.getElementById("summaryRemark"),
       quoteSheet: document.getElementById("quoteSheet"),
       noticeList: document.getElementById("noticeList"),
-      exportImageBtn: document.getElementById("exportImageBtn")
+      exportImageBtn: document.getElementById("exportImageBtn"),
+      exportPreview: document.getElementById("exportPreview"),
+      exportPreviewImage: document.getElementById("exportPreviewImage"),
+      exportPreviewTip: document.getElementById("exportPreviewTip"),
+      closeExportPreview: document.getElementById("closeExportPreview")
     });
 
     if (window.__QUOTE_CATALOGS__) {

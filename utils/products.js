@@ -1,5 +1,5 @@
 // Auto-generated from F:/报价体系及合同/新材联-经销商批发报价最新.xlsx
-// Same product cards are grouped by model/category/name; specOptions keep per-spec dealer prices accurate.
+// Same product cards are grouped by model/category/name; specOptions keep per-spec prices accurate.
 const products = [
   {
     "id": "dt-101-瓷砖处理剂",
@@ -52,7 +52,7 @@ const products = [
         "coverage": 9.6,
         "unit": "组",
         "dealerPrice": 64,
-        "costPerSquare": 6.66666666666667,
+        "costPerSquare": 6.666666666666667,
         "remark": ""
       }
     ],
@@ -60,7 +60,7 @@ const products = [
     "coverage": 9.6,
     "unit": "组",
     "dealerPrice": 64,
-    "costPerSquare": 6.66666666666667,
+    "costPerSquare": 6.666666666666667,
     "remark": ""
   },
   {
@@ -124,7 +124,7 @@ const products = [
         "coverage": 120,
         "unit": "桶",
         "dealerPrice": 193,
-        "costPerSquare": 1.60833333333333,
+        "costPerSquare": 1.6083333333333334,
         "remark": ""
       }
     ],
@@ -188,7 +188,7 @@ const products = [
         "coverage": 6,
         "unit": "组",
         "dealerPrice": 64,
-        "costPerSquare": 10.6666666666667,
+        "costPerSquare": 10.666666666666666,
         "remark": ""
       },
       {
@@ -197,7 +197,7 @@ const products = [
         "coverage": 42,
         "unit": "组",
         "dealerPrice": 415,
-        "costPerSquare": 9.88095238095238,
+        "costPerSquare": 9.880952380952381,
         "remark": ""
       },
       {
@@ -206,7 +206,7 @@ const products = [
         "coverage": 126,
         "unit": "组",
         "dealerPrice": 1185,
-        "costPerSquare": 9.40476190476191,
+        "costPerSquare": 9.404761904761905,
         "remark": ""
       }
     ],
@@ -214,7 +214,7 @@ const products = [
     "coverage": 6,
     "unit": "组",
     "dealerPrice": 64,
-    "costPerSquare": 10.6666666666667,
+    "costPerSquare": 10.666666666666666,
     "remark": ""
   },
   {
@@ -259,7 +259,7 @@ const products = [
         "coverage": 22,
         "unit": "桶",
         "dealerPrice": 468,
-        "costPerSquare": 21.2727272727273,
+        "costPerSquare": 21.272727272727273,
         "remark": ""
       },
       {
@@ -268,7 +268,7 @@ const products = [
         "coverage": 4,
         "unit": "桶",
         "dealerPrice": 112,
-        "costPerSquare": 28,
+        "costPerSquare": 28.0,
         "remark": ""
       }
     ],
@@ -276,7 +276,7 @@ const products = [
     "coverage": 22,
     "unit": "桶",
     "dealerPrice": 468,
-    "costPerSquare": 21.2727272727273,
+    "costPerSquare": 21.272727272727273,
     "remark": ""
   },
   {
@@ -304,7 +304,7 @@ const products = [
         "coverage": 5,
         "unit": "桶",
         "dealerPrice": 100,
-        "costPerSquare": 20,
+        "costPerSquare": 20.0,
         "remark": ""
       }
     ],
@@ -340,7 +340,7 @@ const products = [
         "coverage": 8.75,
         "unit": "桶",
         "dealerPrice": 67,
-        "costPerSquare": 7.65714285714286,
+        "costPerSquare": 7.6571428571428575,
         "remark": ""
       }
     ],
@@ -404,7 +404,7 @@ const products = [
         "coverage": 14.4,
         "unit": "组",
         "dealerPrice": 448,
-        "costPerSquare": 31.1111111111111,
+        "costPerSquare": 31.11111111111111,
         "remark": ""
       },
       {
@@ -422,7 +422,7 @@ const products = [
         "coverage": 108,
         "unit": "组",
         "dealerPrice": 2600,
-        "costPerSquare": 24.0740740740741,
+        "costPerSquare": 24.074074074074073,
         "remark": ""
       }
     ],
@@ -430,7 +430,7 @@ const products = [
     "coverage": 14.4,
     "unit": "组",
     "dealerPrice": 448,
-    "costPerSquare": 31.1111111111111,
+    "costPerSquare": 31.11111111111111,
     "remark": ""
   },
   {
@@ -450,7 +450,7 @@ const products = [
         "coverage": 14.4,
         "unit": "组",
         "dealerPrice": 375,
-        "costPerSquare": 26.0416666666667,
+        "costPerSquare": 26.041666666666664,
         "remark": ""
       },
       {
@@ -459,7 +459,7 @@ const products = [
         "coverage": 30,
         "unit": "组",
         "dealerPrice": 704,
-        "costPerSquare": 23.4666666666667,
+        "costPerSquare": 23.466666666666665,
         "remark": ""
       },
       {
@@ -476,7 +476,7 @@ const products = [
     "coverage": 14.4,
     "unit": "组",
     "dealerPrice": 375,
-    "costPerSquare": 26.0416666666667,
+    "costPerSquare": 26.041666666666664,
     "remark": ""
   },
   {
@@ -566,7 +566,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 208,
-        "costPerSquare": 8.66666666666667,
+        "costPerSquare": 8.666666666666666,
         "remark": ""
       }
     ],
@@ -592,7 +592,7 @@ const products = [
         "coverage": 22.5,
         "unit": "桶",
         "dealerPrice": 260,
-        "costPerSquare": 11.5555555555556,
+        "costPerSquare": 11.555555555555555,
         "remark": ""
       }
     ],
@@ -600,7 +600,7 @@ const products = [
     "coverage": 22.5,
     "unit": "桶",
     "dealerPrice": 260,
-    "costPerSquare": 11.5555555555556,
+    "costPerSquare": 11.555555555555555,
     "remark": ""
   },
   {
@@ -628,7 +628,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 268,
-        "costPerSquare": 11.1666666666667,
+        "costPerSquare": 11.166666666666666,
         "remark": ""
       }
     ],
@@ -654,7 +654,7 @@ const products = [
         "coverage": 12,
         "unit": "桶",
         "dealerPrice": 235,
-        "costPerSquare": 19.5833333333333,
+        "costPerSquare": 19.583333333333332,
         "remark": ""
       }
     ],
@@ -662,7 +662,7 @@ const products = [
     "coverage": 12,
     "unit": "桶",
     "dealerPrice": 235,
-    "costPerSquare": 19.5833333333333,
+    "costPerSquare": 19.583333333333332,
     "remark": ""
   },
   {
@@ -680,7 +680,7 @@ const products = [
         "coverage": 12,
         "unit": "桶",
         "dealerPrice": 268,
-        "costPerSquare": 22.3333333333333,
+        "costPerSquare": 22.333333333333332,
         "remark": ""
       }
     ],
@@ -688,7 +688,7 @@ const products = [
     "coverage": 12,
     "unit": "桶",
     "dealerPrice": 268,
-    "costPerSquare": 22.3333333333333,
+    "costPerSquare": 22.333333333333332,
     "remark": ""
   },
   {
@@ -716,7 +716,7 @@ const products = [
         "coverage": 50,
         "unit": "组",
         "dealerPrice": 900,
-        "costPerSquare": 18,
+        "costPerSquare": 18.0,
         "remark": ""
       }
     ],
@@ -743,7 +743,7 @@ const products = [
         "coverage": 45,
         "unit": "桶",
         "dealerPrice": 290,
-        "costPerSquare": 6.44444444444444,
+        "costPerSquare": 6.444444444444445,
         "remark": ""
       },
       {
@@ -752,7 +752,7 @@ const products = [
         "coverage": 180,
         "unit": "桶",
         "dealerPrice": 1038,
-        "costPerSquare": 5.76666666666667,
+        "costPerSquare": 5.766666666666667,
         "remark": ""
       }
     ],
@@ -760,7 +760,7 @@ const products = [
     "coverage": 45,
     "unit": "桶",
     "dealerPrice": 290,
-    "costPerSquare": 6.44444444444444,
+    "costPerSquare": 6.444444444444445,
     "remark": ""
   },
   {
@@ -780,7 +780,7 @@ const products = [
         "coverage": 12,
         "unit": "桶",
         "dealerPrice": 217,
-        "costPerSquare": 18.0833333333333,
+        "costPerSquare": 18.083333333333332,
         "remark": ""
       },
       {
@@ -798,7 +798,7 @@ const products = [
         "coverage": 90,
         "unit": "桶",
         "dealerPrice": 1355,
-        "costPerSquare": 15.0555555555556,
+        "costPerSquare": 15.055555555555555,
         "remark": ""
       }
     ],
@@ -806,7 +806,7 @@ const products = [
     "coverage": 12,
     "unit": "桶",
     "dealerPrice": 217,
-    "costPerSquare": 18.0833333333333,
+    "costPerSquare": 18.083333333333332,
     "remark": ""
   },
   {
@@ -826,7 +826,7 @@ const products = [
         "coverage": 12,
         "unit": "桶",
         "dealerPrice": 199,
-        "costPerSquare": 16.5833333333333,
+        "costPerSquare": 16.583333333333332,
         "remark": ""
       },
       {
@@ -844,7 +844,7 @@ const products = [
         "coverage": 90,
         "unit": "桶",
         "dealerPrice": 1276,
-        "costPerSquare": 14.1777777777778,
+        "costPerSquare": 14.177777777777777,
         "remark": ""
       }
     ],
@@ -852,7 +852,7 @@ const products = [
     "coverage": 12,
     "unit": "桶",
     "dealerPrice": 199,
-    "costPerSquare": 16.5833333333333,
+    "costPerSquare": 16.583333333333332,
     "remark": ""
   },
   {
@@ -872,7 +872,7 @@ const products = [
         "coverage": 12,
         "unit": "桶",
         "dealerPrice": 217,
-        "costPerSquare": 18.0833333333333,
+        "costPerSquare": 18.083333333333332,
         "remark": ""
       },
       {
@@ -890,7 +890,7 @@ const products = [
         "coverage": 90,
         "unit": "桶",
         "dealerPrice": 1355,
-        "costPerSquare": 15.0555555555556,
+        "costPerSquare": 15.055555555555555,
         "remark": ""
       }
     ],
@@ -898,7 +898,7 @@ const products = [
     "coverage": 12,
     "unit": "桶",
     "dealerPrice": 217,
-    "costPerSquare": 18.0833333333333,
+    "costPerSquare": 18.083333333333332,
     "remark": ""
   },
   {
@@ -918,7 +918,7 @@ const products = [
         "coverage": 12,
         "unit": "桶",
         "dealerPrice": 199,
-        "costPerSquare": 16.5833333333333,
+        "costPerSquare": 16.583333333333332,
         "remark": ""
       },
       {
@@ -936,7 +936,7 @@ const products = [
         "coverage": 90,
         "unit": "桶",
         "dealerPrice": 1276,
-        "costPerSquare": 14.1777777777778,
+        "costPerSquare": 14.177777777777777,
         "remark": ""
       }
     ],
@@ -944,7 +944,7 @@ const products = [
     "coverage": 12,
     "unit": "桶",
     "dealerPrice": 199,
-    "costPerSquare": 16.5833333333333,
+    "costPerSquare": 16.583333333333332,
     "remark": ""
   },
   {
@@ -962,7 +962,7 @@ const products = [
         "coverage": 25,
         "unit": "桶",
         "dealerPrice": 400,
-        "costPerSquare": 16,
+        "costPerSquare": 16.0,
         "remark": ""
       }
     ],
@@ -970,12 +970,12 @@ const products = [
     "coverage": 25,
     "unit": "桶",
     "dealerPrice": 400,
-    "costPerSquare": 16,
+    "costPerSquare": 16.0,
     "remark": ""
   },
   {
-    "id": "cy-001jg-金钢彩釉",
-    "model": "CY-001JG",
+    "id": "yc-211-金钢彩釉",
+    "model": "YC-211",
     "category": "彩釉",
     "name": "金钢彩釉",
     "specs": [
@@ -988,7 +988,7 @@ const products = [
         "coverage": 7.5,
         "unit": "组",
         "dealerPrice": 500,
-        "costPerSquare": 66.6666666666667,
+        "costPerSquare": 66.66666666666667,
         "remark": ""
       }
     ],
@@ -996,7 +996,7 @@ const products = [
     "coverage": 7.5,
     "unit": "组",
     "dealerPrice": 500,
-    "costPerSquare": 66.6666666666667,
+    "costPerSquare": 66.66666666666667,
     "remark": ""
   },
   {
@@ -1015,7 +1015,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 167,
-        "costPerSquare": 6.95833333333333,
+        "costPerSquare": 6.958333333333333,
         "remark": ""
       },
       {
@@ -1024,7 +1024,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 380,
-        "costPerSquare": 6.33333333333333,
+        "costPerSquare": 6.333333333333333,
         "remark": ""
       }
     ],
@@ -1032,7 +1032,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 167,
-    "costPerSquare": 6.95833333333333,
+    "costPerSquare": 6.958333333333333,
     "remark": ""
   },
   {
@@ -1050,7 +1050,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 433,
-        "costPerSquare": 7.21666666666667,
+        "costPerSquare": 7.216666666666667,
         "remark": ""
       }
     ],
@@ -1058,7 +1058,7 @@ const products = [
     "coverage": 60,
     "unit": "桶",
     "dealerPrice": 433,
-    "costPerSquare": 7.21666666666667,
+    "costPerSquare": 7.216666666666667,
     "remark": ""
   },
   {
@@ -1077,7 +1077,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 173,
-        "costPerSquare": 7.20833333333333,
+        "costPerSquare": 7.208333333333333,
         "remark": ""
       },
       {
@@ -1086,7 +1086,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 407,
-        "costPerSquare": 6.78333333333333,
+        "costPerSquare": 6.783333333333333,
         "remark": ""
       }
     ],
@@ -1094,7 +1094,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 173,
-    "costPerSquare": 7.20833333333333,
+    "costPerSquare": 7.208333333333333,
     "remark": ""
   },
   {
@@ -1113,7 +1113,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 190,
-        "costPerSquare": 7.91666666666667,
+        "costPerSquare": 7.916666666666667,
         "remark": ""
       },
       {
@@ -1122,7 +1122,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 433,
-        "costPerSquare": 7.21666666666667,
+        "costPerSquare": 7.216666666666667,
         "remark": ""
       }
     ],
@@ -1130,7 +1130,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 190,
-    "costPerSquare": 7.91666666666667,
+    "costPerSquare": 7.916666666666667,
     "remark": ""
   },
   {
@@ -1149,7 +1149,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 160,
-        "costPerSquare": 6.66666666666667,
+        "costPerSquare": 6.666666666666667,
         "remark": ""
       },
       {
@@ -1158,7 +1158,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 353,
-        "costPerSquare": 5.88333333333333,
+        "costPerSquare": 5.883333333333334,
         "remark": ""
       }
     ],
@@ -1166,7 +1166,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 160,
-    "costPerSquare": 6.66666666666667,
+    "costPerSquare": 6.666666666666667,
     "remark": ""
   },
   {
@@ -1185,7 +1185,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 136,
-        "costPerSquare": 5.66666666666667,
+        "costPerSquare": 5.666666666666667,
         "remark": ""
       },
       {
@@ -1194,7 +1194,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 328,
-        "costPerSquare": 5.46666666666667,
+        "costPerSquare": 5.466666666666667,
         "remark": ""
       }
     ],
@@ -1202,7 +1202,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 136,
-    "costPerSquare": 5.66666666666667,
+    "costPerSquare": 5.666666666666667,
     "remark": ""
   },
   {
@@ -1221,7 +1221,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 158,
-        "costPerSquare": 6.58333333333333,
+        "costPerSquare": 6.583333333333333,
         "remark": ""
       },
       {
@@ -1230,7 +1230,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 368,
-        "costPerSquare": 6.13333333333333,
+        "costPerSquare": 6.133333333333334,
         "remark": ""
       }
     ],
@@ -1238,7 +1238,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 158,
-    "costPerSquare": 6.58333333333333,
+    "costPerSquare": 6.583333333333333,
     "remark": ""
   },
   {
@@ -1257,7 +1257,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 172,
-        "costPerSquare": 7.16666666666667,
+        "costPerSquare": 7.166666666666667,
         "remark": ""
       },
       {
@@ -1266,7 +1266,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 407,
-        "costPerSquare": 6.78333333333333,
+        "costPerSquare": 6.783333333333333,
         "remark": ""
       }
     ],
@@ -1274,7 +1274,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 172,
-    "costPerSquare": 7.16666666666667,
+    "costPerSquare": 7.166666666666667,
     "remark": ""
   },
   {
@@ -1302,7 +1302,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 433,
-        "costPerSquare": 7.21666666666667,
+        "costPerSquare": 7.216666666666667,
         "remark": ""
       }
     ],
@@ -1329,7 +1329,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 248,
-        "costPerSquare": 10.3333333333333,
+        "costPerSquare": 10.333333333333334,
         "remark": ""
       },
       {
@@ -1338,7 +1338,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 593,
-        "costPerSquare": 9.88333333333333,
+        "costPerSquare": 9.883333333333333,
         "remark": ""
       }
     ],
@@ -1346,7 +1346,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 248,
-    "costPerSquare": 10.3333333333333,
+    "costPerSquare": 10.333333333333334,
     "remark": ""
   },
   {
@@ -1365,7 +1365,7 @@ const products = [
         "coverage": 24,
         "unit": "桶",
         "dealerPrice": 205,
-        "costPerSquare": 8.54166666666667,
+        "costPerSquare": 8.541666666666666,
         "remark": ""
       },
       {
@@ -1374,7 +1374,7 @@ const products = [
         "coverage": 60,
         "unit": "桶",
         "dealerPrice": 485,
-        "costPerSquare": 8.08333333333333,
+        "costPerSquare": 8.083333333333334,
         "remark": ""
       }
     ],
@@ -1382,7 +1382,7 @@ const products = [
     "coverage": 24,
     "unit": "桶",
     "dealerPrice": 205,
-    "costPerSquare": 8.54166666666667,
+    "costPerSquare": 8.541666666666666,
     "remark": ""
   },
   {
@@ -1401,7 +1401,7 @@ const products = [
         "coverage": 16.6,
         "unit": "桶",
         "dealerPrice": 128,
-        "costPerSquare": 7.71084337349397,
+        "costPerSquare": 7.710843373493975,
         "remark": ""
       },
       {
@@ -1410,7 +1410,7 @@ const products = [
         "coverage": 66.6,
         "unit": "桶",
         "dealerPrice": 428,
-        "costPerSquare": 6.42642642642643,
+        "costPerSquare": 6.426426426426427,
         "remark": ""
       }
     ],
@@ -1418,7 +1418,7 @@ const products = [
     "coverage": 16.6,
     "unit": "桶",
     "dealerPrice": 128,
-    "costPerSquare": 7.71084337349397,
+    "costPerSquare": 7.710843373493975,
     "remark": ""
   },
   {
@@ -1436,7 +1436,7 @@ const products = [
         "coverage": 16.6,
         "unit": "桶",
         "dealerPrice": 168,
-        "costPerSquare": 10.1204819277108,
+        "costPerSquare": 10.120481927710843,
         "remark": ""
       }
     ],
@@ -1444,7 +1444,7 @@ const products = [
     "coverage": 16.6,
     "unit": "桶",
     "dealerPrice": 168,
-    "costPerSquare": 10.1204819277108,
+    "costPerSquare": 10.120481927710843,
     "remark": ""
   },
   {
@@ -1463,7 +1463,7 @@ const products = [
         "coverage": 14.28,
         "unit": "桶",
         "dealerPrice": 158,
-        "costPerSquare": 11.0644257703081,
+        "costPerSquare": 11.064425770308123,
         "remark": ""
       },
       {
@@ -1472,7 +1472,7 @@ const products = [
         "coverage": 57,
         "unit": "桶",
         "dealerPrice": 605,
-        "costPerSquare": 10.6140350877193,
+        "costPerSquare": 10.614035087719298,
         "remark": ""
       }
     ],
@@ -1480,7 +1480,7 @@ const products = [
     "coverage": 14.28,
     "unit": "桶",
     "dealerPrice": 158,
-    "costPerSquare": 11.0644257703081,
+    "costPerSquare": 11.064425770308123,
     "remark": ""
   },
   {
@@ -1499,7 +1499,7 @@ const products = [
         "coverage": 8.3,
         "unit": "桶",
         "dealerPrice": 158,
-        "costPerSquare": 19.0361445783133,
+        "costPerSquare": 19.03614457831325,
         "remark": ""
       },
       {
@@ -1508,7 +1508,7 @@ const products = [
         "coverage": 33.3,
         "unit": "桶",
         "dealerPrice": 605,
-        "costPerSquare": 18.1681681681682,
+        "costPerSquare": 18.16816816816817,
         "remark": ""
       }
     ],
@@ -1516,7 +1516,7 @@ const products = [
     "coverage": 8.3,
     "unit": "桶",
     "dealerPrice": 158,
-    "costPerSquare": 19.0361445783133,
+    "costPerSquare": 19.03614457831325,
     "remark": ""
   },
   {
@@ -1571,7 +1571,7 @@ const products = [
         "coverage": 16.6,
         "unit": "桶",
         "dealerPrice": 303,
-        "costPerSquare": 18.2530120481928,
+        "costPerSquare": 18.25301204819277,
         "remark": ""
       },
       {
@@ -1580,7 +1580,7 @@ const products = [
         "coverage": 66.6,
         "unit": "桶",
         "dealerPrice": 1188,
-        "costPerSquare": 17.8378378378378,
+        "costPerSquare": 17.83783783783784,
         "remark": ""
       }
     ],
@@ -1588,7 +1588,7 @@ const products = [
     "coverage": 16.6,
     "unit": "桶",
     "dealerPrice": 303,
-    "costPerSquare": 18.2530120481928,
+    "costPerSquare": 18.25301204819277,
     "remark": ""
   },
   {
@@ -1618,6 +1618,32 @@ const products = [
     "remark": ""
   },
   {
+    "id": "wz01-1808-微软瓷清漆",
+    "model": "WZ01-1808",
+    "category": "微软瓷",
+    "name": "微软瓷清漆",
+    "specs": [
+      "20KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "20KG",
+        "workTimes": "2",
+        "coverage": "80",
+        "unit": "桶",
+        "dealerPrice": 650,
+        "costPerSquare": 8.125,
+        "remark": ""
+      }
+    ],
+    "workTimes": "2",
+    "coverage": "80",
+    "unit": "桶",
+    "dealerPrice": 650,
+    "costPerSquare": 8.125,
+    "remark": ""
+  },
+  {
     "id": "wz01-1806-微软瓷仿石漆",
     "model": "WZ01-1806",
     "category": "微软瓷",
@@ -1641,6 +1667,110 @@ const products = [
     "unit": "桶",
     "dealerPrice": 298,
     "costPerSquare": 22.406015037594,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1801-黑线条漆",
+    "model": "WZ01-1801",
+    "category": "微软瓷",
+    "name": "黑线条漆",
+    "specs": [
+      "20KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "20KG",
+        "workTimes": "1",
+        "coverage": "200",
+        "unit": "桶",
+        "dealerPrice": 256,
+        "costPerSquare": 1.28,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "200",
+    "unit": "桶",
+    "dealerPrice": 256,
+    "costPerSquare": 1.28,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1802-仿石漆专用渗透底漆",
+    "model": "WZ01-1802",
+    "category": "微软瓷",
+    "name": "仿石漆专用渗透底漆",
+    "specs": [
+      "18KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "18KG",
+        "workTimes": "1",
+        "coverage": "180",
+        "unit": "桶",
+        "dealerPrice": 260,
+        "costPerSquare": 1.44444444444444,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "180",
+    "unit": "桶",
+    "dealerPrice": 260,
+    "costPerSquare": 1.44444444444444,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1803-仿石漆专用中涂",
+    "model": "WZ01-1803",
+    "category": "微软瓷",
+    "name": "仿石漆专用中涂",
+    "specs": [
+      "20KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "20KG",
+        "workTimes": "1",
+        "coverage": "100",
+        "unit": "桶",
+        "dealerPrice": 280,
+        "costPerSquare": 2.8,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "100",
+    "unit": "桶",
+    "dealerPrice": 280,
+    "costPerSquare": 2.8,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1805-外墙专用罩面",
+    "model": "WZ01-1805",
+    "category": "微软瓷",
+    "name": "外墙专用罩面",
+    "specs": [
+      "18KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "18KG",
+        "workTimes": "1",
+        "coverage": "150",
+        "unit": "桶",
+        "dealerPrice": 432,
+        "costPerSquare": 2.88,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "150",
+    "unit": "桶",
+    "dealerPrice": 432,
+    "costPerSquare": 2.88,
     "remark": ""
   },
   {
@@ -1736,7 +1866,7 @@ const products = [
         "coverage": 7,
         "unit": "组",
         "dealerPrice": 1470,
-        "costPerSquare": 210,
+        "costPerSquare": 210.0,
         "remark": ""
       }
     ],
@@ -1744,7 +1874,7 @@ const products = [
     "coverage": 7,
     "unit": "组",
     "dealerPrice": 1470,
-    "costPerSquare": 210,
+    "costPerSquare": 210.0,
     "remark": ""
   },
   {
@@ -1762,7 +1892,7 @@ const products = [
         "coverage": 14,
         "unit": "组",
         "dealerPrice": 1260,
-        "costPerSquare": 90,
+        "costPerSquare": 90.0,
         "remark": ""
       }
     ],
@@ -1770,7 +1900,7 @@ const products = [
     "coverage": 14,
     "unit": "组",
     "dealerPrice": 1260,
-    "costPerSquare": 90,
+    "costPerSquare": 90.0,
     "remark": ""
   },
   {
@@ -1788,7 +1918,7 @@ const products = [
         "coverage": 108,
         "unit": "组",
         "dealerPrice": 1510,
-        "costPerSquare": 13.9814814814815,
+        "costPerSquare": 13.981481481481481,
         "remark": ""
       }
     ],
@@ -1796,7 +1926,7 @@ const products = [
     "coverage": 108,
     "unit": "组",
     "dealerPrice": 1510,
-    "costPerSquare": 13.9814814814815,
+    "costPerSquare": 13.981481481481481,
     "remark": ""
   },
   {
@@ -1814,7 +1944,7 @@ const products = [
         "coverage": 108,
         "unit": "组",
         "dealerPrice": 1408,
-        "costPerSquare": 13.037037037037,
+        "costPerSquare": 13.037037037037036,
         "remark": ""
       }
     ],
@@ -1822,7 +1952,7 @@ const products = [
     "coverage": 108,
     "unit": "组",
     "dealerPrice": 1408,
-    "costPerSquare": 13.037037037037,
+    "costPerSquare": 13.037037037037036,
     "remark": ""
   },
   {
@@ -1840,7 +1970,7 @@ const products = [
         "coverage": 90,
         "unit": "组",
         "dealerPrice": 548,
-        "costPerSquare": 6.08888888888889,
+        "costPerSquare": 6.088888888888889,
         "remark": ""
       }
     ],
@@ -1848,12 +1978,12 @@ const products = [
     "coverage": 90,
     "unit": "组",
     "dealerPrice": 548,
-    "costPerSquare": 6.08888888888889,
+    "costPerSquare": 6.088888888888889,
     "remark": ""
   },
   {
-    "id": "未编号-金刚砂渗透底漆",
-    "model": "未编号",
+    "id": "tml-001-金刚砂渗透底漆",
+    "model": "TML-001",
     "category": "金刚砂微彩泥",
     "name": "金刚砂渗透底漆",
     "specs": [
@@ -1878,8 +2008,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-金刚砂微彩泥",
-    "model": "未编号",
+    "id": "tml-002-金刚砂微彩泥",
+    "model": "TML-002",
     "category": "金刚砂微彩泥",
     "name": "金刚砂微彩泥",
     "specs": [
@@ -1904,8 +2034,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-纳米晶瓷罩面",
-    "model": "未编号",
+    "id": "tml-003-纳米晶瓷罩面",
+    "model": "TML-003",
     "category": "金刚砂微彩泥",
     "name": "纳米晶瓷罩面",
     "specs": [
@@ -1918,7 +2048,7 @@ const products = [
         "coverage": 30,
         "unit": "桶",
         "dealerPrice": 188,
-        "costPerSquare": 6.26666666666667,
+        "costPerSquare": 6.266666666666667,
         "remark": ""
       }
     ],
@@ -1926,7 +2056,7 @@ const products = [
     "coverage": 30,
     "unit": "桶",
     "dealerPrice": 188,
-    "costPerSquare": 6.26666666666667,
+    "costPerSquare": 6.266666666666667,
     "remark": ""
   },
   {
@@ -1945,7 +2075,7 @@ const products = [
         "coverage": 90,
         "unit": "桶",
         "dealerPrice": 200,
-        "costPerSquare": 2.22222222222222,
+        "costPerSquare": 2.2222222222222223,
         "remark": ""
       },
       {
@@ -1962,7 +2092,7 @@ const products = [
     "coverage": 90,
     "unit": "桶",
     "dealerPrice": 200,
-    "costPerSquare": 2.22222222222222,
+    "costPerSquare": 2.2222222222222223,
     "remark": ""
   },
   {
@@ -1990,7 +2120,7 @@ const products = [
         "coverage": 20,
         "unit": "桶",
         "dealerPrice": 80,
-        "costPerSquare": 4,
+        "costPerSquare": 4.0,
         "remark": ""
       }
     ],
@@ -2016,7 +2146,7 @@ const products = [
         "coverage": 100,
         "unit": "桶",
         "dealerPrice": 200,
-        "costPerSquare": 2,
+        "costPerSquare": 2.0,
         "remark": ""
       }
     ],
@@ -2024,7 +2154,7 @@ const products = [
     "coverage": 100,
     "unit": "桶",
     "dealerPrice": 200,
-    "costPerSquare": 2,
+    "costPerSquare": 2.0,
     "remark": ""
   },
   {
@@ -2069,7 +2199,7 @@ const products = [
         "coverage": 72,
         "unit": "桶",
         "dealerPrice": 936,
-        "costPerSquare": 13,
+        "costPerSquare": 13.0,
         "remark": ""
       },
       {
@@ -2078,7 +2208,7 @@ const products = [
         "coverage": 20,
         "unit": "桶",
         "dealerPrice": 260,
-        "costPerSquare": 13,
+        "costPerSquare": 13.0,
         "remark": ""
       }
     ],
@@ -2086,7 +2216,7 @@ const products = [
     "coverage": 72,
     "unit": "桶",
     "dealerPrice": 936,
-    "costPerSquare": 13,
+    "costPerSquare": 13.0,
     "remark": ""
   },
   {
@@ -2105,7 +2235,7 @@ const products = [
         "coverage": 120,
         "unit": "桶",
         "dealerPrice": 250,
-        "costPerSquare": 2.08333333333333,
+        "costPerSquare": 2.0833333333333335,
         "remark": ""
       },
       {
@@ -2114,7 +2244,7 @@ const products = [
         "coverage": 33,
         "unit": "桶",
         "dealerPrice": 70,
-        "costPerSquare": 2.12121212121212,
+        "costPerSquare": 2.121212121212121,
         "remark": ""
       }
     ],
@@ -2122,7 +2252,7 @@ const products = [
     "coverage": 120,
     "unit": "桶",
     "dealerPrice": 250,
-    "costPerSquare": 2.08333333333333,
+    "costPerSquare": 2.0833333333333335,
     "remark": ""
   }
 ];

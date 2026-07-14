@@ -119,7 +119,64 @@ const hColorPasteProduct = {
   remark: "彩瓷H系列色浆，含100ml/瓶和250ml/瓶两种规格"
 };
 
+const customTintingPasteProduct = {
+  id: "custom-tinting-paste",
+  model: "TY-TT-SJ",
+  category: "陶釉特调色浆",
+  name: "陶釉特调色浆",
+  specs: ["2.4KG", "5KG", "18KG"],
+  allowCustomPrice: true,
+  autoFee: {
+    id: "fee-custom-tinting",
+    model: "FEE-001",
+    category: "陶釉特调色浆",
+    name: "特调调色费",
+    spec: "人工费",
+    unit: "项",
+    price: 50
+  },
+  specOptions: [
+    {
+      spec: "2.4KG",
+      workTimes: "",
+      coverage: "",
+      unit: "桶",
+      packageSpec: "2.4KG",
+      dealerPrice: "",
+      costPerSquare: "",
+      remark: "陶釉特调色浆，价格按实际填写"
+    },
+    {
+      spec: "5KG",
+      workTimes: "",
+      coverage: "",
+      unit: "桶",
+      packageSpec: "5KG",
+      dealerPrice: "",
+      costPerSquare: "",
+      remark: "陶釉特调色浆，价格按实际填写"
+    },
+    {
+      spec: "18KG",
+      workTimes: "",
+      coverage: "",
+      unit: "桶",
+      packageSpec: "18KG",
+      dealerPrice: "",
+      costPerSquare: "",
+      remark: "陶釉特调色浆，价格按实际填写"
+    }
+  ],
+  workTimes: "",
+  coverage: "",
+  unit: "桶",
+  packageSpec: "2.4KG/5KG/18KG",
+  dealerPrice: "",
+  costPerSquare: "",
+  remark: "陶釉特调色浆，价格按实际填写"
+};
+
 module.exports = {
-  extraDealerProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct],
-  extraChannelProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct]
+  extraDealerProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct, customTintingPasteProduct],
+  extraChannelProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct, customTintingPasteProduct]
 };

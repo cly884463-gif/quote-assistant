@@ -41,13 +41,14 @@ function buildQuoteImageModel(input) {
   const rowHeight = 30;
   const totalHeight = 24;
   const noticeTitleWidth = 88;
+  const noticeTitleHeight = 34;
   const noticeLineHeight = 26;
   const noticeHeight = Math.max(120, (input.noticeItems || []).length * noticeLineHeight);
-  const tableHeight = topRowHeight + headerHeight + rows.length * rowHeight + totalHeight * 3;
+  const tableHeight = topRowHeight + headerHeight + rows.length * rowHeight + totalHeight * 4;
 
   return {
     width,
-    height: tableHeight + noticeHeight + 24,
+    height: tableHeight + noticeTitleHeight + noticeHeight + 24,
     columnWidths,
     palette,
     topRowHeight,
@@ -55,6 +56,7 @@ function buildQuoteImageModel(input) {
     rowHeight,
     totalHeight,
     noticeTitleWidth,
+    noticeTitleHeight,
     noticeLineHeight,
     noticeHeight,
     topRow: {
@@ -68,6 +70,8 @@ function buildQuoteImageModel(input) {
       [`发票税金（${quote.taxRate || 0}%）：`, money(quote.tax)],
       ["含税报价：", money(quote.total)]
     ],
+    remarkRow: ["备注：", input.remark || ""],
+    noticeTitle: "注意事项",
     notices: input.noticeItems || []
   };
 }

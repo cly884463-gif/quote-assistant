@@ -27,7 +27,7 @@
       <section class="view is-active" id="homeView">
         <div class="section-head">
           <div>
-            <h2>经销商批发报价</h2>
+            <h2>材料预览</h2>
             <p>按材料类别查看产品，卡片内展示全部规格及两套价格。</p>
           </div>
           <input class="search-input" id="homeSearch" placeholder="搜索型号 / 类别 / 产品名称 / 规格">
@@ -44,6 +44,7 @@
             <button class="summary-btn" id="goSummaryBtn">生成清单</button>
           </div>
         </div>
+        <div class="quote-category-tabs" id="quoteCategoryTabs"></div>
         <div class="quote-list" id="quoteProducts"></div>
       </section>
 
@@ -59,6 +60,9 @@
           <label>税点
             <select id="taxSelect"></select>
           </label>
+          <label class="summary-remark-control">备注
+            <textarea id="summaryRemark" rows="2" placeholder="可填写报价备注"></textarea>
+          </label>
           <button class="export-btn" id="exportImageBtn">导出报价图片</button>
         </div>
 
@@ -68,6 +72,19 @@
         <div class="notes card" id="noticeList"></div>
       </section>
     </main>
+  </div>
+
+  <div class="export-preview" id="exportPreview" aria-hidden="true">
+    <div class="export-preview-panel">
+      <div class="export-preview-head">
+        <div>
+          <strong>报价图片已生成</strong>
+          <p id="exportPreviewTip">长按图片保存，或点右上角用浏览器打开后下载。</p>
+        </div>
+        <button class="text-btn" id="closeExportPreview">关闭</button>
+      </div>
+      <img id="exportPreviewImage" alt="报价清单图片">
+    </div>
   </div>
 
   <canvas id="exportCanvas" class="export-canvas"></canvas>

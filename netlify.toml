@@ -1,0 +1,8 @@
+[build]
+  command = "node tools/build_netlify_release.js"
+  publish = "release/quote-assistant-site"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

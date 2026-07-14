@@ -172,8 +172,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-双组份含砂中涂底漆",
-    "model": "未编号",
+    "id": "dt-108-双组份含砂中涂底漆",
+    "model": "DT-108",
     "category": "底漆",
     "name": "双组份含砂中涂底漆",
     "specs": [
@@ -352,12 +352,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-滚涂型陶泥-粗泥",
-    "model": "未编号",
+    "id": "ttn-301-滚涂型陶泥-粗泥",
+    "model": "TTN-301",
     "category": "陶泥系列",
     "name": "滚涂型陶泥(粗泥)",
     "specs": [
-      "5KG"
+      "5KG",
+      "20KG"
     ],
     "specOptions": [
       {
@@ -368,24 +369,7 @@ const products = [
         "dealerPrice": 273,
         "costPerSquare": 27.25,
         "remark": "备注添加比例"
-      }
-    ],
-    "workTimes": 2,
-    "coverage": "10",
-    "unit": "桶",
-    "dealerPrice": 273,
-    "costPerSquare": 27.25,
-    "remark": "备注添加比例"
-  },
-  {
-    "id": "yc-231-yc-y-滚涂型陶泥-粗泥",
-    "model": "YC-231+YC-Y",
-    "category": "陶泥系列",
-    "name": "滚涂型陶泥(粗泥)",
-    "specs": [
-      "20KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "20KG",
         "workTimes": 2,
@@ -397,19 +381,21 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": "40",
+    "coverage": "10",
     "unit": "桶",
-    "dealerPrice": 975,
-    "costPerSquare": 24.375,
-    "remark": ""
+    "dealerPrice": 273,
+    "costPerSquare": 27.25,
+    "remark": "备注添加比例"
   },
   {
-    "id": "未编号-陶釉哑光白漆-a组份-b组份",
-    "model": "未编号",
+    "id": "yc-231-yc-y-陶釉哑光白漆-a组份-b组份",
+    "model": "YC-231+YC-Y",
     "category": "陶釉",
     "name": "陶釉哑光白漆（A组份）+（B组份）",
     "specs": [
-      "2.88KG"
+      "2.88KG",
+      "6KG",
+      "21.6KG"
     ],
     "specOptions": [
       {
@@ -420,25 +406,7 @@ const products = [
         "dealerPrice": 560,
         "costPerSquare": 38.888888888888886,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 14.4,
-    "unit": "组",
-    "dealerPrice": 560,
-    "costPerSquare": 38.888888888888886,
-    "remark": ""
-  },
-  {
-    "id": "yc-232-yc-y-陶釉哑光白漆-a组份-b组份",
-    "model": "YC-232+YC-Y",
-    "category": "陶釉",
-    "name": "陶釉哑光白漆（A组份）+（B组份）",
-    "specs": [
-      "6KG",
-      "21.6KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "6KG",
         "workTimes": 2,
@@ -459,19 +427,21 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 30,
+    "coverage": 14.4,
     "unit": "组",
-    "dealerPrice": 960,
-    "costPerSquare": 32.0,
+    "dealerPrice": 560,
+    "costPerSquare": 38.888888888888886,
     "remark": ""
   },
   {
-    "id": "未编号-陶釉哑光清漆-a组份-b组份",
-    "model": "未编号",
+    "id": "yc-232-yc-y-陶釉哑光清漆-a组份-b组份",
+    "model": "YC-232+YC-Y",
     "category": "陶釉",
     "name": "陶釉哑光清漆（A组份）+（B组份）",
     "specs": [
-      "2.88KG"
+      "2.88KG",
+      "6KG",
+      "19.2KG"
     ],
     "specOptions": [
       {
@@ -482,24 +452,7 @@ const products = [
         "dealerPrice": 469,
         "costPerSquare": 32.56944444444444,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 14.4,
-    "unit": "组",
-    "dealerPrice": 469,
-    "costPerSquare": 32.56944444444444,
-    "remark": ""
-  },
-  {
-    "id": "qc-401-陶釉哑光清漆-a组份-b组份",
-    "model": "QC-401",
-    "category": "陶釉",
-    "name": "陶釉哑光清漆（A组份）+（B组份）",
-    "specs": [
-      "6KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "6KG",
         "workTimes": 2,
@@ -508,24 +461,7 @@ const products = [
         "dealerPrice": 880,
         "costPerSquare": 29.333333333333332,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 30,
-    "unit": "组",
-    "dealerPrice": 880,
-    "costPerSquare": 29.333333333333332,
-    "remark": ""
-  },
-  {
-    "id": "qc-402-陶釉哑光清漆-a组份-b组份",
-    "model": "QC-402",
-    "category": "陶釉",
-    "name": "陶釉哑光清漆（A组份）+（B组份）",
-    "specs": [
-      "19.2KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "19.2KG",
         "workTimes": 2,
@@ -537,15 +473,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 96,
+    "coverage": 14.4,
     "unit": "组",
-    "dealerPrice": 2655,
-    "costPerSquare": 27.65625,
+    "dealerPrice": 469,
+    "costPerSquare": 32.56944444444444,
     "remark": ""
   },
   {
-    "id": "qc-403-清瓷水漆-蛋壳光白",
-    "model": "QC-403",
+    "id": "qc-401-清瓷水漆-蛋壳光白",
+    "model": "QC-401",
     "category": "清瓷主漆",
     "name": "清瓷水漆（蛋壳光白）",
     "specs": [
@@ -580,8 +516,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-清瓷水漆-蛋壳光清",
-    "model": "未编号",
+    "id": "qc-402-清瓷水漆-蛋壳光清",
+    "model": "QC-402",
     "category": "清瓷主漆",
     "name": "清瓷水漆（蛋壳光清）",
     "specs": [
@@ -606,12 +542,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "qc-404-清瓷水漆-纯哑白",
-    "model": "QC-404",
+    "id": "qc-403-清瓷水漆-纯哑白",
+    "model": "QC-403",
     "category": "清瓷主漆",
     "name": "清瓷水漆（纯哑白）",
     "specs": [
-      "20KG"
+      "20KG",
+      "4.8KG"
     ],
     "specOptions": [
       {
@@ -622,24 +559,7 @@ const products = [
         "dealerPrice": 975,
         "costPerSquare": 9.75,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 100,
-    "unit": "桶",
-    "dealerPrice": 975,
-    "costPerSquare": 9.75,
-    "remark": ""
-  },
-  {
-    "id": "qc-405-清瓷水漆-纯哑白",
-    "model": "QC-405",
-    "category": "清瓷主漆",
-    "name": "清瓷水漆（纯哑白）",
-    "specs": [
-      "4.8KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "4.8KG",
         "workTimes": 2,
@@ -651,15 +571,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 24,
+    "coverage": 100,
     "unit": "桶",
-    "dealerPrice": 260,
-    "costPerSquare": 10.833333333333334,
+    "dealerPrice": 975,
+    "costPerSquare": 9.75,
     "remark": ""
   },
   {
-    "id": "未编号-清瓷罩面清漆-超级哑",
-    "model": "未编号",
+    "id": "qc-404-清瓷罩面清漆-超级哑",
+    "model": "QC-404",
     "category": "清瓷墙面罩面漆",
     "name": "清瓷罩面清漆（超级哑）",
     "specs": [
@@ -684,12 +604,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "jgfg-555-清瓷罩面清漆-哑光",
-    "model": "JGFG-555",
+    "id": "qc-405-清瓷罩面清漆-哑光",
+    "model": "QC-405",
     "category": "清瓷墙面罩面漆",
     "name": "清瓷罩面清漆（哑光）",
     "specs": [
-      "16KG"
+      "16KG",
+      "4.8KG"
     ],
     "specOptions": [
       {
@@ -700,24 +621,7 @@ const products = [
         "dealerPrice": 1070,
         "costPerSquare": 13.375,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 80,
-    "unit": "桶",
-    "dealerPrice": 1070,
-    "costPerSquare": 13.375,
-    "remark": ""
-  },
-  {
-    "id": "jgfg-666-清瓷罩面清漆-哑光",
-    "model": "JGFG-666",
-    "category": "清瓷墙面罩面漆",
-    "name": "清瓷罩面清漆（哑光）",
-    "specs": [
-      "4.8KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "4.8KG",
         "workTimes": 2,
@@ -729,15 +633,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 24,
+    "coverage": 80,
     "unit": "桶",
-    "dealerPrice": 335,
-    "costPerSquare": 13.958333333333334,
+    "dealerPrice": 1070,
+    "costPerSquare": 13.375,
     "remark": ""
   },
   {
-    "id": "yc-241-金钢肤感-超级哑罩面",
-    "model": "YC-241",
+    "id": "jgfg-555-金钢肤感-超级哑罩面",
+    "model": "JGFG-555",
     "category": "墙面肤感罩面",
     "name": "金钢肤感（超级哑罩面）",
     "specs": [
@@ -762,8 +666,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-金钢肤感-极哑罩面",
-    "model": "未编号",
+    "id": "jgfg-666-金钢肤感-极哑罩面",
+    "model": "JGFG-666",
     "category": "墙面肤感罩面",
     "name": "金钢肤感（极哑罩面）",
     "specs": [
@@ -788,8 +692,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "yc-206-防滑耐磨罩面",
-    "model": "YC-206",
+    "id": "yc-241-防滑耐磨罩面",
+    "model": "YC-241",
     "category": "功能性罩面",
     "name": "防滑耐磨罩面",
     "specs": [
@@ -824,8 +728,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-批刮型罩面清漆",
-    "model": "未编号",
+    "id": "yc-206-批刮型罩面清漆",
+    "model": "YC-206",
     "category": "功能性罩面",
     "name": "批刮型罩面清漆",
     "specs": [
@@ -860,12 +764,14 @@ const products = [
     "remark": "备注添加比例"
   },
   {
-    "id": "未编号-金钢瓷釉-半光白",
-    "model": "未编号",
+    "id": "yc-201-金钢瓷釉-半光白",
+    "model": "YC-201",
     "category": "瓷釉主漆",
     "name": "金钢瓷釉（半光白）",
     "specs": [
-      "2.4KG"
+      "2.4KG",
+      "5KG",
+      "18KG"
     ],
     "specOptions": [
       {
@@ -875,6 +781,24 @@ const products = [
         "unit": "桶",
         "dealerPrice": 271,
         "costPerSquare": 22.583333333333332,
+        "remark": ""
+      },
+      {
+        "spec": "5KG",
+        "workTimes": 2,
+        "coverage": 25,
+        "unit": "桶",
+        "dealerPrice": 488,
+        "costPerSquare": 19.52,
+        "remark": ""
+      },
+      {
+        "spec": "18KG",
+        "workTimes": 2,
+        "coverage": 90,
+        "unit": "桶",
+        "dealerPrice": 1694,
+        "costPerSquare": 18.822222222222223,
         "remark": ""
       }
     ],
@@ -886,48 +810,14 @@ const products = [
     "remark": ""
   },
   {
-    "id": "yc-202-金钢瓷釉-半光白",
+    "id": "yc-202-金钢瓷釉-半光清",
     "model": "YC-202",
     "category": "瓷釉主漆",
-    "name": "金钢瓷釉（半光白）",
-    "specs": [
-      "5KG",
-      "18KG"
-    ],
-    "specOptions": [
-      {
-        "spec": "5KG",
-        "workTimes": 2,
-        "coverage": 25,
-        "unit": "桶",
-        "dealerPrice": 488,
-        "costPerSquare": 19.52,
-        "remark": ""
-      },
-      {
-        "spec": "18KG",
-        "workTimes": 2,
-        "coverage": 90,
-        "unit": "桶",
-        "dealerPrice": 1694,
-        "costPerSquare": 18.822222222222223,
-        "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 25,
-    "unit": "桶",
-    "dealerPrice": 488,
-    "costPerSquare": 19.52,
-    "remark": ""
-  },
-  {
-    "id": "未编号-金钢瓷釉-半光清",
-    "model": "未编号",
-    "category": "瓷釉主漆",
     "name": "金钢瓷釉（半光清）",
     "specs": [
-      "2.4KG"
+      "2.4KG",
+      "5KG",
+      "18KG"
     ],
     "specOptions": [
       {
@@ -938,25 +828,7 @@ const products = [
         "dealerPrice": 249,
         "costPerSquare": 20.75,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 12,
-    "unit": "桶",
-    "dealerPrice": 249,
-    "costPerSquare": 20.75,
-    "remark": ""
-  },
-  {
-    "id": "yc-203-金钢瓷釉-半光清",
-    "model": "YC-203",
-    "category": "瓷釉主漆",
-    "name": "金钢瓷釉（半光清）",
-    "specs": [
-      "5KG",
-      "18KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "5KG",
         "workTimes": 2,
@@ -977,19 +849,21 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 25,
+    "coverage": 12,
     "unit": "桶",
-    "dealerPrice": 465,
-    "costPerSquare": 18.6,
+    "dealerPrice": 249,
+    "costPerSquare": 20.75,
     "remark": ""
   },
   {
-    "id": "未编号-金钢瓷釉-蛋壳光白",
-    "model": "未编号",
+    "id": "yc-203-金钢瓷釉-蛋壳光白",
+    "model": "YC-203",
     "category": "瓷釉主漆",
     "name": "金钢瓷釉（蛋壳光白）",
     "specs": [
-      "2.4KG"
+      "2.4KG",
+      "5KG",
+      "18KG"
     ],
     "specOptions": [
       {
@@ -999,6 +873,24 @@ const products = [
         "unit": "桶",
         "dealerPrice": 271,
         "costPerSquare": 22.583333333333332,
+        "remark": ""
+      },
+      {
+        "spec": "5KG",
+        "workTimes": 2,
+        "coverage": 25,
+        "unit": "桶",
+        "dealerPrice": 488,
+        "costPerSquare": 19.52,
+        "remark": ""
+      },
+      {
+        "spec": "18KG",
+        "workTimes": 2,
+        "coverage": 90,
+        "unit": "桶",
+        "dealerPrice": 1694,
+        "costPerSquare": 18.822222222222223,
         "remark": ""
       }
     ],
@@ -1010,48 +902,14 @@ const products = [
     "remark": ""
   },
   {
-    "id": "yc-204-金钢瓷釉-蛋壳光白",
+    "id": "yc-204-金钢瓷釉-蛋壳光清",
     "model": "YC-204",
-    "category": "瓷釉主漆",
-    "name": "金钢瓷釉（蛋壳光白）",
-    "specs": [
-      "5KG",
-      "18KG"
-    ],
-    "specOptions": [
-      {
-        "spec": "5KG",
-        "workTimes": 2,
-        "coverage": 25,
-        "unit": "桶",
-        "dealerPrice": 488,
-        "costPerSquare": 19.52,
-        "remark": ""
-      },
-      {
-        "spec": "18KG",
-        "workTimes": 2,
-        "coverage": 90,
-        "unit": "桶",
-        "dealerPrice": 1694,
-        "costPerSquare": 18.822222222222223,
-        "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 25,
-    "unit": "桶",
-    "dealerPrice": 488,
-    "costPerSquare": 19.52,
-    "remark": ""
-  },
-  {
-    "id": "未编号-金钢瓷釉-蛋壳光清",
-    "model": "未编号",
     "category": "瓷釉主漆",
     "name": "金钢瓷釉（蛋壳光清）",
     "specs": [
-      "2.4KG"
+      "2.4KG",
+      "5KG",
+      "18KG"
     ],
     "specOptions": [
       {
@@ -1062,24 +920,7 @@ const products = [
         "dealerPrice": 249,
         "costPerSquare": 20.75,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 12,
-    "unit": "桶",
-    "dealerPrice": 249,
-    "costPerSquare": 20.75,
-    "remark": ""
-  },
-  {
-    "id": "yc-205-金钢瓷釉-蛋壳光清",
-    "model": "YC-205",
-    "category": "瓷釉主漆",
-    "name": "金钢瓷釉（蛋壳光清）",
-    "specs": [
-      "5KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "5KG",
         "workTimes": 2,
@@ -1088,24 +929,7 @@ const products = [
         "dealerPrice": 465,
         "costPerSquare": 18.6,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 25,
-    "unit": "桶",
-    "dealerPrice": 465,
-    "costPerSquare": 18.6,
-    "remark": ""
-  },
-  {
-    "id": "cy-001jg-金钢瓷釉-蛋壳光清",
-    "model": "CY-001JG",
-    "category": "瓷釉主漆",
-    "name": "金钢瓷釉（蛋壳光清）",
-    "specs": [
-      "18KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "18KG",
         "workTimes": 2,
@@ -1117,15 +941,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 90,
+    "coverage": 12,
     "unit": "桶",
-    "dealerPrice": 1595,
-    "costPerSquare": 17.72222222222222,
+    "dealerPrice": 249,
+    "costPerSquare": 20.75,
     "remark": ""
   },
   {
-    "id": "cc-201-金钢瓷釉-70-亮光",
-    "model": "CC-201",
+    "id": "yc-205-金钢瓷釉-70-亮光",
+    "model": "YC-205",
     "category": "瓷釉主漆",
     "name": "金钢瓷釉（70°亮光）",
     "specs": [
@@ -1150,8 +974,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-金钢彩釉",
-    "model": "未编号",
+    "id": "yc-211-金钢彩釉",
+    "model": "YC-211",
     "category": "彩釉",
     "name": "金钢彩釉",
     "specs": [
@@ -1176,12 +1000,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "cc-202-彩瓷水漆-亮光白",
-    "model": "CC-202",
+    "id": "cc-201-彩瓷水漆-亮光白",
+    "model": "CC-201",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（亮光白）",
     "specs": [
-      "4.8KG"
+      "4.8KG",
+      "12KG"
     ],
     "specOptions": [
       {
@@ -1192,24 +1017,7 @@ const products = [
         "dealerPrice": 209,
         "costPerSquare": 8.708333333333334,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 24,
-    "unit": "桶",
-    "dealerPrice": 209,
-    "costPerSquare": 8.708333333333334,
-    "remark": ""
-  },
-  {
-    "id": "cc-203-彩瓷水漆-亮光白",
-    "model": "CC-203",
-    "category": "彩瓷水漆（DIY调色）",
-    "name": "彩瓷水漆（亮光白）",
-    "specs": [
-      "12KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "12KG",
         "workTimes": 2,
@@ -1221,15 +1029,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 60,
+    "coverage": 24,
     "unit": "桶",
-    "dealerPrice": 475,
-    "costPerSquare": 7.916666666666667,
+    "dealerPrice": 209,
+    "costPerSquare": 8.708333333333334,
     "remark": ""
   },
   {
-    "id": "未编号-彩瓷水漆-半光白",
-    "model": "未编号",
+    "id": "cc-202-彩瓷水漆-半光白",
+    "model": "CC-202",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（半光白）",
     "specs": [
@@ -1254,8 +1062,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "cc-204-彩瓷水漆-哑光白",
-    "model": "CC-204",
+    "id": "cc-203-彩瓷水漆-哑光白",
+    "model": "CC-203",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（哑光白）",
     "specs": [
@@ -1290,8 +1098,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "cc-205-彩瓷水漆-蛋壳光白",
-    "model": "CC-205",
+    "id": "cc-204-彩瓷水漆-蛋壳光白",
+    "model": "CC-204",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（蛋壳光白）",
     "specs": [
@@ -1326,8 +1134,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "cc-206-彩瓷水漆-纯哑白",
-    "model": "CC-206",
+    "id": "cc-205-彩瓷水漆-纯哑白",
+    "model": "CC-205",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（纯哑白）",
     "specs": [
@@ -1362,8 +1170,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "cc-207-彩瓷水漆-亮光清",
-    "model": "CC-207",
+    "id": "cc-206-彩瓷水漆-亮光清",
+    "model": "CC-206",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（亮光清）",
     "specs": [
@@ -1398,8 +1206,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "cc-2209-彩瓷水漆-哑光清",
-    "model": "CC-2209",
+    "id": "cc-207-彩瓷水漆-哑光清",
+    "model": "CC-207",
     "category": "彩瓷水漆（DIY调色）",
     "name": "彩瓷水漆（哑光清）",
     "specs": [
@@ -1434,12 +1242,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-彩瓷水漆-银色-成品色",
-    "model": "未编号",
-    "category": "彩瓷水漆成品色",
+    "id": "cc-2209-彩瓷水漆-银色-成品色",
+    "model": "CC-2209",
+    "category": "彩瓷水漆成品金属色",
     "name": "彩瓷水漆（银色）成品色",
     "specs": [
-      "4.8KG"
+      "4.8KG",
+      "12KG"
     ],
     "specOptions": [
       {
@@ -1450,24 +1259,7 @@ const products = [
         "dealerPrice": 215,
         "costPerSquare": 8.958333333333334,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 24,
-    "unit": "桶",
-    "dealerPrice": 215,
-    "costPerSquare": 8.958333333333334,
-    "remark": ""
-  },
-  {
-    "id": "cc-2210-彩瓷水漆-银色-成品色",
-    "model": "CC-2210",
-    "category": "彩瓷水漆成品色",
-    "name": "彩瓷水漆（银色）成品色",
-    "specs": [
-      "12KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "12KG",
         "workTimes": 2,
@@ -1479,16 +1271,16 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 60,
+    "coverage": 24,
     "unit": "桶",
-    "dealerPrice": 509,
-    "costPerSquare": 8.483333333333333,
+    "dealerPrice": 215,
+    "costPerSquare": 8.958333333333334,
     "remark": ""
   },
   {
-    "id": "未编号-彩瓷水漆-古铜色-成品色",
-    "model": "未编号",
-    "category": "彩瓷水漆成品色",
+    "id": "cc-2210-彩瓷水漆-古铜色-成品色",
+    "model": "CC-2210",
+    "category": "彩瓷水漆成品金属色",
     "name": "彩瓷水漆（古铜色）成品色",
     "specs": [
       "4.8KG",
@@ -1524,7 +1316,7 @@ const products = [
   {
     "id": "cc-2211-彩瓷水漆-金色-成品色",
     "model": "CC-2211",
-    "category": "彩瓷水漆成品色",
+    "category": "彩瓷水漆成品金属色",
     "name": "彩瓷水漆（金色）成品色",
     "specs": [
       "4.8KG",
@@ -1558,12 +1350,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-彩瓷水漆-金箔-成品色",
-    "model": "未编号",
-    "category": "彩瓷水漆成品色",
+    "id": "cc-2212-彩瓷水漆-金箔-成品色",
+    "model": "CC-2212",
+    "category": "彩瓷水漆成品金属色",
     "name": "彩瓷水漆（金箔）成品色",
     "specs": [
-      "4.8KG"
+      "4.8KG",
+      "12KG"
     ],
     "specOptions": [
       {
@@ -1574,24 +1367,7 @@ const products = [
         "dealerPrice": 256,
         "costPerSquare": 10.666666666666666,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 24,
-    "unit": "桶",
-    "dealerPrice": 256,
-    "costPerSquare": 10.666666666666666,
-    "remark": ""
-  },
-  {
-    "id": "cc-2212-彩瓷水漆-金箔-成品色",
-    "model": "CC-2212",
-    "category": "彩瓷水漆成品色",
-    "name": "彩瓷水漆（金箔）成品色",
-    "specs": [
-      "12KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "12KG",
         "workTimes": 2,
@@ -1603,19 +1379,20 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 60,
+    "coverage": 24,
     "unit": "桶",
-    "dealerPrice": 606,
-    "costPerSquare": 10.1,
+    "dealerPrice": 256,
+    "costPerSquare": 10.666666666666666,
     "remark": ""
   },
   {
-    "id": "未编号-小羊皮",
-    "model": "未编号",
+    "id": "nq-203-小羊皮",
+    "model": "NQ-203",
     "category": "艺术漆",
     "name": "小羊皮",
     "specs": [
-      "5KG"
+      "5KG",
+      "20KG"
     ],
     "specOptions": [
       {
@@ -1626,24 +1403,7 @@ const products = [
         "dealerPrice": 160,
         "costPerSquare": 9.638554216867469,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 16.6,
-    "unit": "桶",
-    "dealerPrice": 160,
-    "costPerSquare": 9.638554216867469,
-    "remark": ""
-  },
-  {
-    "id": "nq-203-小羊皮",
-    "model": "NQ-203",
-    "category": "艺术漆",
-    "name": "小羊皮",
-    "specs": [
-      "20KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "20KG",
         "workTimes": 2,
@@ -1655,15 +1415,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 66.6,
+    "coverage": 16.6,
     "unit": "桶",
-    "dealerPrice": 535,
-    "costPerSquare": 8.033033033033034,
+    "dealerPrice": 160,
+    "costPerSquare": 9.638554216867469,
     "remark": ""
   },
   {
-    "id": "nq-203-小牛皮-哑光",
-    "model": "NQ-203",
+    "id": "nq-206-小牛皮-哑光",
+    "model": "NQ-206",
     "category": "艺术漆",
     "name": "小牛皮（哑光）",
     "specs": [
@@ -1688,12 +1448,13 @@ const products = [
     "remark": ""
   },
   {
-    "id": "nq-206-天鹅绒",
-    "model": "NQ-206",
+    "id": "nq-207-天鹅绒",
+    "model": "NQ-207",
     "category": "艺术漆",
     "name": "天鹅绒",
     "specs": [
-      "5KG"
+      "5KG",
+      "20KG"
     ],
     "specOptions": [
       {
@@ -1704,24 +1465,7 @@ const products = [
         "dealerPrice": 198,
         "costPerSquare": 13.865546218487395,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 14.28,
-    "unit": "桶",
-    "dealerPrice": 198,
-    "costPerSquare": 13.865546218487395,
-    "remark": ""
-  },
-  {
-    "id": "nq-207-天鹅绒",
-    "model": "NQ-207",
-    "category": "艺术漆",
-    "name": "天鹅绒",
-    "specs": [
-      "20KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "20KG",
         "workTimes": 2,
@@ -1733,19 +1477,20 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 57,
+    "coverage": 14.28,
     "unit": "桶",
-    "dealerPrice": 756,
-    "costPerSquare": 13.263157894736842,
+    "dealerPrice": 198,
+    "costPerSquare": 13.865546218487395,
     "remark": ""
   },
   {
-    "id": "nq-207-曜晶石",
-    "model": "NQ-207",
+    "id": "nq-208-曜晶石",
+    "model": "NQ-208",
     "category": "艺术漆",
     "name": "曜晶石",
     "specs": [
-      "5KG"
+      "5KG",
+      "20KG"
     ],
     "specOptions": [
       {
@@ -1756,24 +1501,7 @@ const products = [
         "dealerPrice": 198,
         "costPerSquare": 23.855421686746986,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 8.3,
-    "unit": "桶",
-    "dealerPrice": 198,
-    "costPerSquare": 23.855421686746986,
-    "remark": ""
-  },
-  {
-    "id": "nq-208-曜晶石",
-    "model": "NQ-208",
-    "category": "艺术漆",
-    "name": "曜晶石",
-    "specs": [
-      "20KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "20KG",
         "workTimes": 2,
@@ -1785,19 +1513,20 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 33.3,
+    "coverage": 8.3,
     "unit": "桶",
-    "dealerPrice": 756,
-    "costPerSquare": 22.702702702702705,
+    "dealerPrice": 198,
+    "costPerSquare": 23.855421686746986,
     "remark": ""
   },
   {
-    "id": "nq-208-彩釉",
-    "model": "NQ-208",
+    "id": "nq-209-彩釉",
+    "model": "NQ-209",
     "category": "艺术漆",
     "name": "彩釉",
     "specs": [
-      "5KG"
+      "5KG",
+      "20KG"
     ],
     "specOptions": [
       {
@@ -1808,24 +1537,7 @@ const products = [
         "dealerPrice": 298,
         "costPerSquare": 23.84,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 12.5,
-    "unit": "桶",
-    "dealerPrice": 298,
-    "costPerSquare": 23.84,
-    "remark": ""
-  },
-  {
-    "id": "nq-209-彩釉",
-    "model": "NQ-209",
-    "category": "艺术漆",
-    "name": "彩釉",
-    "specs": [
-      "20KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "20KG",
         "workTimes": 2,
@@ -1837,19 +1549,20 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 50,
+    "coverage": 12.5,
     "unit": "桶",
-    "dealerPrice": 1163,
-    "costPerSquare": 23.26,
+    "dealerPrice": 298,
+    "costPerSquare": 23.84,
     "remark": ""
   },
   {
-    "id": "nq-209-砂绒",
-    "model": "NQ-209",
+    "id": "nq-210-砂绒",
+    "model": "NQ-210",
     "category": "艺术漆",
     "name": "砂绒",
     "specs": [
-      "5KG"
+      "5KG",
+      "20KG"
     ],
     "specOptions": [
       {
@@ -1860,24 +1573,7 @@ const products = [
         "dealerPrice": 379,
         "costPerSquare": 22.831325301204817,
         "remark": ""
-      }
-    ],
-    "workTimes": 2,
-    "coverage": 16.6,
-    "unit": "桶",
-    "dealerPrice": 379,
-    "costPerSquare": 22.831325301204817,
-    "remark": ""
-  },
-  {
-    "id": "nq-210-砂绒",
-    "model": "NQ-210",
-    "category": "艺术漆",
-    "name": "砂绒",
-    "specs": [
-      "20KG"
-    ],
-    "specOptions": [
+      },
       {
         "spec": "20KG",
         "workTimes": 2,
@@ -1889,15 +1585,15 @@ const products = [
       }
     ],
     "workTimes": 2,
-    "coverage": 66.6,
+    "coverage": 16.6,
     "unit": "桶",
-    "dealerPrice": 1485,
-    "costPerSquare": 22.2972972972973,
+    "dealerPrice": 379,
+    "costPerSquare": 22.831325301204817,
     "remark": ""
   },
   {
-    "id": "nq-210-微软瓷白漆",
-    "model": "NQ-210",
+    "id": "wz01-1807-微软瓷白漆",
+    "model": "WZ01-1807",
     "category": "微软瓷",
     "name": "微软瓷白漆",
     "specs": [
@@ -1922,8 +1618,34 @@ const products = [
     "remark": ""
   },
   {
-    "id": "wz01-1807-微软瓷仿石漆",
-    "model": "WZ01-1807",
+    "id": "wz01-1808-微软瓷清漆",
+    "model": "WZ01-1808",
+    "category": "微软瓷",
+    "name": "微软瓷清漆",
+    "specs": [
+      "20KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "20KG",
+        "workTimes": "2",
+        "coverage": "80",
+        "unit": "桶",
+        "dealerPrice": 813,
+        "costPerSquare": 10.1625,
+        "remark": ""
+      }
+    ],
+    "workTimes": "2",
+    "coverage": "80",
+    "unit": "桶",
+    "dealerPrice": 813,
+    "costPerSquare": 10.1625,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1806-微软瓷仿石漆",
+    "model": "WZ01-1806",
     "category": "微软瓷",
     "name": "微软瓷仿石漆",
     "specs": [
@@ -1945,6 +1667,110 @@ const products = [
     "unit": "桶",
     "dealerPrice": 373,
     "costPerSquare": 28.0075187969925,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1801-黑线条漆",
+    "model": "WZ01-1801",
+    "category": "微软瓷",
+    "name": "黑线条漆",
+    "specs": [
+      "20KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "20KG",
+        "workTimes": "1",
+        "coverage": "200",
+        "unit": "桶",
+        "dealerPrice": 320,
+        "costPerSquare": 1.6,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "200",
+    "unit": "桶",
+    "dealerPrice": 320,
+    "costPerSquare": 1.6,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1802-仿石漆专用渗透底漆",
+    "model": "WZ01-1802",
+    "category": "微软瓷",
+    "name": "仿石漆专用渗透底漆",
+    "specs": [
+      "18KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "18KG",
+        "workTimes": "1",
+        "coverage": "180",
+        "unit": "桶",
+        "dealerPrice": 325,
+        "costPerSquare": 1.80555555555556,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "180",
+    "unit": "桶",
+    "dealerPrice": 325,
+    "costPerSquare": 1.80555555555556,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1803-仿石漆专用中涂",
+    "model": "WZ01-1803",
+    "category": "微软瓷",
+    "name": "仿石漆专用中涂",
+    "specs": [
+      "20KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "20KG",
+        "workTimes": "1",
+        "coverage": "100",
+        "unit": "桶",
+        "dealerPrice": 350,
+        "costPerSquare": 3.5,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "100",
+    "unit": "桶",
+    "dealerPrice": 350,
+    "costPerSquare": 3.5,
+    "remark": ""
+  },
+  {
+    "id": "wz01-1805-外墙专用罩面",
+    "model": "WZ01-1805",
+    "category": "微软瓷",
+    "name": "外墙专用罩面",
+    "specs": [
+      "18KG"
+    ],
+    "specOptions": [
+      {
+        "spec": "18KG",
+        "workTimes": "1",
+        "coverage": "150",
+        "unit": "桶",
+        "dealerPrice": 540,
+        "costPerSquare": 3.6,
+        "remark": ""
+      }
+    ],
+    "workTimes": "1",
+    "coverage": "150",
+    "unit": "桶",
+    "dealerPrice": 540,
+    "costPerSquare": 3.6,
     "remark": ""
   },
   {
@@ -2156,8 +1982,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-金刚砂渗透底漆",
-    "model": "未编号",
+    "id": "tml-001-金刚砂渗透底漆",
+    "model": "TML-001",
     "category": "金刚砂微彩泥",
     "name": "金刚砂渗透底漆",
     "specs": [
@@ -2182,8 +2008,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-金刚砂微彩泥",
-    "model": "未编号",
+    "id": "tml-002-金刚砂微彩泥",
+    "model": "TML-002",
     "category": "金刚砂微彩泥",
     "name": "金刚砂微彩泥",
     "specs": [
@@ -2208,8 +2034,8 @@ const products = [
     "remark": ""
   },
   {
-    "id": "未编号-纳米晶瓷罩面",
-    "model": "未编号",
+    "id": "tml-003-纳米晶瓷罩面",
+    "model": "TML-003",
     "category": "金刚砂微彩泥",
     "name": "纳米晶瓷罩面",
     "specs": [

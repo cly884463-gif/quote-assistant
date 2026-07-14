@@ -1,11 +1,35 @@
+function normalizeProductName(name) {
+  return String(name || "")
+    .replace(/罩面/g, "")
+    .replace(/[（）()\s]/g, "")
+    .toLowerCase();
+}
+
+function setIfEmpty(map, key, value) {
+  if (key && !map[key]) {
+    map[key] = value;
+  }
+}
+
 function buildChannelSpecMap(channelProducts) {
   const map = {};
   (channelProducts || []).forEach((product) => {
     (product.specOptions || []).forEach((option) => {
-      map[`${product.id}|${option.spec}`] = option;
+      setIfEmpty(map, `${product.id}|${option.spec}`, option);
+      setIfEmpty(map, `${product.model}|${product.name}|${option.spec}`, option);
+      setIfEmpty(map, `${product.name}|${option.spec}`, option);
+      setIfEmpty(map, `${normalizeProductName(product.name)}|${option.spec}`, option);
     });
   });
   return map;
+}
+
+function findChannelOption(map, product, option) {
+  return map[`${product.id}|${option.spec}`]
+    || map[`${product.model}|${product.name}|${option.spec}`]
+    || map[`${product.name}|${option.spec}`]
+    || map[`${normalizeProductName(product.name)}|${option.spec}`]
+    || {};
 }
 
 function buildHomeProductCards(dealerProducts, channelProducts) {
@@ -13,9 +37,11 @@ function buildHomeProductCards(dealerProducts, channelProducts) {
 
   return (dealerProducts || []).map((product) => {
     const specRows = (product.specOptions || []).map((option) => {
-      const channelOption = channelSpecMap[`${product.id}|${option.spec}`] || {};
+      const channelOption = findChannelOption(channelSpecMap, product, option);
       const coverageText = option.packageSpec || `${option.coverage}㎡/${option.unit}`;
-      const channelPrice = channelOption.dealerPrice || "";
+      const channelPrice = product.allowCustomPrice ? "可填" : (channelOption.dealerPrice || "");
+      const dealerPriceText = product.allowCustomPrice ? "可填" : `¥${option.dealerPrice}`;
+      const channelPriceText = channelPrice ? (product.allowCustomPrice ? channelPrice : `¥${channelPrice}`) : "";
       return {
         spec: option.spec,
         coverage: option.coverage,
@@ -26,8 +52,8 @@ function buildHomeProductCards(dealerProducts, channelProducts) {
         cells: [
           option.spec,
           coverageText,
-          `¥${option.dealerPrice}`,
-          channelPrice ? `¥${channelPrice}` : ""
+          dealerPriceText,
+          channelPriceText
         ]
       };
     });

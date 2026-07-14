@@ -38,8 +38,16 @@ def extract_products(source, should_round_prices=False):
     ws = openpyxl.load_workbook(source, data_only=True).active
     grouped = {}
     current = {"model": "", "category": "", "name": ""}
+    start_row = 7
 
-    for row_index in range(7, ws.max_row + 1):
+    for row_index in range(1, min(ws.max_row, 30) + 1):
+        values = [ws.cell(row_index, col).value for col in range(1, 4)]
+        labels = [str(value).strip() if value is not None else "" for value in values]
+        if labels[:3] == ["序列号", "材料类别", "产品名称"]:
+            start_row = row_index + 1
+            break
+
+    for row_index in range(start_row, ws.max_row + 1):
         values = [ws.cell(row_index, col).value for col in range(1, 13)]
         if values[0] and str(values[0]).startswith("合计"):
             break

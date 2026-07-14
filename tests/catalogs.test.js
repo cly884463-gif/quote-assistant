@@ -12,6 +12,9 @@ const dealerColorPaste = dealerCatalogView.products.find((item) => item.model ==
 const channelColorPaste = channelCatalogView.products.find((item) => item.model === "TN-SJ");
 const hColorPaste = dealerCatalogView.products.find((item) => item.model === "CC-H-SJ");
 const sColorPaste = dealerCatalogView.products.find((item) => item.model === "GN-S-SJ");
+const dealerCustomTintingPaste = dealerCatalogView.products.find((item) => item.model === "TY-TT-SJ");
+const channelCustomTintingPaste = channelCatalogView.products.find((item) => item.model === "TY-TT-SJ");
+const dealerCustomTintingFee = dealerCatalogView.products.find((item) => item.model === "FEE-001");
 
 assert.strictEqual(dealerDt101.specOptions[0].dealerPrice, 30);
 assert.strictEqual(channelDt101.specOptions[0].dealerPrice, 38);
@@ -48,6 +51,14 @@ assert.ok(sColorPaste.specOptions[0].remark.includes("配比(g:ml)：清漆：�
 assert.strictEqual(sColorPaste.specOptions[20].spec, "S025 冰川（白漆）200ml/瓶");
 assert.ok(sColorPaste.specOptions[20].remark.includes("配比(g:g)：白漆：色浆=1000：10"));
 assert.strictEqual(dealerCatalogView.filterProducts("S025")[0].name, "高浓度S系列色浆");
+assert.ok(dealerCustomTintingPaste);
+assert.ok(channelCustomTintingPaste);
+assert.ok(!dealerCustomTintingFee);
+assert.deepStrictEqual(dealerCustomTintingPaste.specs, ["2.4KG", "5KG", "18KG"]);
+assert.strictEqual(dealerCustomTintingPaste.allowCustomPrice, true);
+assert.strictEqual(dealerCustomTintingPaste.specOptions[0].dealerPrice, "");
+assert.strictEqual(channelCustomTintingPaste.specOptions[0].dealerPrice, "");
+assert.strictEqual(dealerCatalogView.filterProducts("TY-TT-SJ")[0].model, "TY-TT-SJ");
 assert.strictEqual(getCatalogByQuoteType("unknown").products.length, dealerCatalogView.products.length);
 
 console.log("catalog selection ok");
