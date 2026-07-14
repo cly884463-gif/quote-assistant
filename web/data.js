@@ -4269,9 +4269,9 @@ window.__QUOTE_CATALOGS__ = {
       "category": "陶釉特调色浆",
       "name": "陶釉特调色浆",
       "specs": [
-        "2.4KG",
-        "5KG",
-        "18KG"
+        "2.4KG配套",
+        "5KG配套",
+        "18KG配套"
       ],
       "allowCustomPrice": true,
       "autoFee": {
@@ -4285,31 +4285,31 @@ window.__QUOTE_CATALOGS__ = {
       },
       "specOptions": [
         {
-          "spec": "2.4KG",
+          "spec": "2.4KG配套",
           "workTimes": "",
           "coverage": "",
-          "unit": "桶",
-          "packageSpec": "2.4KG",
+          "unit": "瓶",
+          "packageSpec": "2.4KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "陶釉特调色浆，价格按实际填写"
         },
         {
-          "spec": "5KG",
+          "spec": "5KG配套",
           "workTimes": "",
           "coverage": "",
-          "unit": "桶",
-          "packageSpec": "5KG",
+          "unit": "瓶",
+          "packageSpec": "5KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "陶釉特调色浆，价格按实际填写"
         },
         {
-          "spec": "18KG",
+          "spec": "18KG配套",
           "workTimes": "",
           "coverage": "",
-          "unit": "桶",
-          "packageSpec": "18KG",
+          "unit": "瓶",
+          "packageSpec": "18KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "陶釉特调色浆，价格按实际填写"
@@ -4317,8 +4317,8 @@ window.__QUOTE_CATALOGS__ = {
       ],
       "workTimes": "",
       "coverage": "",
-      "unit": "桶",
-      "packageSpec": "2.4KG/5KG/18KG",
+      "unit": "瓶",
+      "packageSpec": "2.4KG配套/5KG配套/18KG配套",
       "dealerPrice": "",
       "costPerSquare": "",
       "remark": "陶釉特调色浆，价格按实际填写"
@@ -8594,9 +8594,9 @@ window.__QUOTE_CATALOGS__ = {
       "category": "陶釉特调色浆",
       "name": "陶釉特调色浆",
       "specs": [
-        "2.4KG",
-        "5KG",
-        "18KG"
+        "2.4KG配套",
+        "5KG配套",
+        "18KG配套"
       ],
       "allowCustomPrice": true,
       "autoFee": {
@@ -8610,31 +8610,31 @@ window.__QUOTE_CATALOGS__ = {
       },
       "specOptions": [
         {
-          "spec": "2.4KG",
+          "spec": "2.4KG配套",
           "workTimes": "",
           "coverage": "",
-          "unit": "桶",
-          "packageSpec": "2.4KG",
+          "unit": "瓶",
+          "packageSpec": "2.4KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "陶釉特调色浆，价格按实际填写"
         },
         {
-          "spec": "5KG",
+          "spec": "5KG配套",
           "workTimes": "",
           "coverage": "",
-          "unit": "桶",
-          "packageSpec": "5KG",
+          "unit": "瓶",
+          "packageSpec": "5KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "陶釉特调色浆，价格按实际填写"
         },
         {
-          "spec": "18KG",
+          "spec": "18KG配套",
           "workTimes": "",
           "coverage": "",
-          "unit": "桶",
-          "packageSpec": "18KG",
+          "unit": "瓶",
+          "packageSpec": "18KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "陶釉特调色浆，价格按实际填写"
@@ -8642,8 +8642,8 @@ window.__QUOTE_CATALOGS__ = {
       ],
       "workTimes": "",
       "coverage": "",
-      "unit": "桶",
-      "packageSpec": "2.4KG/5KG/18KG",
+      "unit": "瓶",
+      "packageSpec": "2.4KG配套/5KG配套/18KG配套",
       "dealerPrice": "",
       "costPerSquare": "",
       "remark": "陶釉特调色浆，价格按实际填写"

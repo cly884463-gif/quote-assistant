@@ -54,10 +54,11 @@ assert.strictEqual(dealerCatalogView.filterProducts("S025")[0].name, "高浓度S
 assert.ok(dealerCustomTintingPaste);
 assert.ok(channelCustomTintingPaste);
 assert.ok(!dealerCustomTintingFee);
-assert.deepStrictEqual(dealerCustomTintingPaste.specs, ["2.4KG", "5KG", "18KG"]);
+assert.deepStrictEqual(dealerCustomTintingPaste.specs, ["2.4KG配套", "5KG配套", "18KG配套"]);
 assert.strictEqual(dealerCustomTintingPaste.allowCustomPrice, true);
 assert.strictEqual(dealerCustomTintingPaste.specOptions[0].dealerPrice, "");
 assert.strictEqual(channelCustomTintingPaste.specOptions[0].dealerPrice, "");
+assert.strictEqual(dealerCustomTintingPaste.specOptions[0].unit, "瓶");
 assert.strictEqual(dealerCatalogView.filterProducts("TY-TT-SJ")[0].model, "TY-TT-SJ");
 assert.strictEqual(getCatalogByQuoteType("unknown").products.length, dealerCatalogView.products.length);
 
