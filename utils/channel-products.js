@@ -38,32 +38,6 @@ const products = [
     "remark": ""
   },
   {
-    "id": "dt-107-瓷砖界面剂双组份-不含砂",
-    "model": "DT-107",
-    "category": "底漆",
-    "name": "瓷砖界面剂双组份(不含砂)",
-    "specs": [
-      "0.96KG"
-    ],
-    "specOptions": [
-      {
-        "spec": "0.96KG",
-        "workTimes": 1,
-        "coverage": 9.6,
-        "unit": "组",
-        "dealerPrice": 80,
-        "costPerSquare": 8.333333333333334,
-        "remark": ""
-      }
-    ],
-    "workTimes": 1,
-    "coverage": 9.6,
-    "unit": "组",
-    "dealerPrice": 80,
-    "costPerSquare": 8.333333333333334,
-    "remark": ""
-  },
-  {
     "id": "dt-103-金刚底固宝",
     "model": "DT-103",
     "category": "底漆",

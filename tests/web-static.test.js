@@ -40,6 +40,7 @@ assert.ok(data.includes("window.__QUOTE_CATALOGS__"));
 assert.ok(data.includes("\"dealer\""));
 assert.ok(data.includes("\"channel\""));
 assert.ok(data.includes("\"specOptions\""));
+assert.ok(!data.includes("\"model\": \"DT-107\""));
 
 assert.ok(css.includes(".quote-card.is-added"));
 assert.ok(css.includes(".spec-select"));

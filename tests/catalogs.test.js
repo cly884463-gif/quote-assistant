@@ -16,6 +16,9 @@ const dealerCustomTintingPaste = dealerCatalogView.products.find((item) => item.
 const channelCustomTintingPaste = channelCatalogView.products.find((item) => item.model === "TY-TT-SJ");
 const dealerCustomTintingFee = dealerCatalogView.products.find((item) => item.model === "FEE-001");
 
+assert.ok(!dealerCatalog.products.some((item) => item.model === "DT-107"));
+assert.ok(!channelCatalog.products.some((item) => item.model === "DT-107"));
+
 assert.strictEqual(dealerDt101.specOptions[0].dealerPrice, 30);
 assert.strictEqual(channelDt101.specOptions[0].dealerPrice, 38);
 assert.strictEqual(channelDt101.specOptions[1].dealerPrice, 725);
