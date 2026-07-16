@@ -55,4 +55,14 @@ assert.ok(femaFloorPaint);
 assert.strictEqual(femaFloorPaint.category, "菲玛");
 assert.deepStrictEqual(femaFloorPaint.specRows[0].cells, ["A+B组份 7KG/组", "3.5㎡/套", "¥350", "¥420"]);
 
+const missingCoverageCards = buildHomeProductCards([{
+  id: "missing-coverage",
+  model: "MISSING-001",
+  category: "测试",
+  name: "缺失涂布量",
+  specs: ["1KG"],
+  specOptions: [{ spec: "1KG", coverage: "未提供", unit: "组", dealerPrice: 1 }]
+}], []);
+assert.strictEqual(missingCoverageCards[0].specRows[0].coverageText, "未提供");
+
 console.log("home product cards ok");

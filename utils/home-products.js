@@ -32,13 +32,23 @@ function findChannelOption(map, product, option) {
     || {};
 }
 
+function formatCoverage(option) {
+  if (option.packageSpec) {
+    return option.packageSpec;
+  }
+  if (option.coverage === "" || option.coverage == null || option.coverage === "未提供") {
+    return "未提供";
+  }
+  return `${option.coverage}㎡/${option.unit || ""}`;
+}
+
 function buildHomeProductCards(dealerProducts, channelProducts) {
   const channelSpecMap = buildChannelSpecMap(channelProducts);
 
   return (dealerProducts || []).map((product) => {
     const specRows = (product.specOptions || []).map((option) => {
       const channelOption = findChannelOption(channelSpecMap, product, option);
-      const coverageText = option.packageSpec || `${option.coverage}㎡/${option.unit}`;
+      const coverageText = formatCoverage(option);
       const channelPrice = product.allowCustomPrice ? "可填" : (channelOption.dealerPrice || "");
       const dealerPriceText = product.allowCustomPrice ? "可填" : `¥${option.dealerPrice}`;
       const channelPriceText = channelPrice ? (product.allowCustomPrice ? channelPrice : `¥${channelPrice}`) : "";
