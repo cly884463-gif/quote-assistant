@@ -633,9 +633,11 @@
     ctx.font = "bold 22px Microsoft YaHei, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
+    ctx.translate(width / 2, height / 2);
     ctx.rotate(-24 * Math.PI / 180);
-    for (let y = -height; y <= height * 2; y += 120) {
-      for (let x = -width; x <= width * 2; x += 320) {
+    const extent = Math.hypot(width, height);
+    for (let y = -extent; y <= extent; y += 120) {
+      for (let x = -extent; x <= extent; x += 320) {
         ctx.fillText("新材联·New Material Union", x, y);
       }
     }

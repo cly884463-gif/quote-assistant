@@ -49,3 +49,9 @@
 ## 疑虑
 
 无功能疑虑。工作区保留任务目录中的既有未跟踪 `.superpowers/` 文件。
+
+## Final Coverage Correction
+
+- `tests/web-static.test.js`: added static assertions for centered translation and diagonal extent calculation. The focused test first failed because the extent calculation was absent.
+- `web/app.js`: translated the watermark coordinate system to the canvas center, then rotated it and tiled both axes from `-Math.hypot(width, height)` through `Math.hypot(width, height)` at the existing 320/120 spacing.
+- Verification: focused static test passed; all 12 test files passed; `node tools\\build_netlify_release.js` produced `netlify release generated`; `git diff --check` passed. Git reported only pre-existing LF/CRLF conversion warnings.

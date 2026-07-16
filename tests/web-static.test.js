@@ -34,6 +34,8 @@ assert.ok(js.includes("function drawQuoteWatermark(ctx, width, height)"));
 assert.ok(js.includes("新材联·New Material Union"));
 assert.ok(js.includes('ctx.font = "bold 22px Microsoft YaHei, sans-serif"'));
 assert.ok(js.includes("ctx.rotate(-24 * Math.PI / 180)"));
+assert.ok(js.includes("const extent = Math.hypot(width, height)"));
+assert.ok(js.includes("ctx.translate(width / 2, height / 2)"));
 assert.ok(js.includes("ctx.save()"));
 assert.ok(js.includes("ctx.restore()"));
 assert.ok(js.includes("ctx.globalAlpha = 0.045"));
