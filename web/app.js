@@ -630,13 +630,13 @@
     ctx.save();
     ctx.fillStyle = "#667085";
     ctx.globalAlpha = 0.045;
-    ctx.font = "22px Microsoft YaHei, sans-serif";
+    ctx.font = "bold 22px Microsoft YaHei, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.rotate(-24 * Math.PI / 180);
     for (let y = -height; y <= height * 2; y += 120) {
       for (let x = -width; x <= width * 2; x += 320) {
-        ctx.fillText("新材料联盟New Material Union", x, y);
+        ctx.fillText("新材联·New Material Union", x, y);
       }
     }
     ctx.restore();
