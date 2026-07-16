@@ -4296,6 +4296,94 @@ window.__QUOTE_CATALOGS__ = {
       "dealerPrice": "",
       "costPerSquare": "",
       "remark": "陶釉特调色浆，价格按实际填写"
+    },
+    {
+      "id": "fema-001",
+      "model": "FEMA-001",
+      "category": "菲玛",
+      "name": "短流平耐磨地坪实色面漆",
+      "specs": ["A+B组份 7KG/组"],
+      "specOptions": [{
+        "spec": "A+B组份 7KG/组",
+        "workTimes": "",
+        "coverage": 3.5,
+        "unit": "套",
+        "dealerPrice": 350,
+        "costPerSquare": 100,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 3.5,
+      "unit": "套",
+      "dealerPrice": 350,
+      "costPerSquare": 100,
+      "remark": "菲玛"
+    },
+    {
+      "id": "fema-002",
+      "model": "FEMA-002",
+      "category": "菲玛",
+      "name": "墙瓷（粗粉）套装",
+      "specs": ["套装 14.35KG/组"],
+      "specOptions": [{
+        "spec": "套装 14.35KG/组",
+        "workTimes": "",
+        "coverage": 11,
+        "unit": "套",
+        "dealerPrice": 265,
+        "costPerSquare": 24.09090909090909,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 11,
+      "unit": "套",
+      "dealerPrice": 265,
+      "costPerSquare": 24.09090909090909,
+      "remark": "菲玛"
+    },
+    {
+      "id": "fema-003",
+      "model": "FEMA-003",
+      "category": "菲玛",
+      "name": "墙瓷（细粉）套装",
+      "specs": ["套装 21KG/组"],
+      "specOptions": [{
+        "spec": "套装 21KG/组",
+        "workTimes": "",
+        "coverage": 17.5,
+        "unit": "套",
+        "dealerPrice": 295,
+        "costPerSquare": 16.857142857142858,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 17.5,
+      "unit": "套",
+      "dealerPrice": 295,
+      "costPerSquare": 16.857142857142858,
+      "remark": "菲玛"
+    },
+    {
+      "id": "fema-004",
+      "model": "FEMA-004",
+      "category": "菲玛",
+      "name": "墙瓷实色面漆套装",
+      "specs": ["A+B组份 3KG/组"],
+      "specOptions": [{
+        "spec": "A+B组份 3KG/组",
+        "workTimes": "",
+        "coverage": 12,
+        "unit": "套",
+        "dealerPrice": 336,
+        "costPerSquare": 28,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 12,
+      "unit": "套",
+      "dealerPrice": 336,
+      "costPerSquare": 28,
+      "remark": "菲玛"
     }
   ],
   "channel": [
@@ -8595,6 +8683,94 @@ window.__QUOTE_CATALOGS__ = {
       "dealerPrice": "",
       "costPerSquare": "",
       "remark": "陶釉特调色浆，价格按实际填写"
+    },
+    {
+      "id": "fema-001",
+      "model": "FEMA-001",
+      "category": "菲玛",
+      "name": "短流平耐磨地坪实色面漆",
+      "specs": ["A+B组份 7KG/组"],
+      "specOptions": [{
+        "spec": "A+B组份 7KG/组",
+        "workTimes": "",
+        "coverage": 3.5,
+        "unit": "套",
+        "dealerPrice": 420,
+        "costPerSquare": 120,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 3.5,
+      "unit": "套",
+      "dealerPrice": 420,
+      "costPerSquare": 120,
+      "remark": "菲玛"
+    },
+    {
+      "id": "fema-002",
+      "model": "FEMA-002",
+      "category": "菲玛",
+      "name": "墙瓷（粗粉）套装",
+      "specs": ["套装 14.35KG/组"],
+      "specOptions": [{
+        "spec": "套装 14.35KG/组",
+        "workTimes": "",
+        "coverage": 11,
+        "unit": "套",
+        "dealerPrice": 318,
+        "costPerSquare": 28.90909090909091,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 11,
+      "unit": "套",
+      "dealerPrice": 318,
+      "costPerSquare": 28.90909090909091,
+      "remark": "菲玛"
+    },
+    {
+      "id": "fema-003",
+      "model": "FEMA-003",
+      "category": "菲玛",
+      "name": "墙瓷（细粉）套装",
+      "specs": ["套装 21KG/组"],
+      "specOptions": [{
+        "spec": "套装 21KG/组",
+        "workTimes": "",
+        "coverage": 17.5,
+        "unit": "套",
+        "dealerPrice": 354,
+        "costPerSquare": 20.228571428571428,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 17.5,
+      "unit": "套",
+      "dealerPrice": 354,
+      "costPerSquare": 20.228571428571428,
+      "remark": "菲玛"
+    },
+    {
+      "id": "fema-004",
+      "model": "FEMA-004",
+      "category": "菲玛",
+      "name": "墙瓷实色面漆套装",
+      "specs": ["A+B组份 3KG/组"],
+      "specOptions": [{
+        "spec": "A+B组份 3KG/组",
+        "workTimes": "",
+        "coverage": 12,
+        "unit": "套",
+        "dealerPrice": 403,
+        "costPerSquare": 33.583333333333336,
+        "remark": "菲玛"
+      }],
+      "workTimes": "",
+      "coverage": 12,
+      "unit": "套",
+      "dealerPrice": 403,
+      "costPerSquare": 33.583333333333336,
+      "remark": "菲玛"
     }
   ]
 };
