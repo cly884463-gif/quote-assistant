@@ -17,6 +17,8 @@ const channelCustomTintingPaste = channelCatalogView.products.find((item) => ite
 const dealerCustomTintingFee = dealerCatalogView.products.find((item) => item.model === "FEE-001");
 const dealerFemaProducts = dealerCatalogView.products.filter((item) => item.category === "菲玛");
 const channelFemaProducts = channelCatalogView.products.filter((item) => item.category === "菲玛");
+const dealerLiquidTileProducts = dealerCatalogView.products.filter((item) => item.category === "液态瓷砖");
+const channelLiquidTileProducts = channelCatalogView.products.filter((item) => item.category === "液态瓷砖");
 
 assert.ok(!dealerCatalog.products.some((item) => item.model === "DT-107"));
 assert.ok(!channelCatalog.products.some((item) => item.model === "DT-107"));
@@ -69,6 +71,11 @@ assert.deepStrictEqual(dealerFemaProducts.map((item) => item.model), ["FEMA-001"
 assert.deepStrictEqual(dealerFemaProducts.map((item) => item.dealerPrice), [350, 265, 295, 336]);
 assert.deepStrictEqual(channelFemaProducts.map((item) => item.dealerPrice), [420, 318, 354, 403]);
 assert.strictEqual(dealerCatalogView.filterProducts("菲玛").length, 4);
+assert.deepStrictEqual(dealerLiquidTileProducts.map((item) => item.model), ["DP-1021", "DP-1022", "DP-1023"]);
+assert.deepStrictEqual(dealerLiquidTileProducts.map((item) => item.dealerPrice), [56, 56, 308]);
+assert.deepStrictEqual(channelLiquidTileProducts.map((item) => item.dealerPrice), [67, 67, 370]);
+assert.deepStrictEqual(dealerLiquidTileProducts.map((item) => item.workTimes), [1, 1, 1]);
+assert.strictEqual(dealerCatalogView.filterProducts("DP-1022")[0].name, "墙砖补缝膏（AB组份）");
 assert.strictEqual(getCatalogByQuoteType("unknown").products.length, dealerCatalogView.products.length);
 
 console.log("catalog selection ok");
