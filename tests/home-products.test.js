@@ -14,6 +14,7 @@ const colorPaste = cards.find((product) => product.model === "TN-SJ");
 const hColorPaste = cards.find((product) => product.model === "CC-H-SJ");
 const sColorPaste = cards.find((product) => product.model === "GN-S-SJ");
 const customTintingPaste = cards.find((product) => product.model === "TY-TT-SJ");
+const femaFloorPaint = cards.find((product) => product.model === "FEMA-001");
 
 assert.ok(dt101);
 assert.deepStrictEqual(dt101.specRows.map((row) => row.spec), ["0.8KG", "16KG"]);
@@ -49,5 +50,9 @@ assert.deepStrictEqual(sColorPaste.specRows[20].cells, ["S025 冰川（白漆）
 assert.ok(customTintingPaste);
 assert.deepStrictEqual(customTintingPaste.specRows.map((row) => row.spec), ["2.4KG配套", "5KG配套", "18KG配套"]);
 assert.deepStrictEqual(customTintingPaste.specRows[0].cells, ["2.4KG配套", "2.4KG配套", "可填", "可填"]);
+
+assert.ok(femaFloorPaint);
+assert.strictEqual(femaFloorPaint.category, "菲玛");
+assert.deepStrictEqual(femaFloorPaint.specRows[0].cells, ["A+B组份 7KG/组", "3.5㎡/套", "¥350", "¥420"]);
 
 console.log("home product cards ok");

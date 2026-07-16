@@ -1,4 +1,5 @@
 const { sColorPasteProduct } = require("./s-color-products");
+const { dealerFemaProducts, channelFemaProducts } = require("./fema-products");
 
 const colorPasteSpecs = [
   ["1号色浆", "TS001", "TN001"],
@@ -177,6 +178,6 @@ const customTintingPasteProduct = {
 };
 
 module.exports = {
-  extraDealerProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct, customTintingPasteProduct],
-  extraChannelProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct, customTintingPasteProduct]
+  extraDealerProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct, customTintingPasteProduct, ...dealerFemaProducts],
+  extraChannelProducts: [colorPasteProduct, hColorPasteProduct, sColorPasteProduct, customTintingPasteProduct, ...channelFemaProducts]
 };

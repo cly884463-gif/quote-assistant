@@ -15,6 +15,8 @@ const sColorPaste = dealerCatalogView.products.find((item) => item.model === "GN
 const dealerCustomTintingPaste = dealerCatalogView.products.find((item) => item.model === "TY-TT-SJ");
 const channelCustomTintingPaste = channelCatalogView.products.find((item) => item.model === "TY-TT-SJ");
 const dealerCustomTintingFee = dealerCatalogView.products.find((item) => item.model === "FEE-001");
+const dealerFemaProducts = dealerCatalogView.products.filter((item) => item.category === "菲玛");
+const channelFemaProducts = channelCatalogView.products.filter((item) => item.category === "菲玛");
 
 assert.ok(!dealerCatalog.products.some((item) => item.model === "DT-107"));
 assert.ok(!channelCatalog.products.some((item) => item.model === "DT-107"));
@@ -63,6 +65,10 @@ assert.strictEqual(dealerCustomTintingPaste.specOptions[0].dealerPrice, "");
 assert.strictEqual(channelCustomTintingPaste.specOptions[0].dealerPrice, "");
 assert.strictEqual(dealerCustomTintingPaste.specOptions[0].unit, "瓶");
 assert.strictEqual(dealerCatalogView.filterProducts("TY-TT-SJ")[0].model, "TY-TT-SJ");
+assert.deepStrictEqual(dealerFemaProducts.map((item) => item.model), ["FEMA-001", "FEMA-002", "FEMA-003", "FEMA-004"]);
+assert.deepStrictEqual(dealerFemaProducts.map((item) => item.dealerPrice), [350, 265, 295, 336]);
+assert.deepStrictEqual(channelFemaProducts.map((item) => item.dealerPrice), [420, 318, 354, 403]);
+assert.strictEqual(dealerCatalogView.filterProducts("菲玛").length, 4);
 assert.strictEqual(getCatalogByQuoteType("unknown").products.length, dealerCatalogView.products.length);
 
 console.log("catalog selection ok");
