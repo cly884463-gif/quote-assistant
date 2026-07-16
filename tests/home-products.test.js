@@ -15,6 +15,8 @@ const hColorPaste = cards.find((product) => product.model === "CC-H-SJ");
 const sColorPaste = cards.find((product) => product.model === "GN-S-SJ");
 const customTintingPaste = cards.find((product) => product.model === "TY-TT-SJ");
 const femaFloorPaint = cards.find((product) => product.model === "FEMA-001");
+const liquidTileJointFiller = cards.find((product) => product.model === "DP-1021");
+const seamlessLiquidTile = cards.find((product) => product.model === "DP-1023");
 
 assert.ok(dt101);
 assert.deepStrictEqual(dt101.specRows.map((row) => row.spec), ["0.8KG", "16KG"]);
@@ -54,5 +56,21 @@ assert.deepStrictEqual(customTintingPaste.specRows[0].cells, ["2.4KG配套", "2.
 assert.ok(femaFloorPaint);
 assert.strictEqual(femaFloorPaint.category, "菲玛");
 assert.deepStrictEqual(femaFloorPaint.specRows[0].cells, ["A+B组份 7KG/组", "3.5㎡/套", "¥350", "¥420"]);
+
+const missingCoverageCards = buildHomeProductCards([{
+  id: "missing-coverage",
+  model: "MISSING-001",
+  category: "测试",
+  name: "缺失涂布量",
+  specs: ["1KG"],
+  specOptions: [{ spec: "1KG", coverage: "未提供", unit: "组", dealerPrice: 1 }]
+}], []);
+assert.strictEqual(missingCoverageCards[0].specRows[0].coverageText, "未提供");
+
+assert.ok(liquidTileJointFiller);
+assert.strictEqual(liquidTileJointFiller.category, "液态瓷砖");
+assert.deepStrictEqual(liquidTileJointFiller.specRows[0].cells, ["1.2KG", "未提供", "¥56", "¥67"]);
+assert.ok(seamlessLiquidTile);
+assert.deepStrictEqual(seamlessLiquidTile.specRows[0].cells, ["7KG", "3.5㎡/组", "¥308", "¥370"]);
 
 console.log("home product cards ok");

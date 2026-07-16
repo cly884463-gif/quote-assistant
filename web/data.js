@@ -4384,6 +4384,72 @@ window.__QUOTE_CATALOGS__ = {
       "dealerPrice": 336,
       "costPerSquare": 28,
       "remark": "菲玛"
+    },
+    {
+      "id": "dp-1021",
+      "model": "DP-1021",
+      "category": "液态瓷砖",
+      "name": "地砖填缝胶（AB组份）",
+      "specs": ["1.2KG"],
+      "specOptions": [{
+        "spec": "1.2KG",
+        "workTimes": 1,
+        "coverage": "未提供",
+        "unit": "组",
+        "dealerPrice": 56,
+        "costPerSquare": "",
+        "remark": "液态瓷砖"
+      }],
+      "workTimes": 1,
+      "coverage": "未提供",
+      "unit": "组",
+      "dealerPrice": 56,
+      "costPerSquare": "",
+      "remark": "液态瓷砖"
+    },
+    {
+      "id": "dp-1022",
+      "model": "DP-1022",
+      "category": "液态瓷砖",
+      "name": "墙砖补缝膏（AB组份）",
+      "specs": ["1.2KG"],
+      "specOptions": [{
+        "spec": "1.2KG",
+        "workTimes": 1,
+        "coverage": "未提供",
+        "unit": "组",
+        "dealerPrice": 56,
+        "costPerSquare": "",
+        "remark": "液态瓷砖"
+      }],
+      "workTimes": 1,
+      "coverage": "未提供",
+      "unit": "组",
+      "dealerPrice": 56,
+      "costPerSquare": "",
+      "remark": "液态瓷砖"
+    },
+    {
+      "id": "dp-1023",
+      "model": "DP-1023",
+      "category": "液态瓷砖",
+      "name": "液态无缝瓷砖（AB组份）",
+      "specs": ["7KG"],
+      "specOptions": [{
+        "spec": "7KG",
+        "workTimes": 1,
+        "coverage": 3.5,
+        "unit": "组",
+        "dealerPrice": 308,
+        "costPerSquare": 88,
+        "remark": "液态瓷砖"
+      }],
+      "workTimes": 1,
+      "coverage": 3.5,
+      "unit": "组",
+      "dealerPrice": 308,
+      "costPerSquare": 88,
+      "remark": "液态瓷砖"
     }
   ],
   "channel": [
@@ -8771,6 +8837,72 @@ window.__QUOTE_CATALOGS__ = {
       "dealerPrice": 403,
       "costPerSquare": 33.583333333333336,
       "remark": "菲玛"
+    },
+    {
+      "id": "dp-1021",
+      "model": "DP-1021",
+      "category": "液态瓷砖",
+      "name": "地砖填缝胶（AB组份）",
+      "specs": ["1.2KG"],
+      "specOptions": [{
+        "spec": "1.2KG",
+        "workTimes": 1,
+        "coverage": "未提供",
+        "unit": "组",
+        "dealerPrice": 67,
+        "costPerSquare": "",
+        "remark": "液态瓷砖"
+      }],
+      "workTimes": 1,
+      "coverage": "未提供",
+      "unit": "组",
+      "dealerPrice": 67,
+      "costPerSquare": "",
+      "remark": "液态瓷砖"
+    },
+    {
+      "id": "dp-1022",
+      "model": "DP-1022",
+      "category": "液态瓷砖",
+      "name": "墙砖补缝膏（AB组份）",
+      "specs": ["1.2KG"],
+      "specOptions": [{
+        "spec": "1.2KG",
+        "workTimes": 1,
+        "coverage": "未提供",
+        "unit": "组",
+        "dealerPrice": 67,
+        "costPerSquare": "",
+        "remark": "液态瓷砖"
+      }],
+      "workTimes": 1,
+      "coverage": "未提供",
+      "unit": "组",
+      "dealerPrice": 67,
+      "costPerSquare": "",
+      "remark": "液态瓷砖"
+    },
+    {
+      "id": "dp-1023",
+      "model": "DP-1023",
+      "category": "液态瓷砖",
+      "name": "液态无缝瓷砖（AB组份）",
+      "specs": ["7KG"],
+      "specOptions": [{
+        "spec": "7KG",
+        "workTimes": 1,
+        "coverage": 3.5,
+        "unit": "组",
+        "dealerPrice": 370,
+        "costPerSquare": 105.71428571428571,
+        "remark": "液态瓷砖"
+      }],
+      "workTimes": 1,
+      "coverage": 3.5,
+      "unit": "组",
+      "dealerPrice": 370,
+      "costPerSquare": 105.71428571428571,
+      "remark": "液态瓷砖"
     }
   ]
 };

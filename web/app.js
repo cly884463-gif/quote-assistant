@@ -234,6 +234,16 @@
       || {};
   }
 
+  function formatCoverage(option) {
+    if (option.packageSpec) {
+      return option.packageSpec;
+    }
+    if (option.coverage === "" || option.coverage == null || option.coverage === "未提供") {
+      return "未提供";
+    }
+    return `${option.coverage}㎡/${option.unit || ""}`;
+  }
+
   function buildHomeCards() {
     const dealerProducts = getCatalog("dealer").products;
     const channelProducts = getCatalog("channel").products;
@@ -243,7 +253,7 @@
         const channel = findChannelOption(channelMap, product, option);
         return {
           spec: option.spec,
-          coverageText: option.packageSpec || `${option.coverage || ""}㎡/${option.unit || ""}`,
+          coverageText: formatCoverage(option),
           dealerPrice: option.dealerPrice,
           channelPrice: product.allowCustomPrice ? "可填" : (channel.dealerPrice || "")
         };
@@ -450,7 +460,7 @@
           <span class="price" data-role="price">${formatMoney(product.dealerPrice)}/${escapeHtml(product.unit)}</span>
         </div>
         <div class="quote-name">${escapeHtml(product.name)}</div>
-        <div class="quote-desc" data-role="desc">${escapeHtml(product.category)} · 施工${escapeHtml(product.workTimes)}次 · ${escapeHtml(product.coverage)}㎡/${escapeHtml(product.unit)}</div>
+        <div class="quote-desc" data-role="desc">${escapeHtml(product.category)} · 施工${escapeHtml(product.workTimes)}次 · ${escapeHtml(formatCoverage(product))}</div>
         <div class="quote-controls">
           <select class="spec-select" data-action="spec">${optionHtml}</select>
           ${product.allowCustomPrice ? `
@@ -494,7 +504,7 @@
     const button = card.querySelector("[data-role='add-button']");
     card.classList.toggle("is-added", addedProduct.isAdded);
     card.querySelector("[data-role='price']").textContent = `${formatMoney(product.dealerPrice)}/${product.unit}`;
-    card.querySelector("[data-role='desc']").textContent = `${product.category} · 施工${product.workTimes}次 · ${product.coverage}㎡/${product.unit}`;
+    card.querySelector("[data-role='desc']").textContent = `${product.category} · 施工${product.workTimes}次 · ${formatCoverage(product)}`;
     if (addedProduct.isAdded && quantity === 0) {
       button.textContent = "删除";
       button.classList.add("delete-btn");
