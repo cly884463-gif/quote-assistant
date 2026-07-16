@@ -50,9 +50,15 @@ assert.ok(data.includes("\"specOptions\""));
 assert.ok(!data.includes("\"model\": \"DT-107\""));
 const dealerFemaProducts = webCatalogs.dealer.filter((item) => item.category === "菲玛");
 const channelFemaProducts = webCatalogs.channel.filter((item) => item.category === "菲玛");
+const dealerLiquidTiles = webCatalogs.dealer.filter((item) => item.category === "液态瓷砖");
+const channelLiquidTiles = webCatalogs.channel.filter((item) => item.category === "液态瓷砖");
 assert.deepStrictEqual(Array.from(dealerFemaProducts, (item) => item.model), ["FEMA-001", "FEMA-002", "FEMA-003", "FEMA-004"]);
 assert.deepStrictEqual(Array.from(dealerFemaProducts, (item) => item.dealerPrice), [350, 265, 295, 336]);
 assert.deepStrictEqual(Array.from(channelFemaProducts, (item) => item.dealerPrice), [420, 318, 354, 403]);
+assert.deepStrictEqual(Array.from(dealerLiquidTiles, (item) => item.model), ["DP-1021", "DP-1022", "DP-1023"]);
+assert.deepStrictEqual(Array.from(dealerLiquidTiles, (item) => item.dealerPrice), [56, 56, 308]);
+assert.deepStrictEqual(Array.from(channelLiquidTiles, (item) => item.dealerPrice), [67, 67, 370]);
+assert.deepStrictEqual(Array.from(dealerLiquidTiles, (item) => item.coverage), ["未提供", "未提供", 3.5]);
 
 assert.ok(css.includes(".quote-card.is-added"));
 assert.ok(css.includes(".spec-select"));
