@@ -399,7 +399,8 @@ select {
   width: 100%;
 }
 
-.custom-price-control {
+.custom-price-control,
+.custom-reference-control {
   display: grid;
   gap: 6px;
   color: #64736f;
@@ -407,7 +408,8 @@ select {
   font-weight: 800;
 }
 
-.custom-price-control input {
+.custom-price-control input,
+.custom-reference-control input {
   width: 100%;
   height: 40px;
   border: 1px solid rgba(31, 41, 51, 0.12);
@@ -419,7 +421,8 @@ select {
   outline: 0;
 }
 
-.custom-price-control input:focus {
+.custom-price-control input:focus,
+.custom-reference-control input:focus {
   border-color: var(--teal);
   box-shadow: 0 0 0 3px rgba(19, 132, 121, 0.12);
 }

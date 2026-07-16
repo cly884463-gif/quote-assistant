@@ -18,7 +18,7 @@ function findAddedSpecItem(items, product) {
 function applyAddedState(product, quoteItems) {
   const addedMap = getAddedProductMap(quoteItems);
   const addedItem = addedMap[getQuoteItemKey(product)];
-  return Object.assign({}, product, {
+  return Object.assign({}, product, addedItem || {}, {
     quantity: addedItem ? addedItem.quantity : 0,
     isAdded: Boolean(addedItem)
   });

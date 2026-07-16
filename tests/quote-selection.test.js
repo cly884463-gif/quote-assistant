@@ -105,4 +105,34 @@ assert.deepStrictEqual(removedItems, [
   { id: "yc-203", spec: "2.4KG", quantity: 1 }
 ]);
 
+const customTintingItems = upsertQuoteItem(
+  [{
+    id: "custom-tinting-paste",
+    spec: "2.4KG配套",
+    quantity: 1,
+    referenceColor: "米白色 NCS S 0502-Y"
+  }],
+  {
+    id: "custom-tinting-paste",
+    selectedSpec: "2.4KG配套",
+    quantity: 1,
+    referenceColor: "暖灰色 NCS S 2002-Y"
+  }
+);
+assert.strictEqual(customTintingItems.length, 1);
+assert.strictEqual(customTintingItems[0].referenceColor, "暖灰色 NCS S 2002-Y");
+
+const customTintingCards = buildQuoteCards([{
+  id: "custom-tinting-paste",
+  name: "陶釉特调色浆",
+  specs: ["2.4KG配套", "5KG配套", "18KG配套"],
+  specOptions: [
+    { spec: "2.4KG配套", dealerPrice: 15 },
+    { spec: "5KG配套", dealerPrice: 15 },
+    { spec: "18KG配套", dealerPrice: 15 }
+  ]
+}], customTintingItems);
+assert.strictEqual(customTintingCards[0].selectedSpec, "2.4KG配套");
+assert.strictEqual(customTintingCards[0].referenceColor, "暖灰色 NCS S 2002-Y");
+
 console.log("quote selection behavior ok");
