@@ -244,6 +244,14 @@
     return `${option.coverage}㎡/${option.unit || ""}`;
   }
 
+  function formatQuoteItemName(item) {
+    const referenceColor = String(item.referenceColor || "").trim();
+    if (!isCustomTintingProduct(item) || !referenceColor) {
+      return item.name;
+    }
+    return `${item.name}（参考颜色及色号：${referenceColor}）`;
+  }
+
   function buildHomeCards() {
     const dealerProducts = getCatalog("dealer").products;
     const channelProducts = getCatalog("channel").products;
@@ -352,7 +360,11 @@
     const rows = state.quoteItems.map((item) => {
       const quantity = Math.max(1, Number(item.quantity) || 1);
       const amount = money((Number(item.dealerPrice) || 0) * quantity);
-      return Object.assign({}, item, { quantity, amount });
+      return Object.assign({}, item, {
+        name: formatQuoteItemName(item),
+        quantity,
+        amount
+      });
     });
     const subtotal = money(rows.reduce((sum, item) => sum + item.amount, 0));
     const tax = money(subtotal * taxRate / 100);
@@ -468,6 +480,11 @@
               <input data-action="custom-price" type="number" min="0" step="0.01" placeholder="请输入单价" value="${escapeHtml(product.dealerPrice)}">
             </label>
           ` : ""}
+          ${isCustomTintingProduct(product) ? `
+            <label class="custom-reference-control">参考颜色及色号
+              <input data-action="reference-color" type="text" placeholder="请输入参考颜色及色号" value="${escapeHtml(product.referenceColor || "")}">
+            </label>
+          ` : ""}
           <div class="qty-stepper">
             <button data-action="step" data-delta="-1">-</button>
             <input data-action="quantity" type="number" min="0" value="${escapeHtml(product.quantity)}">
@@ -488,9 +505,11 @@
     const quantity = card.querySelector("[data-action='quantity']").value;
     const product = selectSpecOption(source, specIndex);
     const customPriceInput = card.querySelector("[data-action='custom-price']");
+    const referenceColorInput = card.querySelector("[data-action='reference-color']");
     return Object.assign(product, {
       quantity,
-      dealerPrice: customPriceInput ? customPriceInput.value : product.dealerPrice
+      dealerPrice: customPriceInput ? customPriceInput.value : product.dealerPrice,
+      referenceColor: referenceColorInput ? referenceColorInput.value.trim() : ""
     });
   }
 
@@ -505,6 +524,10 @@
     card.classList.toggle("is-added", addedProduct.isAdded);
     card.querySelector("[data-role='price']").textContent = `${formatMoney(product.dealerPrice)}/${product.unit}`;
     card.querySelector("[data-role='desc']").textContent = `${product.category} · 施工${product.workTimes}次 · ${formatCoverage(product)}`;
+    const referenceColorInput = card.querySelector("[data-action='reference-color']");
+    if (referenceColorInput) {
+      referenceColorInput.value = addedProduct.referenceColor || "";
+    }
     if (addedProduct.isAdded && quantity === 0) {
       button.textContent = "删除";
       button.classList.add("delete-btn");
@@ -752,16 +775,26 @@
         return;
       }
       if (event.target.dataset.action === "spec") {
-        const product = applyAddedState(getProductFromCard(card));
-        const input = card.querySelector("[data-action='quantity']");
-        input.value = product.quantity;
-        updateQuoteCard(card, getProductFromCard(card));
+        const source = getCatalog().products.find((product) => product.id === card.dataset.productId);
+        const product = applyAddedState(selectSpecOption(source, Number(event.target.value) || 0));
+        card.querySelector("[data-action='quantity']").value = product.quantity;
+        const customPriceInput = card.querySelector("[data-action='custom-price']");
+        if (customPriceInput) {
+          customPriceInput.value = product.dealerPrice;
+        }
+        const referenceColorInput = card.querySelector("[data-action='reference-color']");
+        if (referenceColorInput) {
+          referenceColorInput.value = product.referenceColor || "";
+        }
+        updateQuoteCard(card, product);
       }
       syncAddedProduct(card);
     });
 
     el.quoteProducts.addEventListener("input", (event) => {
-      if (event.target.dataset.action === "quantity" || event.target.dataset.action === "custom-price") {
+      if (event.target.dataset.action === "quantity"
+        || event.target.dataset.action === "custom-price"
+        || event.target.dataset.action === "reference-color") {
         syncAddedProduct(event.target.closest(".quote-card"));
       }
     });

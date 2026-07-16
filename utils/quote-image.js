@@ -20,13 +20,21 @@ function compactMoney(value) {
   return `¥${Number.isInteger(number) ? number : number.toFixed(2)}`;
 }
 
+function formatQuoteItemName(item) {
+  const referenceColor = String(item.referenceColor || "").trim();
+  if (item.id !== "custom-tinting-paste" || !referenceColor) {
+    return item.name;
+  }
+  return `${item.name}（参考颜色及色号：${referenceColor}）`;
+}
+
 function buildQuoteImageModel(input) {
   const width = columnWidths.reduce((sum, item) => sum + item, 0);
   const quote = input.quote || {};
   const rows = (quote.rows || []).map((item) => [
     item.model,
     item.category,
-    item.name,
+    formatQuoteItemName(item),
     item.spec,
     item.workTimes,
     item.coverage,
@@ -77,5 +85,6 @@ function buildQuoteImageModel(input) {
 }
 
 module.exports = {
-  buildQuoteImageModel
+  buildQuoteImageModel,
+  formatQuoteItemName
 };

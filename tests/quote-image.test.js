@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { buildQuoteImageModel } = require("../utils/quote-image");
+const { buildQuoteImageModel, formatQuoteItemName } = require("../utils/quote-image");
 
 const model = buildQuoteImageModel({
   quoteType: "channel",
@@ -47,5 +47,18 @@ assert.strictEqual(model.noticeTitle, "注意事项");
 assert.strictEqual(model.noticeTitleHeight, 34);
 assert.strictEqual(model.notices[0], "1、测试注意事项");
 assert.ok(model.height > 260);
+
+assert.strictEqual(
+  formatQuoteItemName({ id: "custom-tinting-paste", name: "陶釉特调色浆", referenceColor: "暖灰色 NCS S 2002-Y" }),
+  "陶釉特调色浆（参考颜色及色号：暖灰色 NCS S 2002-Y）"
+);
+assert.strictEqual(
+  formatQuoteItemName({ id: "custom-tinting-paste", name: "陶釉特调色浆", referenceColor: "" }),
+  "陶釉特调色浆"
+);
+assert.strictEqual(
+  formatQuoteItemName({ id: "other-product", name: "普通产品", referenceColor: "不应显示" }),
+  "普通产品"
+);
 
 console.log("quote image model ok");
