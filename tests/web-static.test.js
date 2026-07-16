@@ -1,6 +1,7 @@
 const assert = require("assert");
 const fs = require("fs");
 const path = require("path");
+const vm = require("vm");
 
 const root = path.resolve(__dirname, "..");
 const html = fs.readFileSync(path.join(root, "web", "index.html"), "utf8");
@@ -8,6 +9,9 @@ const js = fs.readFileSync(path.join(root, "web", "app.js"), "utf8");
 const css = fs.readFileSync(path.join(root, "web", "styles.css"), "utf8");
 const bat = fs.readFileSync(path.join(root, "web", "start-web.bat"), "utf8");
 const data = fs.readFileSync(path.join(root, "web", "data.js"), "utf8");
+const dataContext = { window: {} };
+vm.runInNewContext(data, dataContext);
+const webCatalogs = dataContext.window.__QUOTE_CATALOGS__;
 
 assert.ok(html.includes("data-start-quote=\"dealer\""));
 assert.ok(html.includes("data-start-quote=\"channel\""));
@@ -41,6 +45,11 @@ assert.ok(data.includes("\"dealer\""));
 assert.ok(data.includes("\"channel\""));
 assert.ok(data.includes("\"specOptions\""));
 assert.ok(!data.includes("\"model\": \"DT-107\""));
+const dealerFemaProducts = webCatalogs.dealer.filter((item) => item.category === "菲玛");
+const channelFemaProducts = webCatalogs.channel.filter((item) => item.category === "菲玛");
+assert.deepStrictEqual(Array.from(dealerFemaProducts, (item) => item.model), ["FEMA-001", "FEMA-002", "FEMA-003", "FEMA-004"]);
+assert.deepStrictEqual(Array.from(dealerFemaProducts, (item) => item.dealerPrice), [350, 265, 295, 336]);
+assert.deepStrictEqual(Array.from(channelFemaProducts, (item) => item.dealerPrice), [420, 318, 354, 403]);
 
 assert.ok(css.includes(".quote-card.is-added"));
 assert.ok(css.includes(".spec-select"));
