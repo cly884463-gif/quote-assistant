@@ -626,6 +626,24 @@
     el.exportPreview.setAttribute("aria-hidden", "true");
   }
 
+  function drawQuoteWatermark(ctx, width, height) {
+    ctx.save();
+    ctx.fillStyle = "#667085";
+    ctx.globalAlpha = 0.045;
+    ctx.font = "bold 22px Microsoft YaHei, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.translate(width / 2, height / 2);
+    ctx.rotate(-24 * Math.PI / 180);
+    const extent = Math.hypot(width, height);
+    for (let y = -extent; y <= extent; y += 120) {
+      for (let x = -extent; x <= extent; x += 320) {
+        ctx.fillText("新材联·New Material Union", x, y);
+      }
+    }
+    ctx.restore();
+  }
+
   function exportQuoteImage() {
     const quote = calculateQuote();
     const canvas = document.getElementById("exportCanvas");
@@ -641,6 +659,7 @@
     const ctx = canvas.getContext("2d");
     ctx.fillStyle = "#fff";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawQuoteWatermark(ctx, canvas.width, canvas.height);
     ctx.strokeStyle = "#111827";
     ctx.lineWidth = 1;
     ctx.font = "12px Microsoft YaHei, sans-serif";
