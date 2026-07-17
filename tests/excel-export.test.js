@@ -59,7 +59,11 @@ const input = {
   assert.strictEqual(sheet.getCell("A3").value, "DT-103");
   assert.strictEqual(sheet.getCell("A3").protection.locked, true);
   assert.strictEqual(sheet.getCell("I3").value, 84);
-  assert.strictEqual(sheet.getImages().length, 1);
+  const images = sheet.getImages();
+  assert.strictEqual(images.length, 1);
+  assert.strictEqual(images[0].range.tl.nativeCol, 0);
+  assert.strictEqual(images[0].range.br.nativeCol, 10);
+  assert.strictEqual(images[0].range.editAs, "absolute");
   assert.ok(sheet.pageSetup.printArea.startsWith("A1:J"));
 
   const buffer = await workbook.xlsx.writeBuffer();
