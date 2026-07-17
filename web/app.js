@@ -629,7 +629,7 @@
   function drawQuoteWatermark(ctx, width, height) {
     ctx.save();
     ctx.fillStyle = "#667085";
-    ctx.globalAlpha = 0.045;
+    ctx.globalAlpha = 0.06;
     ctx.font = "bold 22px Microsoft YaHei, sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";

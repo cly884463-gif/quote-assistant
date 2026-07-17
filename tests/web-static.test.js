@@ -38,7 +38,7 @@ assert.ok(js.includes("const extent = Math.hypot(width, height)"));
 assert.ok(js.includes("ctx.translate(width / 2, height / 2)"));
 assert.ok(js.includes("ctx.save()"));
 assert.ok(js.includes("ctx.restore()"));
-assert.ok(js.includes("ctx.globalAlpha = 0.045"));
+assert.ok(js.includes("ctx.globalAlpha = 0.06"));
 assert.ok(js.includes("drawQuoteWatermark(ctx, canvas.width, canvas.height)"));
 assert.ok(js.includes("state.remark"));
 assert.ok(js.includes("注意事项"));
