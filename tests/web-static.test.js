@@ -22,6 +22,7 @@ assert.ok(html.includes("id=\"summaryRemark\""));
 assert.ok(html.includes("id=\"quoteCategoryTabs\""));
 assert.ok(html.includes("../assets/interior-bg.jpg"));
 assert.ok(html.includes("./data.js"));
+assert.ok(html.includes("./vendor/exceljs.min.js"));
 assert.ok(html.includes("./app.js"));
 
 assert.ok(js.includes("createCjsLoader"));

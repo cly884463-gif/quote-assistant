@@ -1,0 +1,8 @@
+{
+  "name": "quote-assistant",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "exceljs": "4.4.0"
+  }
+}
