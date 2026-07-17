@@ -575,6 +575,17 @@ select {
   background: #fff;
 }
 
+.summary-export-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.summary-export-actions .export-btn {
+  min-width: 150px;
+  white-space: nowrap;
+}
+
 .notes {
   display: grid;
   gap: 9px;
@@ -725,13 +736,23 @@ select {
     min-width: 0;
   }
 
-  .summary-toolbar .export-btn {
-    grid-column: 1;
+  .summary-toolbar .summary-export-actions {
+    grid-column: 1 / span 2;
     grid-row: 5;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .summary-toolbar .summary-export-actions .export-btn {
+    grid-column: auto;
+    grid-row: auto;
+    min-width: 0;
     min-height: 48px;
     align-self: end;
     padding: 0 10px;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.2;
   }
 

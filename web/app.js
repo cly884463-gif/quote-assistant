@@ -27,6 +27,7 @@
 
   const CUSTOM_TINTING_PRODUCT_ID = "custom-tinting-paste";
   const CUSTOM_TINTING_FEE_ID = "fee-custom-tinting";
+  const EXCEL_PROTECTION_PASSWORD = "XCL995511";
   const CUSTOM_TINTING_FEE_ITEM = {
     id: CUSTOM_TINTING_FEE_ID,
     model: "FEE-001",
@@ -644,6 +645,15 @@
     ctx.restore();
   }
 
+  function createExcelWatermarkDataUrl() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1400;
+    canvas.height = 1000;
+    const ctx = canvas.getContext("2d");
+    drawQuoteWatermark(ctx, canvas.width, canvas.height);
+    return canvas.toDataURL("image/png");
+  }
+
   function exportQuoteImage() {
     const quote = calculateQuote();
     const canvas = document.getElementById("exportCanvas");
@@ -732,6 +742,58 @@
       link.download = `${state.quoteType === "channel" ? "渠道合作报价" : "经销商批发报价"}.png`;
       link.href = imageUrl;
       link.click();
+    }
+  }
+
+  async function exportQuoteExcel() {
+    if (isWeChatBrowser()) {
+      toast("请点击右上角，用系统浏览器打开后导出Excel表格");
+      return;
+    }
+
+    const button = el.exportExcelBtn;
+    const defaultLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = "正在生成...";
+
+    try {
+      if (!window.ExcelJS || !window.__EXCEL_EXPORT__) {
+        throw new Error("Excel 导出组件未加载");
+      }
+      const quote = calculateQuote();
+      const workbook = await window.__EXCEL_EXPORT__.createProtectedQuoteWorkbook(
+        window.ExcelJS,
+        {
+          quoteType: state.quoteType,
+          logistics: state.logistics,
+          delivery: state.delivery,
+          remark: state.remark,
+          quote,
+          noticeItems
+        },
+        createExcelWatermarkDataUrl(),
+        EXCEL_PROTECTION_PASSWORD
+      );
+      const buffer = await workbook.xlsx.writeBuffer();
+      const blob = new Blob([buffer], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.download = `${state.quoteType === "channel" ? "渠道合作报价" : "经销商批发报价"}.xlsx`;
+      link.href = url;
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      toast("Excel表格已生成");
+    } catch (error) {
+      console.error(error);
+      toast("Excel表格生成失败，请重试");
+    } finally {
+      button.disabled = false;
+      button.textContent = defaultLabel;
     }
   }
 
@@ -881,6 +943,7 @@
       renderSummary();
     });
     el.exportImageBtn.addEventListener("click", exportQuoteImage);
+    el.exportExcelBtn.addEventListener("click", exportQuoteExcel);
     el.closeExportPreview.addEventListener("click", closeExportPreview);
     el.exportPreview.addEventListener("click", (event) => {
       if (event.target === el.exportPreview) {
@@ -907,6 +970,7 @@
       quoteSheet: document.getElementById("quoteSheet"),
       noticeList: document.getElementById("noticeList"),
       exportImageBtn: document.getElementById("exportImageBtn"),
+      exportExcelBtn: document.getElementById("exportExcelBtn"),
       exportPreview: document.getElementById("exportPreview"),
       exportPreviewImage: document.getElementById("exportPreviewImage"),
       exportPreviewTip: document.getElementById("exportPreviewTip"),
