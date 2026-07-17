@@ -427,6 +427,24 @@ select {
   box-shadow: 0 0 0 3px rgba(19, 132, 121, 0.12);
 }
 
+.custom-tinting-fee-control {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 36px;
+  color: #44534f;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.custom-tinting-fee-control input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--teal);
+}
+
 .qty-stepper {
   display: grid;
   width: 100%;

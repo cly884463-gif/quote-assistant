@@ -105,8 +105,16 @@
     return Number(String(text).replace("%", "")) || 0;
   }
 
+  function normalizeReferenceColor(value) {
+    return String(value || "").trim().toLocaleLowerCase();
+  }
+
   function getItemKey(item) {
-    return `${item.id}|${item.spec || item.selectedSpec || ""}`;
+    const baseKey = `${item.id}|${item.spec || item.selectedSpec || ""}`;
+    if (item.id !== CUSTOM_TINTING_PRODUCT_ID) {
+      return baseKey;
+    }
+    return `${baseKey}|${normalizeReferenceColor(item.referenceColor)}`;
   }
 
   function createCjsLoader() {
@@ -304,6 +312,7 @@
       const selectedSpec = addedItem ? addedItem.spec : product.specs[0];
       const selectedSpecIndex = Math.max(0, product.specs.indexOf(selectedSpec));
       return applyAddedState(selectSpecOption(Object.assign({}, product, {
+        referenceColor: addedItem ? addedItem.referenceColor : product.referenceColor,
         selectedSpec,
         selectedSpecIndex
       }), selectedSpecIndex));
@@ -334,18 +343,32 @@
   }
 
   function syncCustomTintingFee() {
-    const hasCustomTinting = state.quoteItems.some((item) => (
-      item.id === CUSTOM_TINTING_PRODUCT_ID
-      && Number(item.quantity) > 0
-      && Number(item.dealerPrice) > 0
+    const productItems = state.quoteItems.filter((item) => item.id !== CUSTOM_TINTING_FEE_ID);
+    const selectedColors = new Map();
+    productItems.forEach((item) => {
+      const referenceColor = String(item.referenceColor || "").trim();
+      const colorKey = normalizeReferenceColor(referenceColor);
+      if (item.id !== CUSTOM_TINTING_PRODUCT_ID
+        || Number(item.quantity) <= 0
+        || Number(item.dealerPrice) <= 0
+        || !item.needsTintingFee
+        || !colorKey) {
+        return;
+      }
+      if (!selectedColors.has(colorKey)) {
+        selectedColors.set(colorKey, referenceColor);
+      }
+    });
+    const feeItems = Array.from(selectedColors.entries()).map(([colorKey, referenceColor]) => (
+      Object.assign({}, CUSTOM_TINTING_FEE_ITEM, {
+        name: `${CUSTOM_TINTING_FEE_ITEM.name}（${referenceColor}）`,
+        spec: `参考颜色：${referenceColor}`,
+        selectedSpec: `参考颜色：${referenceColor}`,
+        referenceColor,
+        feeColorKey: colorKey
+      })
     ));
-    const hasFee = state.quoteItems.some((item) => item.id === CUSTOM_TINTING_FEE_ID);
-    if (hasCustomTinting && !hasFee) {
-      state.quoteItems.push(Object.assign({}, CUSTOM_TINTING_FEE_ITEM));
-    }
-    if (!hasCustomTinting && hasFee) {
-      state.quoteItems = state.quoteItems.filter((item) => item.id !== CUSTOM_TINTING_FEE_ID);
-    }
+    state.quoteItems = productItems.concat(feeItems);
   }
 
   function isCustomTintingProduct(product) {
@@ -485,6 +508,10 @@
             <label class="custom-reference-control">参考颜色及色号
               <input data-action="reference-color" type="text" placeholder="请输入参考颜色及色号" value="${escapeHtml(product.referenceColor || "")}">
             </label>
+            <label class="custom-tinting-fee-control">
+              <input data-action="needs-tinting" type="checkbox" ${product.needsTintingFee ? "checked" : ""}>
+              <span>需要调色（+¥50/颜色）</span>
+            </label>
           ` : ""}
           <div class="qty-stepper">
             <button data-action="step" data-delta="-1">-</button>
@@ -507,10 +534,12 @@
     const product = selectSpecOption(source, specIndex);
     const customPriceInput = card.querySelector("[data-action='custom-price']");
     const referenceColorInput = card.querySelector("[data-action='reference-color']");
+    const needsTintingInput = card.querySelector("[data-action='needs-tinting']");
     return Object.assign(product, {
       quantity,
       dealerPrice: customPriceInput ? customPriceInput.value : product.dealerPrice,
-      referenceColor: referenceColorInput ? referenceColorInput.value.trim() : ""
+      referenceColor: referenceColorInput ? referenceColorInput.value.trim() : "",
+      needsTintingFee: needsTintingInput ? needsTintingInput.checked : false
     });
   }
 
@@ -529,6 +558,10 @@
     if (referenceColorInput) {
       referenceColorInput.value = addedProduct.referenceColor || "";
     }
+    const needsTintingInput = card.querySelector("[data-action='needs-tinting']");
+    if (needsTintingInput) {
+      needsTintingInput.checked = Boolean(addedProduct.needsTintingFee);
+    }
     if (addedProduct.isAdded && quantity === 0) {
       button.textContent = "删除";
       button.classList.add("delete-btn");
@@ -537,6 +570,25 @@
       button.classList.remove("delete-btn");
     }
     updateSelectedCount();
+  }
+
+  function handleCustomReferenceInput(card) {
+    const product = getProductFromCard(card);
+    const addedProduct = applyAddedState(product);
+    const customPriceInput = card.querySelector("[data-action='custom-price']");
+    const quantityInput = card.querySelector("[data-action='quantity']");
+    const needsTintingInput = card.querySelector("[data-action='needs-tinting']");
+    if (addedProduct.isAdded) {
+      customPriceInput.value = addedProduct.dealerPrice;
+      quantityInput.value = addedProduct.quantity;
+      needsTintingInput.checked = Boolean(addedProduct.needsTintingFee);
+      updateQuoteCard(card, addedProduct);
+      return;
+    }
+    customPriceInput.value = "";
+    quantityInput.value = 0;
+    needsTintingInput.checked = false;
+    updateQuoteCard(card, getProductFromCard(card));
   }
 
   function syncAddedProduct(card) {
@@ -857,13 +909,16 @@
       }
       if (event.target.dataset.action === "spec") {
         const source = getCatalog().products.find((product) => product.id === card.dataset.productId);
-        const product = applyAddedState(selectSpecOption(source, Number(event.target.value) || 0));
+        const referenceColorInput = card.querySelector("[data-action='reference-color']");
+        const selectedProduct = selectSpecOption(Object.assign({}, source, {
+          referenceColor: referenceColorInput ? referenceColorInput.value.trim() : ""
+        }), Number(event.target.value) || 0);
+        const product = applyAddedState(selectedProduct);
         card.querySelector("[data-action='quantity']").value = product.quantity;
         const customPriceInput = card.querySelector("[data-action='custom-price']");
         if (customPriceInput) {
           customPriceInput.value = product.dealerPrice;
         }
-        const referenceColorInput = card.querySelector("[data-action='reference-color']");
         if (referenceColorInput) {
           referenceColorInput.value = product.referenceColor || "";
         }
@@ -873,9 +928,12 @@
     });
 
     el.quoteProducts.addEventListener("input", (event) => {
+      if (event.target.dataset.action === "reference-color") {
+        handleCustomReferenceInput(event.target.closest(".quote-card"));
+        return;
+      }
       if (event.target.dataset.action === "quantity"
-        || event.target.dataset.action === "custom-price"
-        || event.target.dataset.action === "reference-color") {
+        || event.target.dataset.action === "custom-price") {
         syncAddedProduct(event.target.closest(".quote-card"));
       }
     });
