@@ -63,7 +63,10 @@
           <label class="summary-remark-control">备注
             <textarea id="summaryRemark" rows="2" placeholder="可填写报价备注"></textarea>
           </label>
-          <button class="export-btn" id="exportImageBtn">导出报价图片</button>
+          <div class="summary-export-actions">
+            <button class="export-btn" id="exportImageBtn">导出报价图片</button>
+            <button class="export-btn" id="exportExcelBtn">导出Excel表格</button>
+          </div>
         </div>
 
         <div class="sheet-scroll">
@@ -90,6 +93,7 @@
   <canvas id="exportCanvas" class="export-canvas"></canvas>
   <script src="./data.js"></script>
   <script src="./vendor/exceljs.min.js"></script>
+  <script src="./excel-export.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

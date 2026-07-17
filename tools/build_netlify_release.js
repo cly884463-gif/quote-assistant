@@ -18,6 +18,7 @@ fs.writeFileSync(path.join(releaseDir, "index.html"), html, "utf8");
 fs.copyFileSync(path.join(root, "web", "styles.css"), path.join(releaseDir, "styles.css"));
 fs.copyFileSync(path.join(root, "web", "app.js"), path.join(releaseDir, "app.js"));
 fs.copyFileSync(path.join(root, "web", "data.js"), path.join(releaseDir, "data.js"));
+fs.copyFileSync(path.join(root, "web", "excel-export.js"), path.join(releaseDir, "excel-export.js"));
 fs.copyFileSync(
   path.join(root, "web", "vendor", "exceljs.min.js"),
   path.join(releaseDir, "vendor", "exceljs.min.js")

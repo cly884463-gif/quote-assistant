@@ -42,6 +42,9 @@ const input = {
   assert.deepStrictEqual(model.totals[2], ["含税报价：", 169.68]);
   assert.strictEqual(model.remark, "测试备注");
   assert.deepStrictEqual(model.notices, ["1、测试注意事项"]);
+  const dealerModel = buildExcelQuoteModel(Object.assign({}, input, { quoteType: "dealer" }));
+  assert.strictEqual(dealerModel.columns[8], "经销商单价");
+  assert.strictEqual(dealerModel.columns[9], "经销商合计");
 
   const workbook = await createProtectedQuoteWorkbook(
     ExcelJS,
@@ -52,7 +55,9 @@ const input = {
   const sheet = workbook.worksheets[0];
   assert.strictEqual(sheet.name, "报价清单");
   assert.strictEqual(sheet.sheetProtection.sheet, true);
+  assert.ok(sheet.sheetProtection.hashValue);
   assert.strictEqual(sheet.getCell("A3").value, "DT-103");
+  assert.strictEqual(sheet.getCell("A3").protection.locked, true);
   assert.strictEqual(sheet.getCell("I3").value, 84);
   assert.strictEqual(sheet.getImages().length, 1);
   assert.ok(sheet.pageSetup.printArea.startsWith("A1:J"));

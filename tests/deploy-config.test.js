@@ -27,5 +27,6 @@ assert.ok(netlifyConfig.includes("command = \"node tools/build_netlify_release.j
 assert.ok(netlifyConfig.includes("publish = \"release/quote-assistant-site\""));
 assert.ok(buildScript.includes("web\", \"vendor\", \"exceljs.min.js"));
 assert.ok(buildScript.includes("exceljs.LICENSE.txt"));
+assert.ok(buildScript.includes("web\", \"excel-export.js"));
 
 console.log("deploy config ok");
