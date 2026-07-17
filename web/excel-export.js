@@ -226,11 +226,14 @@
       formatRows: false,
       insertRows: false,
       insertColumns: false,
+      insertHyperlinks: false,
       deleteRows: false,
       deleteColumns: false,
       sort: false,
       autoFilter: false,
       pivotTables: false,
+      objects: false,
+      scenarios: false,
       spinCount: 10000
     });
 

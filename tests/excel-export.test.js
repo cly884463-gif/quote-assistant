@@ -55,6 +55,8 @@ const input = {
   const sheet = workbook.worksheets[0];
   assert.strictEqual(sheet.name, "报价清单");
   assert.strictEqual(sheet.sheetProtection.sheet, true);
+  assert.strictEqual(sheet.sheetProtection.objects, false);
+  assert.strictEqual(sheet.sheetProtection.scenarios, false);
   assert.ok(sheet.sheetProtection.hashValue);
   assert.strictEqual(sheet.getCell("A3").value, "DT-103");
   assert.strictEqual(sheet.getCell("A3").protection.locked, true);
@@ -72,6 +74,7 @@ const input = {
   const reopened = new ExcelJS.Workbook();
   await reopened.xlsx.load(buffer);
   assert.strictEqual(reopened.worksheets[0].sheetProtection.sheet, true);
+  assert.strictEqual(reopened.worksheets[0].sheetProtection.objects, false);
   assert.strictEqual(reopened.worksheets[0].getCell("J3").value, 168);
 
   console.log("excel export ok");
