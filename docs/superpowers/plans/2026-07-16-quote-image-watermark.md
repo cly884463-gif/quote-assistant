@@ -11,7 +11,7 @@
 ## Global Constraints
 
 - 水印文字固定为 `新材联·New Material Union`。
-- 旋转角度固定为 `-24°`，透明度固定为 `0.045`。
+- 旋转角度固定为 `-24°`，透明度固定为 `0.06`。
 - 水印仅进入导出图片及预览，不进入网页报价清单 DOM。
 - 不安装新依赖，不调整现有报价数据和计算逻辑。
 
@@ -34,7 +34,7 @@
 ```js
 assert.ok(js.includes("function drawQuoteWatermark(ctx, width, height)"));
 assert.ok(js.includes("新材联·New Material Union"));
-assert.ok(js.includes("ctx.globalAlpha = 0.045"));
+assert.ok(js.includes("ctx.globalAlpha = 0.06"));
 assert.ok(js.includes("drawQuoteWatermark(ctx, canvas.width, canvas.height)"));
 ```
 
@@ -52,7 +52,7 @@ Expected: FAIL，缺少 `drawQuoteWatermark` 断言内容。
 function drawQuoteWatermark(ctx, width, height) {
   const text = "新材联·New Material Union";
   ctx.save();
-  ctx.globalAlpha = 0.045;
+  ctx.globalAlpha = 0.06;
   ctx.fillStyle = "#667085";
   ctx.font = "bold 22px Microsoft YaHei, sans-serif";
   ctx.textAlign = "center";
