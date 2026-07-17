@@ -222,34 +222,34 @@ window.__QUOTE_CATALOGS__ = {
       "category": "陶泥系列",
       "name": "金刚陶砂（细砂）",
       "specs": [
-        "25KG",
-        "5KG"
+        "5KG",
+        "25KG"
       ],
       "specOptions": [
-        {
-          "spec": "25KG",
-          "workTimes": 2,
-          "coverage": 22,
-          "unit": "桶",
-          "dealerPrice": 468,
-          "costPerSquare": 21.272727272727273,
-          "remark": ""
-        },
         {
           "spec": "5KG",
           "workTimes": 2,
           "coverage": 4,
           "unit": "桶",
-          "dealerPrice": 112,
-          "costPerSquare": 28,
+          "dealerPrice": 100,
+          "costPerSquare": 25,
+          "remark": ""
+        },
+        {
+          "spec": "25KG",
+          "workTimes": 2,
+          "coverage": 22,
+          "unit": "桶",
+          "dealerPrice": 426,
+          "costPerSquare": 19.363636363636363,
           "remark": ""
         }
       ],
       "workTimes": 2,
-      "coverage": 22,
+      "coverage": 4,
       "unit": "桶",
-      "dealerPrice": 468,
-      "costPerSquare": 21.272727272727273,
+      "dealerPrice": 100,
+      "costPerSquare": 25,
       "remark": ""
     },
     {
@@ -364,7 +364,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-231-yc-y-陶釉哑光白漆-a组份-b组份",
       "model": "YC-231+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光白漆（A组份）+（B组份）",
+      "name": "陶釉哑光白漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
@@ -376,8 +376,8 @@ window.__QUOTE_CATALOGS__ = {
           "workTimes": 2,
           "coverage": 14.4,
           "unit": "组",
-          "dealerPrice": 448,
-          "costPerSquare": 31.11111111111111,
+          "dealerPrice": 406,
+          "costPerSquare": 28.194444444444443,
           "remark": ""
         },
         {
@@ -394,16 +394,16 @@ window.__QUOTE_CATALOGS__ = {
           "workTimes": 2,
           "coverage": 108,
           "unit": "组",
-          "dealerPrice": 2600,
-          "costPerSquare": 24.074074074074073,
+          "dealerPrice": 2498,
+          "costPerSquare": 23.12962962962963,
           "remark": ""
         }
       ],
       "workTimes": 2,
       "coverage": 14.4,
       "unit": "组",
-      "dealerPrice": 448,
-      "costPerSquare": 31.11111111111111,
+      "dealerPrice": 406,
+      "costPerSquare": 28.194444444444443,
       "remark": ""
     },
     {
@@ -414,7 +414,7 @@ window.__QUOTE_CATALOGS__ = {
       "specs": [
         "2.88KG",
         "6KG",
-        "19.2KG"
+        "21.6KG"
       ],
       "specOptions": [
         {
@@ -422,8 +422,8 @@ window.__QUOTE_CATALOGS__ = {
           "workTimes": 2,
           "coverage": 14.4,
           "unit": "组",
-          "dealerPrice": 375,
-          "costPerSquare": 26.041666666666664,
+          "dealerPrice": 358,
+          "costPerSquare": 24.86111111111111,
           "remark": ""
         },
         {
@@ -436,20 +436,20 @@ window.__QUOTE_CATALOGS__ = {
           "remark": ""
         },
         {
-          "spec": "19.2KG",
+          "spec": "21.6KG",
           "workTimes": 2,
-          "coverage": 96,
+          "coverage": 108,
           "unit": "组",
-          "dealerPrice": 2124,
-          "costPerSquare": 22.125,
+          "dealerPrice": 2106,
+          "costPerSquare": 19.5,
           "remark": ""
         }
       ],
       "workTimes": 2,
       "coverage": 14.4,
       "unit": "组",
-      "dealerPrice": 375,
-      "costPerSquare": 26.041666666666664,
+      "dealerPrice": 358,
+      "costPerSquare": 24.86111111111111,
       "remark": ""
     },
     {
@@ -4675,34 +4675,34 @@ window.__QUOTE_CATALOGS__ = {
       "category": "陶泥系列",
       "name": "金刚陶砂（细砂）",
       "specs": [
-        "25KG",
-        "5KG"
+        "5KG",
+        "25KG"
       ],
       "specOptions": [
-        {
-          "spec": "25KG",
-          "workTimes": 2,
-          "coverage": 22,
-          "unit": "桶",
-          "dealerPrice": 585,
-          "costPerSquare": 26.59090909090909,
-          "remark": ""
-        },
         {
           "spec": "5KG",
           "workTimes": 2,
           "coverage": 4,
           "unit": "桶",
-          "dealerPrice": 140,
-          "costPerSquare": 35,
+          "dealerPrice": 125,
+          "costPerSquare": 31.25,
+          "remark": ""
+        },
+        {
+          "spec": "25KG",
+          "workTimes": 2,
+          "coverage": 22,
+          "unit": "桶",
+          "dealerPrice": 533,
+          "costPerSquare": 24.227272727272727,
           "remark": ""
         }
       ],
       "workTimes": 2,
-      "coverage": 22,
+      "coverage": 4,
       "unit": "桶",
-      "dealerPrice": 585,
-      "costPerSquare": 26.59090909090909,
+      "dealerPrice": 125,
+      "costPerSquare": 31.25,
       "remark": ""
     },
     {
@@ -4817,7 +4817,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-231-yc-y-陶釉哑光白漆-a组份-b组份",
       "model": "YC-231+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光白漆（A组份）+（B组份）",
+      "name": "陶釉哑光白漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
@@ -4829,8 +4829,8 @@ window.__QUOTE_CATALOGS__ = {
           "workTimes": 2,
           "coverage": 14.4,
           "unit": "组",
-          "dealerPrice": 560,
-          "costPerSquare": 38.888888888888886,
+          "dealerPrice": 508,
+          "costPerSquare": 35.27777777777778,
           "remark": ""
         },
         {
@@ -4847,27 +4847,27 @@ window.__QUOTE_CATALOGS__ = {
           "workTimes": 2,
           "coverage": 108,
           "unit": "组",
-          "dealerPrice": 3250,
-          "costPerSquare": 30.09259259259259,
+          "dealerPrice": 3123,
+          "costPerSquare": 28.916666666666668,
           "remark": ""
         }
       ],
       "workTimes": 2,
       "coverage": 14.4,
       "unit": "组",
-      "dealerPrice": 560,
-      "costPerSquare": 38.888888888888886,
+      "dealerPrice": 508,
+      "costPerSquare": 35.27777777777778,
       "remark": ""
     },
     {
       "id": "yc-232-yc-y-陶釉哑光清漆-a组份-b组份",
       "model": "YC-232+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光清漆（A组份）+（B组份）",
+      "name": "陶釉哑光清漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
-        "19.2KG"
+        "21.6KG"
       ],
       "specOptions": [
         {
@@ -4875,8 +4875,8 @@ window.__QUOTE_CATALOGS__ = {
           "workTimes": 2,
           "coverage": 14.4,
           "unit": "组",
-          "dealerPrice": 469,
-          "costPerSquare": 32.56944444444444,
+          "dealerPrice": 448,
+          "costPerSquare": 31.11111111111111,
           "remark": ""
         },
         {
@@ -4889,20 +4889,20 @@ window.__QUOTE_CATALOGS__ = {
           "remark": ""
         },
         {
-          "spec": "19.2KG",
+          "spec": "21.6KG",
           "workTimes": 2,
-          "coverage": 96,
+          "coverage": 108,
           "unit": "组",
-          "dealerPrice": 2655,
-          "costPerSquare": 27.65625,
+          "dealerPrice": 2633,
+          "costPerSquare": 24.37962962962963,
           "remark": ""
         }
       ],
       "workTimes": 2,
       "coverage": 14.4,
       "unit": "组",
-      "dealerPrice": 469,
-      "costPerSquare": 32.56944444444444,
+      "dealerPrice": 448,
+      "costPerSquare": 31.11111111111111,
       "remark": ""
     },
     {
