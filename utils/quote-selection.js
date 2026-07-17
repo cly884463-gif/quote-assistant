@@ -1,5 +1,16 @@
+const CUSTOM_TINTING_PRODUCT_ID = "custom-tinting-paste";
+const CUSTOM_TINTING_FEE_ID = "fee-custom-tinting";
+
+function normalizeReferenceColor(value) {
+  return String(value || "").trim().toLocaleLowerCase();
+}
+
 function getQuoteItemKey(item) {
-  return `${item.id}|${item.spec || item.selectedSpec || ""}`;
+  const baseKey = `${item.id}|${item.spec || item.selectedSpec || ""}`;
+  if (item.id !== CUSTOM_TINTING_PRODUCT_ID) {
+    return baseKey;
+  }
+  return `${baseKey}|${normalizeReferenceColor(item.referenceColor)}`;
 }
 
 function getAddedProductMap(items) {
@@ -31,6 +42,7 @@ function buildQuoteCards(products, quoteItems) {
     const selectedSpecIndex = Math.max(0, product.specs.indexOf(selectedSpec));
 
     const card = selectSpecOption(Object.assign({}, product, {
+      referenceColor: addedItem ? addedItem.referenceColor : product.referenceColor,
       selectedSpecIndex,
       selectedSpec
     }), selectedSpecIndex);
@@ -101,13 +113,46 @@ function removeQuoteItem(items, id, spec) {
   return (items || []).filter((item) => getQuoteItemKey(item) !== removeKey);
 }
 
+function syncCustomTintingFees(items, feeTemplate) {
+  const productItems = (items || []).filter((item) => item.id !== CUSTOM_TINTING_FEE_ID);
+  const selectedColors = new Map();
+
+  productItems.forEach((item) => {
+    const referenceColor = String(item.referenceColor || "").trim();
+    const colorKey = normalizeReferenceColor(referenceColor);
+    if (item.id !== CUSTOM_TINTING_PRODUCT_ID
+      || Number(item.quantity) <= 0
+      || !item.needsTintingFee
+      || !colorKey) {
+      return;
+    }
+    if (!selectedColors.has(colorKey)) {
+      selectedColors.set(colorKey, referenceColor);
+    }
+  });
+
+  const feeItems = Array.from(selectedColors.entries()).map(([colorKey, referenceColor]) => (
+    Object.assign({}, feeTemplate, {
+      name: `${feeTemplate.name}（${referenceColor}）`,
+      spec: `参考颜色：${referenceColor}`,
+      selectedSpec: `参考颜色：${referenceColor}`,
+      referenceColor,
+      feeColorKey: colorKey
+    })
+  ));
+
+  return productItems.concat(feeItems);
+}
+
 module.exports = {
   applyAddedState,
   buildQuoteCards,
   changeQuantity,
+  getQuoteItemKey,
   getQuantityOnFocus,
   getQuantityOnBlur,
   removeQuoteItem,
   selectSpecOption,
+  syncCustomTintingFees,
   upsertQuoteItem
 };

@@ -3,10 +3,12 @@ const assert = require("assert");
 const {
   buildQuoteCards,
   changeQuantity,
+  getQuoteItemKey,
   getQuantityOnFocus,
   getQuantityOnBlur,
   removeQuoteItem,
   selectSpecOption,
+  syncCustomTintingFees,
   upsertQuoteItem
 } = require("../utils/quote-selection");
 
@@ -119,8 +121,9 @@ const customTintingItems = upsertQuoteItem(
     referenceColor: "暖灰色 NCS S 2002-Y"
   }
 );
-assert.strictEqual(customTintingItems.length, 1);
-assert.strictEqual(customTintingItems[0].referenceColor, "暖灰色 NCS S 2002-Y");
+assert.strictEqual(customTintingItems.length, 2);
+assert.strictEqual(customTintingItems[0].referenceColor, "米白色 NCS S 0502-Y");
+assert.strictEqual(customTintingItems[1].referenceColor, "暖灰色 NCS S 2002-Y");
 
 const customTintingCards = buildQuoteCards([{
   id: "custom-tinting-paste",
@@ -133,6 +136,82 @@ const customTintingCards = buildQuoteCards([{
   ]
 }], customTintingItems);
 assert.strictEqual(customTintingCards[0].selectedSpec, "2.4KG配套");
-assert.strictEqual(customTintingCards[0].referenceColor, "暖灰色 NCS S 2002-Y");
+assert.strictEqual(customTintingCards[0].referenceColor, "米白色 NCS S 0502-Y");
+
+const warmGrayKey = getQuoteItemKey({
+  id: "custom-tinting-paste",
+  spec: "2.4KG配套",
+  referenceColor: "暖灰色 NCS S 2002-Y"
+});
+const riceWhiteKey = getQuoteItemKey({
+  id: "custom-tinting-paste",
+  spec: "2.4KG配套",
+  referenceColor: "米白色 NCS S 0502-Y"
+});
+assert.notStrictEqual(warmGrayKey, riceWhiteKey);
+
+const customColorItems = upsertQuoteItem(
+  [{
+    id: "custom-tinting-paste",
+    spec: "2.4KG配套",
+    quantity: 1,
+    referenceColor: "暖灰色 NCS S 2002-Y",
+    needsTintingFee: true
+  }],
+  {
+    id: "custom-tinting-paste",
+    selectedSpec: "2.4KG配套",
+    quantity: 2,
+    referenceColor: "米白色 NCS S 0502-Y",
+    needsTintingFee: true
+  }
+);
+assert.strictEqual(customColorItems.length, 2);
+
+const tintingFeeTemplate = {
+  id: "fee-custom-tinting",
+  model: "FEE-001",
+  category: "陶釉特调色浆",
+  name: "特调调色费",
+  spec: "人工费",
+  unit: "项",
+  quantity: 1,
+  dealerPrice: 50
+};
+const synchronizedFees = syncCustomTintingFees([
+  {
+    id: "custom-tinting-paste",
+    spec: "2.4KG配套",
+    quantity: 1,
+    referenceColor: "暖灰色 NCS S 2002-Y",
+    needsTintingFee: true
+  },
+  {
+    id: "custom-tinting-paste",
+    spec: "5KG配套",
+    quantity: 1,
+    referenceColor: " 暖灰色 NCS S 2002-Y ",
+    needsTintingFee: true
+  },
+  {
+    id: "custom-tinting-paste",
+    spec: "18KG配套",
+    quantity: 1,
+    referenceColor: "米白色 NCS S 0502-Y",
+    needsTintingFee: false
+  },
+  {
+    id: "custom-tinting-paste",
+    spec: "2.4KG配套",
+    quantity: 1,
+    referenceColor: "深灰色 NCS S 6000-N",
+    needsTintingFee: true
+  }
+], tintingFeeTemplate);
+const tintingFees = synchronizedFees.filter((item) => item.id === "fee-custom-tinting");
+assert.strictEqual(tintingFees.length, 2);
+assert.ok(tintingFees.some((item) => item.name.includes("暖灰色 NCS S 2002-Y")));
+assert.ok(tintingFees.some((item) => item.name.includes("深灰色 NCS S 6000-N")));
+assert.ok(!tintingFees.some((item) => item.name.includes("米白色 NCS S 0502-Y")));
 
 console.log("quote selection behavior ok");
