@@ -4295,13 +4295,19 @@ window.__QUOTE_CATALOGS__ = {
     },
     {
       "id": "custom-tinting-paste",
-      "model": "TY-TT-SJ",
+      "model": "TT-SJ",
       "category": "陶釉特调色浆",
-      "name": "陶釉特调色浆",
+      "name": "特调色浆",
       "specs": [
-        "2.4KG配套",
-        "5KG配套",
-        "18KG配套"
+        "陶釉主漆2.4KG配套",
+        "陶釉主漆5KG配套",
+        "陶釉主漆18KG配套",
+        "清瓷水漆4.8KG配套",
+        "清瓷水漆20KG配套",
+        "瓷釉主漆2.4KG配套",
+        "瓷釉主漆5KG配套",
+        "瓷釉主漆18KG配套",
+        "金刚陶泥/陶砂25KG配套"
       ],
       "allowCustomPrice": true,
       "autoFee": {
@@ -4315,43 +4321,103 @@ window.__QUOTE_CATALOGS__ = {
       },
       "specOptions": [
         {
-          "spec": "2.4KG配套",
+          "spec": "陶釉主漆2.4KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "2.4KG配套",
+          "packageSpec": "陶釉主漆2.4KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
-          "remark": "陶釉特调色浆，价格按实际填写"
+          "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "5KG配套",
+          "spec": "陶釉主漆5KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "5KG配套",
+          "packageSpec": "陶釉主漆5KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
-          "remark": "陶釉特调色浆，价格按实际填写"
+          "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "18KG配套",
+          "spec": "陶釉主漆18KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "18KG配套",
+          "packageSpec": "陶釉主漆18KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
-          "remark": "陶釉特调色浆，价格按实际填写"
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "清瓷水漆4.8KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "清瓷水漆4.8KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "清瓷水漆20KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "清瓷水漆20KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "瓷釉主漆2.4KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "瓷釉主漆2.4KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "瓷釉主漆5KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "瓷釉主漆5KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "瓷釉主漆18KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "瓷釉主漆18KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "金刚陶泥/陶砂25KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "金刚陶泥/陶砂25KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
         }
       ],
       "workTimes": "",
       "coverage": "",
       "unit": "瓶",
-      "packageSpec": "2.4KG配套/5KG配套/18KG配套",
+      "packageSpec": "陶釉主漆2.4KG配套/陶釉主漆5KG配套/陶釉主漆18KG配套/清瓷水漆4.8KG配套/清瓷水漆20KG配套/瓷釉主漆2.4KG配套/瓷釉主漆5KG配套/瓷釉主漆18KG配套/金刚陶泥/陶砂25KG配套",
       "dealerPrice": "",
       "costPerSquare": "",
-      "remark": "陶釉特调色浆，价格按实际填写"
+      "remark": "特调色浆，价格按实际填写"
     },
     {
       "id": "fema-001",
@@ -8804,13 +8870,19 @@ window.__QUOTE_CATALOGS__ = {
     },
     {
       "id": "custom-tinting-paste",
-      "model": "TY-TT-SJ",
+      "model": "TT-SJ",
       "category": "陶釉特调色浆",
-      "name": "陶釉特调色浆",
+      "name": "特调色浆",
       "specs": [
-        "2.4KG配套",
-        "5KG配套",
-        "18KG配套"
+        "陶釉主漆2.4KG配套",
+        "陶釉主漆5KG配套",
+        "陶釉主漆18KG配套",
+        "清瓷水漆4.8KG配套",
+        "清瓷水漆20KG配套",
+        "瓷釉主漆2.4KG配套",
+        "瓷釉主漆5KG配套",
+        "瓷釉主漆18KG配套",
+        "金刚陶泥/陶砂25KG配套"
       ],
       "allowCustomPrice": true,
       "autoFee": {
@@ -8824,43 +8896,103 @@ window.__QUOTE_CATALOGS__ = {
       },
       "specOptions": [
         {
-          "spec": "2.4KG配套",
+          "spec": "陶釉主漆2.4KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "2.4KG配套",
+          "packageSpec": "陶釉主漆2.4KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
-          "remark": "陶釉特调色浆，价格按实际填写"
+          "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "5KG配套",
+          "spec": "陶釉主漆5KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "5KG配套",
+          "packageSpec": "陶釉主漆5KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
-          "remark": "陶釉特调色浆，价格按实际填写"
+          "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "18KG配套",
+          "spec": "陶釉主漆18KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "18KG配套",
+          "packageSpec": "陶釉主漆18KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
-          "remark": "陶釉特调色浆，价格按实际填写"
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "清瓷水漆4.8KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "清瓷水漆4.8KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "清瓷水漆20KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "清瓷水漆20KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "瓷釉主漆2.4KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "瓷釉主漆2.4KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "瓷釉主漆5KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "瓷釉主漆5KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "瓷釉主漆18KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "瓷釉主漆18KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
+        },
+        {
+          "spec": "金刚陶泥/陶砂25KG配套",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "瓶",
+          "packageSpec": "金刚陶泥/陶砂25KG配套",
+          "dealerPrice": "",
+          "costPerSquare": "",
+          "remark": "特调色浆，价格按实际填写"
         }
       ],
       "workTimes": "",
       "coverage": "",
       "unit": "瓶",
-      "packageSpec": "2.4KG配套/5KG配套/18KG配套",
+      "packageSpec": "陶釉主漆2.4KG配套/陶釉主漆5KG配套/陶釉主漆18KG配套/清瓷水漆4.8KG配套/清瓷水漆20KG配套/瓷釉主漆2.4KG配套/瓷釉主漆5KG配套/瓷釉主漆18KG配套/金刚陶泥/陶砂25KG配套",
       "dealerPrice": "",
       "costPerSquare": "",
-      "remark": "陶釉特调色浆，价格按实际填写"
+      "remark": "特调色浆，价格按实际填写"
     },
     {
       "id": "fema-001",
