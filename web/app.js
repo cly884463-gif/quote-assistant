@@ -17,13 +17,42 @@
   const taxOptions = ["1%", "3%", "13%"];
 
   const noticeItems = [
-    "1、订单报价不含安装、不含税、不含运费、全款订单发货。如需开票请按含税报价支付货款（默认普票，如需其他票类请与业务人员沟通）",
-    "2、报价单默认普通物流自提方式发货，如需送货上门请提前和业务员沟通备注。",
-    "3、自提+送货方式收到货物后，先验货，货物无磨损、破碎、结冻等情况再签收，如有损坏现象请及时与对接业务人及时联系反馈。",
-    "4、退换货政策：在不影响工厂二次销售的情况下，自实际收到商品之日起7日内可退货；15天可换货，退换货运费由客户承担，换货产品按照订单金额的8折处理。",
-    "5、定制产品确认下单付款后不退不换。",
-    "6、所有产品的施工，如非我方负责，施工前一定要和业务员沟通施工流程及细节，并按照业务员的建议和指导按步骤进行；如客户擅自按照自己的想法施工导致了后续不理想的效果，我方不予处理。"
+    "1、本报价同时列明未税金额、适用税额和含税总额，客户默认按含税总额付款。默认开具增值税普通发票；如需专用发票，请与业务负责人提前告知。",
+    "2、本报价默认采用普通物流(运费到付)、物流网点自提。如果需要其他物流方式和送货方式，应在下单前书面确认费用和收货地址。",
+    "3、收货时请核对产品名称、规格、数量及外包装。发现明显破损、渗漏、结冻或数量不符，应拒收或在签收单中注明并拍照反馈。隐蔽运输损坏应在发现后及时提供照片或视频；并及时与对接业务人及时联系反馈。",
+    "4、非质量原因退换货仅适用于未开封、包装完整、不影响再次销售的非定制产品。退货应在收货后7日内提出，换货应在15日内提出，经确认后办理，相关物流及实际发生的整理费用由客户承担，换货产品按照订单金额的8折处理。质量问题按照法律规定及产品质保政策处理。",
+    "5、定制产品、调色产品及已开封使用的产品，非质量原因不支持退换；存在质量问题的除外。",
+    "6、产品理论涂布面积及建议施工道数仅供用量测算，实际用量受基层平整度、吸水率、施工工具和损耗影响。",
+    "7、客户应按照产品说明书、技术交底和书面施工要求操作。因基层不符合要求、未遵循书面施工规范或第三方施工不当造成的问题，经核实后不属于产品质量责任；公司可协助提供技术分析或有偿处理方案。",
+    "8、本报价单经双方签字盖章或通过双方认可的电子方式确认后，与订单、付款凭证及书面变更记录共同构成交易依据。"
   ];
+
+  function getBeijingTodayISO() {
+    try {
+      const parts = new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(new Date());
+      const lookup = {};
+      parts.forEach((part) => {
+        if (part.type !== "literal") {
+          lookup[part.type] = part.value;
+        }
+      });
+      return `${lookup.year}-${lookup.month}-${lookup.day}`;
+    } catch (error) {
+      const now = new Date();
+      const offset = now.getTimezoneOffset() * 60000;
+      const beijingMs = now.getTime() + (now.getTimezoneOffset() < -480 ? 0 : 8 * 60 - now.getTimezoneOffset()) * 60000;
+      const beijing = new Date(beijingMs);
+      const year = beijing.getUTCFullYear();
+      const month = String(beijing.getUTCMonth() + 1).padStart(2, "0");
+      const day = String(beijing.getUTCDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+  }
 
   const CUSTOM_TINTING_PRODUCT_ID = "custom-tinting-paste";
   const CUSTOM_TINTING_FEE_ID = "fee-custom-tinting";
@@ -71,6 +100,8 @@
     logistics: logisticsOptions[0],
     delivery: deliveryOptions[0],
     taxText: taxOptions[0],
+    orderDate: "",
+    person: "",
     remark: ""
   };
 
@@ -615,6 +646,8 @@
     el.logisticsSelect.innerHTML = logisticsOptions.map((option) => `<option>${escapeHtml(option)}</option>`).join("");
     el.deliverySelect.innerHTML = deliveryOptions.map((option) => `<option>${escapeHtml(option)}</option>`).join("");
     el.taxSelect.innerHTML = taxOptions.map((option) => `<option>${escapeHtml(option)}</option>`).join("");
+    el.orderDate.value = getBeijingTodayISO();
+    state.orderDate = el.orderDate.value;
     el.noticeList.innerHTML = `<div class="notes-title">注意事项</div>${noticeItems.map((item) => `<div>${escapeHtml(item)}</div>`).join("")}`;
   }
 
@@ -626,6 +659,10 @@
         <span class="logistics">物流方式：${escapeHtml(state.logistics)}</span>
         <span class="delivery">送货方式：${escapeHtml(state.delivery)}</span>
       </div>
+      <div class="sheet-row sheet-meta">
+        <span class="meta-left">订单日期：${escapeHtml(state.orderDate)}</span>
+        <span class="meta-right">业务负责人：${escapeHtml(state.person)}</span>
+      </div>
       <div class="sheet-row sheet-head">
         ${labels.map((label) => `<span>${escapeHtml(label)}</span>`).join("")}
       </div>
@@ -634,9 +671,9 @@
           ${summaryColumnKeys.map((key) => `<span class="${key === "dealerPrice" || key === "amount" ? "green" : ""}">${escapeHtml(row[key])}</span>`).join("")}
         </div>
       `).join("")}
-      <div class="sheet-total"><span class="label">合计（不含税）：</span><span class="value">${formatMoney(quote.subtotal)}</span></div>
-      <div class="sheet-total"><span class="label">发票税金（${quote.taxRate}%）：</span><span class="value">${formatMoney(quote.tax)}</span></div>
-      <div class="sheet-total"><span class="label"><strong>含税报价：</strong></span><span class="value">${formatMoney(quote.total)}</span></div>
+      <div class="sheet-total"><span class="label">合计（未税金额）：</span><span class="value">${formatMoney(quote.subtotal)}</span></div>
+      <div class="sheet-total"><span class="label">适用税额（${quote.taxRate}%）：</span><span class="value">${formatMoney(quote.tax)}</span></div>
+      <div class="sheet-total"><span class="label"><strong>含税总额：</strong></span><span class="value">${formatMoney(quote.total)}</span></div>
       <div class="sheet-remark"><span class="label">备注：</span><span class="value">${escapeHtml(state.remark)}</span></div>
     `;
   }
@@ -712,10 +749,27 @@
     const widths = [90, 115, 230, 105, 80, 135, 65, 65, 115, 125];
     const tableWidth = widths.reduce((sum, width) => sum + width, 0);
     const rowHeight = 34;
-    const noteHeight = 24;
     const noticeTitleHeight = 38;
+    const noticeLineHeight = 18;
+    const noticePadding = 5;
     const totalRows = 1 + 1 + quote.rows.length + 4;
-    const height = totalRows * rowHeight + noticeTitleHeight + noticeItems.length * noteHeight + 28;
+
+    // Pre-measure notice items so 2-line / 3-line notices don't overflow the canvas.
+    // Use a dedicated measurement canvas so drawText's internal fillText() calls
+    // don't dirty the main canvas used for the actual export.
+    const measureCanvas = document.createElement("canvas");
+    const measureCtx = measureCanvas.getContext("2d");
+    measureCtx.font = "12px Microsoft YaHei, sans-serif";
+    let measuredNoticeHeight = 0;
+    noticeItems.forEach((item) => {
+      measuredNoticeHeight = drawText(measureCtx, item, 0, measuredNoticeHeight + noticePadding, tableWidth - 16, noticeLineHeight);
+    });
+    // measuredNoticeHeight is the y offset (relative to notice start) where the next
+    // line after the last notice would begin. The last drawn text occupies
+    // [measuredNoticeHeight - lineHeight, measuredNoticeHeight - lineHeight + 12].
+    // Add a 28px bottom buffer so the last line has breathing room.
+
+    const height = totalRows * rowHeight + noticeTitleHeight + Math.max(measuredNoticeHeight, 0) + 28;
     canvas.width = tableWidth;
     canvas.height = height;
     const ctx = canvas.getContext("2d");
@@ -741,7 +795,11 @@
 
     let y = 0;
     cell(`物流方式：${state.logistics}`, 0, y, widths.slice(0, 5).reduce((a, b) => a + b, 0), rowHeight, "#fff200", "left");
-    cell(`送货方式：${state.delivery}`, widths.slice(0, 5).reduce((a, b) => a + b, 0), y, widths.slice(5).reduce((a, b) => a + b, 0), rowHeight, "#fff200", "right");
+    cell(`送货方式：${state.delivery}`, widths.slice(0, 5).reduce((a, b) => a + b, 0), y, widths.slice(5).reduce((a, b) => a + b, 0), rowHeight, "#fff200", "left");
+    y += rowHeight;
+
+    cell(`订单日期：${state.orderDate}`, 0, y, widths.slice(0, 5).reduce((a, b) => a + b, 0), rowHeight, "#fff200", "left");
+    cell(`业务负责人：${state.person}`, widths.slice(0, 5).reduce((a, b) => a + b, 0), y, widths.slice(5).reduce((a, b) => a + b, 0), rowHeight, "#fff200", "left");
     y += rowHeight;
 
     let x = 0;
@@ -762,9 +820,9 @@
     });
 
     [
-      ["合计（不含税）：", formatMoney(quote.subtotal)],
-      [`发票税金（${quote.taxRate}%）：`, formatMoney(quote.tax)],
-      ["含税报价：", formatMoney(quote.total)]
+      ["合计（未税金额）：", formatMoney(quote.subtotal)],
+      [`适用税额（${quote.taxRate}%）：`, formatMoney(quote.tax)],
+      ["含税总额：", formatMoney(quote.total)]
     ].forEach((row) => {
       cell(row[0], 0, y, tableWidth - widths[9], rowHeight, "", "right");
       cell(row[1], tableWidth - widths[9], y, widths[9], rowHeight);
@@ -819,6 +877,8 @@
           quoteType: state.quoteType,
           logistics: state.logistics,
           delivery: state.delivery,
+          orderDate: state.orderDate,
+          person: state.person,
           remark: state.remark,
           quote,
           noticeItems
@@ -996,6 +1056,14 @@
       state.taxText = event.target.value;
       renderSummary();
     });
+    el.orderDate.addEventListener("change", (event) => {
+      state.orderDate = event.target.value;
+      renderSummary();
+    });
+    el.person.addEventListener("input", (event) => {
+      state.person = event.target.value;
+      renderSummary();
+    });
     el.summaryRemark.addEventListener("input", (event) => {
       state.remark = event.target.value;
       renderSummary();
@@ -1024,6 +1092,8 @@
       logisticsSelect: document.getElementById("logisticsSelect"),
       deliverySelect: document.getElementById("deliverySelect"),
       taxSelect: document.getElementById("taxSelect"),
+      orderDate: document.getElementById("orderDate"),
+      person: document.getElementById("person"),
       summaryRemark: document.getElementById("summaryRemark"),
       quoteSheet: document.getElementById("quoteSheet"),
       noticeList: document.getElementById("noticeList"),

@@ -145,6 +145,42 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
+      "id": "dt-106-高遮盖内墙抗碱底漆",
+      "model": "DT-106",
+      "category": "底漆",
+      "name": "高遮盖内墙抗碱底漆",
+      "specs": [
+        "4.8KG",
+        "12KG"
+      ],
+      "specOptions": [
+        {
+          "spec": "4.8KG",
+          "workTimes": 1,
+          "coverage": 48,
+          "unit": "桶",
+          "dealerPrice": 84,
+          "costPerSquare": 1.75,
+          "remark": ""
+        },
+        {
+          "spec": "12KG",
+          "workTimes": 1,
+          "coverage": 120,
+          "unit": "桶",
+          "dealerPrice": 193,
+          "costPerSquare": 1.6083333333333334,
+          "remark": ""
+        }
+      ],
+      "workTimes": 1,
+      "coverage": 48,
+      "unit": "桶",
+      "dealerPrice": 84,
+      "costPerSquare": 1.75,
+      "remark": ""
+    },
+    {
       "id": "td-108-双组份含砂中涂底漆",
       "model": "TD-108",
       "category": "底漆",
@@ -1570,9 +1606,19 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微软瓷",
       "name": "微软瓷白漆",
       "specs": [
+        "5KG",
         "20KG"
       ],
       "specOptions": [
+        {
+          "spec": "5KG",
+          "workTimes": "2",
+          "coverage": "20",
+          "unit": "桶",
+          "dealerPrice": 180,
+          "costPerSquare": 9,
+          "remark": ""
+        },
         {
           "spec": "20KG",
           "workTimes": "2",
@@ -1584,10 +1630,10 @@ window.__QUOTE_CATALOGS__ = {
         }
       ],
       "workTimes": "2",
-      "coverage": "80",
+      "coverage": "20",
       "unit": "桶",
-      "dealerPrice": 660,
-      "costPerSquare": 8.25,
+      "dealerPrice": 180,
+      "costPerSquare": 9,
       "remark": ""
     },
     {
@@ -1596,9 +1642,19 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微软瓷",
       "name": "微软瓷清漆",
       "specs": [
+        "5KG",
         "20KG"
       ],
       "specOptions": [
+        {
+          "spec": "5KG",
+          "workTimes": "2",
+          "coverage": "20",
+          "unit": "桶",
+          "dealerPrice": 180,
+          "costPerSquare": 9,
+          "remark": ""
+        },
         {
           "spec": "20KG",
           "workTimes": "2",
@@ -1610,10 +1666,10 @@ window.__QUOTE_CATALOGS__ = {
         }
       ],
       "workTimes": "2",
-      "coverage": "80",
+      "coverage": "20",
       "unit": "桶",
-      "dealerPrice": 650,
-      "costPerSquare": 8.125,
+      "dealerPrice": 180,
+      "costPerSquare": 9,
       "remark": ""
     },
     {
@@ -4388,7 +4444,7 @@ window.__QUOTE_CATALOGS__ = {
     {
       "id": "dp-1021",
       "model": "DP-1021",
-      "category": "液态瓷砖",
+      "category": "液态陶泥",
       "name": "地砖填缝胶（AB组份）",
       "specs": ["1.2KG"],
       "specOptions": [{
@@ -4398,19 +4454,19 @@ window.__QUOTE_CATALOGS__ = {
         "unit": "组",
         "dealerPrice": 56,
         "costPerSquare": "",
-        "remark": "液态瓷砖"
+        "remark": "液态陶泥"
       }],
       "workTimes": 1,
       "coverage": "未提供",
       "unit": "组",
       "dealerPrice": 56,
       "costPerSquare": "",
-      "remark": "液态瓷砖"
+      "remark": "液态陶泥"
     },
     {
       "id": "dp-1022",
       "model": "DP-1022",
-      "category": "液态瓷砖",
+      "category": "液态陶泥",
       "name": "墙砖补缝膏（AB组份）",
       "specs": ["1.2KG"],
       "specOptions": [{
@@ -4420,20 +4476,20 @@ window.__QUOTE_CATALOGS__ = {
         "unit": "组",
         "dealerPrice": 56,
         "costPerSquare": "",
-        "remark": "液态瓷砖"
+        "remark": "液态陶泥"
       }],
       "workTimes": 1,
       "coverage": "未提供",
       "unit": "组",
       "dealerPrice": 56,
       "costPerSquare": "",
-      "remark": "液态瓷砖"
+      "remark": "液态陶泥"
     },
     {
       "id": "dp-1023",
       "model": "DP-1023",
-      "category": "液态瓷砖",
-      "name": "液态无缝瓷砖（AB组份）",
+      "category": "液态陶泥",
+      "name": "液态无缝陶泥（AB组份）",
       "specs": ["7KG"],
       "specOptions": [{
         "spec": "7KG",
@@ -4442,14 +4498,14 @@ window.__QUOTE_CATALOGS__ = {
         "unit": "组",
         "dealerPrice": 308,
         "costPerSquare": 88,
-        "remark": "液态瓷砖"
+        "remark": "液态陶泥"
       }],
       "workTimes": 1,
       "coverage": 3.5,
       "unit": "组",
       "dealerPrice": 308,
       "costPerSquare": 88,
-      "remark": "液态瓷砖"
+      "remark": "液态陶泥"
     }
   ],
   "channel": [
@@ -4595,6 +4651,42 @@ window.__QUOTE_CATALOGS__ = {
       "unit": "桶",
       "dealerPrice": 234,
       "costPerSquare": 9.36,
+      "remark": ""
+    },
+    {
+      "id": "dt-106-高遮盖内墙抗碱底漆",
+      "model": "DT-106",
+      "category": "底漆",
+      "name": "高遮盖内墙抗碱底漆",
+      "specs": [
+        "4.8KG",
+        "12KG"
+      ],
+      "specOptions": [
+        {
+          "spec": "4.8KG",
+          "workTimes": 1,
+          "coverage": 48,
+          "unit": "桶",
+          "dealerPrice": 105,
+          "costPerSquare": 2.1875,
+          "remark": ""
+        },
+        {
+          "spec": "12KG",
+          "workTimes": 1,
+          "coverage": 120,
+          "unit": "桶",
+          "dealerPrice": 241,
+          "costPerSquare": 2.0083333333333333,
+          "remark": ""
+        }
+      ],
+      "workTimes": 1,
+      "coverage": 48,
+      "unit": "桶",
+      "dealerPrice": 105,
+      "costPerSquare": 2.1875,
       "remark": ""
     },
     {
@@ -6023,9 +6115,19 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微软瓷",
       "name": "微软瓷白漆",
       "specs": [
+        "5KG",
         "20KG"
       ],
       "specOptions": [
+        {
+          "spec": "5KG",
+          "workTimes": "2",
+          "coverage": "20",
+          "unit": "桶",
+          "dealerPrice": 225,
+          "costPerSquare": 11.25,
+          "remark": ""
+        },
         {
           "spec": "20KG",
           "workTimes": "2",
@@ -6037,10 +6139,10 @@ window.__QUOTE_CATALOGS__ = {
         }
       ],
       "workTimes": "2",
-      "coverage": "80",
+      "coverage": "20",
       "unit": "桶",
-      "dealerPrice": 825,
-      "costPerSquare": 10.3125,
+      "dealerPrice": 225,
+      "costPerSquare": 11.25,
       "remark": ""
     },
     {
@@ -6049,9 +6151,19 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微软瓷",
       "name": "微软瓷清漆",
       "specs": [
+        "5KG",
         "20KG"
       ],
       "specOptions": [
+        {
+          "spec": "5KG",
+          "workTimes": "2",
+          "coverage": "20",
+          "unit": "桶",
+          "dealerPrice": 225,
+          "costPerSquare": 11.25,
+          "remark": ""
+        },
         {
           "spec": "20KG",
           "workTimes": "2",
@@ -6063,10 +6175,10 @@ window.__QUOTE_CATALOGS__ = {
         }
       ],
       "workTimes": "2",
-      "coverage": "80",
+      "coverage": "20",
       "unit": "桶",
-      "dealerPrice": 813,
-      "costPerSquare": 10.1625,
+      "dealerPrice": 225,
+      "costPerSquare": 11.25,
       "remark": ""
     },
     {
@@ -8841,7 +8953,7 @@ window.__QUOTE_CATALOGS__ = {
     {
       "id": "dp-1021",
       "model": "DP-1021",
-      "category": "液态瓷砖",
+      "category": "液态陶泥",
       "name": "地砖填缝胶（AB组份）",
       "specs": ["1.2KG"],
       "specOptions": [{
@@ -8851,19 +8963,19 @@ window.__QUOTE_CATALOGS__ = {
         "unit": "组",
         "dealerPrice": 67,
         "costPerSquare": "",
-        "remark": "液态瓷砖"
+        "remark": "液态陶泥"
       }],
       "workTimes": 1,
       "coverage": "未提供",
       "unit": "组",
       "dealerPrice": 67,
       "costPerSquare": "",
-      "remark": "液态瓷砖"
+      "remark": "液态陶泥"
     },
     {
       "id": "dp-1022",
       "model": "DP-1022",
-      "category": "液态瓷砖",
+      "category": "液态陶泥",
       "name": "墙砖补缝膏（AB组份）",
       "specs": ["1.2KG"],
       "specOptions": [{
@@ -8873,20 +8985,20 @@ window.__QUOTE_CATALOGS__ = {
         "unit": "组",
         "dealerPrice": 67,
         "costPerSquare": "",
-        "remark": "液态瓷砖"
+        "remark": "液态陶泥"
       }],
       "workTimes": 1,
       "coverage": "未提供",
       "unit": "组",
       "dealerPrice": 67,
       "costPerSquare": "",
-      "remark": "液态瓷砖"
+      "remark": "液态陶泥"
     },
     {
       "id": "dp-1023",
       "model": "DP-1023",
-      "category": "液态瓷砖",
-      "name": "液态无缝瓷砖（AB组份）",
+      "category": "液态陶泥",
+      "name": "液态无缝陶泥（AB组份）",
       "specs": ["7KG"],
       "specOptions": [{
         "spec": "7KG",
@@ -8895,14 +9007,14 @@ window.__QUOTE_CATALOGS__ = {
         "unit": "组",
         "dealerPrice": 370,
         "costPerSquare": 105.71428571428571,
-        "remark": "液态瓷砖"
+        "remark": "液态陶泥"
       }],
       "workTimes": 1,
       "coverage": 3.5,
       "unit": "组",
       "dealerPrice": 370,
       "costPerSquare": 105.71428571428571,
-      "remark": "液态瓷砖"
+      "remark": "液态陶泥"
     }
   ]
 };

@@ -512,7 +512,8 @@ select {
 .sheet-top,
 .sheet-row,
 .sheet-total,
-.sheet-remark {
+.sheet-remark,
+.sheet-row.sheet-meta {
   display: grid;
   grid-template-columns: 95px 120px 240px 110px 88px 130px 70px 70px 120px 130px;
 }
@@ -535,6 +536,34 @@ select {
   font-weight: 900;
 }
 
+.sheet-row.sheet-meta {
+  background: #fff200;
+  font-weight: 900;
+}
+
+.sheet-row.sheet-meta .meta-left {
+  grid-column: 1 / span 5;
+  background: #fff200;
+  text-align: left;
+  padding: 7px 8px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  min-height: 34px;
+  overflow-wrap: anywhere;
+  display: block;
+}
+
+.sheet-row.sheet-meta .meta-right {
+  grid-column: 6 / span 5;
+  background: #fff200;
+  text-align: left;
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--line);
+  min-height: 34px;
+  overflow-wrap: anywhere;
+  display: block;
+}
+
 .sheet-top .logistics {
   grid-column: 1 / span 5;
   text-align: left;
@@ -542,7 +571,7 @@ select {
 
 .sheet-top .delivery {
   grid-column: 6 / span 5;
-  text-align: right;
+  text-align: left;
 }
 
 .sheet-head span {
@@ -591,6 +620,48 @@ select {
   font: inherit;
   color: var(--ink);
   background: #fff;
+}
+
+.summary-date-control {
+  min-width: 170px;
+}
+
+.summary-date-control input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+}
+
+.summary-date-control input:focus {
+  outline: none;
+  border-color: var(--brand, #0f766e);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
+}
+
+.summary-person-control {
+  min-width: 180px;
+}
+
+.summary-person-control input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+}
+
+.summary-person-control input:focus {
+  outline: none;
+  border-color: var(--brand, #0f766e);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
 }
 
 .summary-export-actions {
@@ -745,8 +816,16 @@ select {
   }
 
   .summary-toolbar label:nth-of-type(4) {
-    grid-column: 1 / span 2;
     grid-row: 4;
+  }
+
+  .summary-toolbar label:nth-of-type(5) {
+    grid-row: 5;
+  }
+
+  .summary-toolbar label:nth-of-type(6) {
+    grid-column: 1 / span 2;
+    grid-row: 6;
   }
 
   .summary-toolbar select {
@@ -756,7 +835,7 @@ select {
 
   .summary-toolbar .summary-export-actions {
     grid-column: 1 / span 2;
-    grid-row: 5;
+    grid-row: 7;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;

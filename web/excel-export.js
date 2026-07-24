@@ -45,12 +45,14 @@
       quoteType,
       logistics: input.logistics || "",
       delivery: input.delivery || "",
+      orderDate: input.orderDate || "",
+      person: input.person || "",
       columns: columnLabels[quoteType].slice(),
       rows: (quote.rows || []).map((item) => columnKeys.map((key) => item[key])),
       totals: [
-        ["合计（不含税）：", Number(quote.subtotal) || 0],
-        [`发票税金（${Number(quote.taxRate) || 0}%）：`, Number(quote.tax) || 0],
-        ["含税报价：", Number(quote.total) || 0]
+        ["合计（未税金额）：", Number(quote.subtotal) || 0],
+        [`适用税额（${Number(quote.taxRate) || 0}%）：`, Number(quote.tax) || 0],
+        ["含税总额：", Number(quote.total) || 0]
       ],
       remark: input.remark || "",
       notices: (input.noticeItems || []).slice()
@@ -114,17 +116,24 @@
     worksheet.getCell("A1").value = `物流方式：${model.logistics}`;
     worksheet.getCell("F1").value = `送货方式：${model.delivery}`;
     worksheet.getRow(1).height = 26;
-    worksheet.getRow(2).values = model.columns;
-    worksheet.getRow(2).height = 28;
 
-    let currentRow = 3;
+    worksheet.mergeCells("A2:E2");
+    worksheet.getCell("A2").value = `订单日期：${model.orderDate}`;
+    worksheet.mergeCells("F2:J2");
+    worksheet.getCell("F2").value = `业务负责人：${model.person}`;
+    worksheet.getRow(2).height = 26;
+
+    worksheet.getRow(3).values = model.columns;
+    worksheet.getRow(3).height = 28;
+
+    let currentRow = 4;
     model.rows.forEach((values) => {
       const row = worksheet.getRow(currentRow);
       row.values = values;
       row.height = 26;
       currentRow += 1;
     });
-    const detailStartRow = 3;
+    const detailStartRow = 4;
     const detailEndRow = currentRow - 1;
 
     model.totals.forEach(([label, value]) => {
@@ -161,12 +170,12 @@
     const grayFill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFF3F4F6" } };
     const greenFill = { type: "pattern", pattern: "solid", fgColor: { argb: "FF10B981" } };
 
-    styleCells(worksheet, 1, 1, {
+    styleCells(worksheet, 1, 2, {
       fill: yellowFill,
       font: { name: "Microsoft YaHei", size: 11, bold: true },
       alignment: { horizontal: "left" }
     });
-    styleCells(worksheet, 2, 2, {
+    styleCells(worksheet, 3, 3, {
       fill: grayFill,
       font: { name: "Microsoft YaHei", size: 10, bold: true }
     });
