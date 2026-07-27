@@ -57,6 +57,7 @@
   const CUSTOM_TINTING_PRODUCT_ID = "custom-tinting-paste";
   const CUSTOM_TINTING_FEE_ID = "fee-custom-tinting";
   const EXCEL_PROTECTION_PASSWORD = "XCL995511";
+  const CATEGORY_ORDER_STORAGE_KEY = "quoteAssistant.categoryOrder.v1";
   const CUSTOM_TINTING_FEE_ITEM = {
     id: CUSTOM_TINTING_FEE_ID,
     model: "FEE-001",
@@ -102,7 +103,8 @@
     taxText: taxOptions[0],
     orderDate: "",
     person: "",
-    remark: ""
+    remark: "",
+    categoryOrder: loadCategoryOrder()
   };
 
   const el = {};
@@ -238,6 +240,56 @@
       groups[category].push(product);
       return groups;
     }, {});
+  }
+
+  function loadCategoryOrder() {
+    try {
+      const stored = localStorage.getItem(CATEGORY_ORDER_STORAGE_KEY);
+      const parsed = JSON.parse(stored || "[]");
+      return Array.isArray(parsed) ? parsed.filter(Boolean) : [];
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function saveCategoryOrder() {
+    try {
+      localStorage.setItem(CATEGORY_ORDER_STORAGE_KEY, JSON.stringify(state.categoryOrder));
+    } catch (error) {
+      // localStorage can fail in private browsing; ordering still works for this session.
+    }
+  }
+
+  function getOrderedCategories(groups) {
+    const categories = Object.keys(groups);
+    const known = state.categoryOrder.filter((category) => categories.includes(category));
+    const fresh = categories.filter((category) => !known.includes(category));
+    return known.concat(fresh);
+  }
+
+  function moveCategory(category, direction) {
+    const allGroups = groupByCategory(buildHomeCards());
+    const categories = getOrderedCategories(allGroups);
+    const fromIndex = categories.indexOf(category);
+    const toIndex = fromIndex + direction;
+    if (fromIndex < 0 || toIndex < 0 || toIndex >= categories.length) {
+      return;
+    }
+    categories.splice(fromIndex, 1);
+    categories.splice(toIndex, 0, category);
+    state.categoryOrder = categories;
+    saveCategoryOrder();
+    renderHome();
+    renderQuote();
+  }
+
+  function renderCategoryOrderControls(category) {
+    return `
+      <span class="category-order-controls">
+        <button class="category-order-btn" type="button" data-category-move="${escapeHtml(category)}" data-category-direction="-1" title="Move up">↑</button>
+        <button class="category-order-btn" type="button" data-category-move="${escapeHtml(category)}" data-category-direction="1" title="Move down">↓</button>
+      </span>
+    `;
   }
 
   function normalizeProductName(name) {
@@ -450,12 +502,16 @@
   function renderHome() {
     const products = filterProducts(buildHomeCards(), state.homeKeyword);
     const groups = groupByCategory(products);
-    el.homeCategories.innerHTML = Object.keys(groups).map((category) => `
+    const categories = getOrderedCategories(groups);
+    el.homeCategories.innerHTML = categories.map((category) => `
       <article class="category-panel">
+        <div class="category-header">
         <button class="category-toggle" data-category-toggle>
           <strong>${escapeHtml(category)}</strong>
           <span>${groups[category].length} 个产品</span>
         </button>
+          ${renderCategoryOrderControls(category)}
+        </div>
         <div class="category-body">
           ${groups[category].map(renderHomeProduct).join("")}
         </div>
@@ -491,7 +547,7 @@
   function renderQuote() {
     const products = buildQuoteCards();
     const groups = groupByCategory(products);
-    const categories = Object.keys(groups);
+    const categories = getOrderedCategories(groups);
     el.selectedCount.textContent = `已选 ${state.quoteItems.length} 项`;
     el.quoteCategoryTabs.innerHTML = categories.map((category) => `
       <button class="quote-category-tab" data-quote-category-target="${escapeHtml(category)}">
@@ -504,10 +560,13 @@
       }
       return `
         <article class="quote-category-panel ${quoteOpenCategories[category] ? "is-open" : ""}" data-quote-category="${escapeHtml(category)}">
+          <div class="quote-category-header">
           <button class="quote-category-toggle" data-quote-category-toggle="${escapeHtml(category)}">
             <strong>${escapeHtml(category)}</strong>
             <span>${groups[category].length} 个产品</span>
           </button>
+            ${renderCategoryOrderControls(category)}
+          </div>
           <div class="quote-category-body">
             ${groups[category].map(renderQuoteCard).join("")}
           </div>
@@ -932,6 +991,13 @@
     });
 
     el.homeCategories.addEventListener("click", (event) => {
+      const moveButton = event.target.closest("[data-category-move]");
+      if (moveButton) {
+        event.preventDefault();
+        event.stopPropagation();
+        moveCategory(moveButton.dataset.categoryMove, Number(moveButton.dataset.categoryDirection));
+        return;
+      }
       const toggle = event.target.closest("[data-category-toggle]");
       if (toggle) {
         toggle.closest(".category-panel").classList.toggle("is-open");
@@ -954,6 +1020,13 @@
     });
 
     el.quoteProducts.addEventListener("click", (event) => {
+      const moveButton = event.target.closest("[data-category-move]");
+      if (moveButton) {
+        event.preventDefault();
+        event.stopPropagation();
+        moveCategory(moveButton.dataset.categoryMove, Number(moveButton.dataset.categoryDirection));
+        return;
+      }
       const toggle = event.target.closest("[data-quote-category-toggle]");
       if (toggle) {
         const category = toggle.dataset.quoteCategoryToggle;

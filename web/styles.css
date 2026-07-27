@@ -217,14 +217,23 @@ select {
   border-radius: 8px;
 }
 
+.category-header,
+.quote-category-header {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
 .quote-category-toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
   min-height: 50px;
   padding: 0 16px;
-  background: rgba(255, 255, 255, 0.94);
+  background: transparent;
   color: var(--ink);
   text-align: left;
   font-weight: 900;
@@ -249,13 +258,38 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
   min-height: 48px;
   padding: 0 16px;
-  background: rgba(255, 255, 255, 0.92);
+  background: transparent;
   color: var(--ink);
   text-align: left;
   font-weight: 800;
+}
+
+.category-order-controls {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 4px;
+  padding-right: 10px;
+}
+
+.category-order-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(15, 118, 110, 0.16);
+  border-radius: 8px;
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--teal);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.category-order-btn:active {
+  transform: translateY(1px);
 }
 
 .category-toggle span:last-child {
