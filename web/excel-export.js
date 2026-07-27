@@ -55,6 +55,7 @@
         ["含税总额：", Number(quote.total) || 0]
       ],
       remark: input.remark || "",
+      shippingAddress: input.shippingAddress || "",
       notices: (input.noticeItems || []).slice()
     };
   }
@@ -152,6 +153,13 @@
     const remarkRow = currentRow;
     currentRow += 1;
 
+    worksheet.getCell(`A${currentRow}`).value = "收货地址：";
+    worksheet.mergeCells(`B${currentRow}:J${currentRow}`);
+    worksheet.getCell(`B${currentRow}`).value = model.shippingAddress;
+    worksheet.getRow(currentRow).height = Math.max(28, model.shippingAddress ? 42 : 28);
+    const addressRow = currentRow;
+    currentRow += 1;
+
     worksheet.mergeCells(`A${currentRow}:J${currentRow}`);
     worksheet.getCell(`A${currentRow}`).value = "注意事项";
     worksheet.getRow(currentRow).height = 28;
@@ -192,12 +200,14 @@
         worksheet.getCell(`J${rowNumber}`).numFmt = "¥0.00";
       }
     }
-    styleCells(worksheet, detailEndRow + 1, remarkRow, {
+    styleCells(worksheet, detailEndRow + 1, addressRow, {
       font: { name: "Microsoft YaHei", size: 10 },
       alignment: { horizontal: "right" }
     });
     worksheet.getCell(`A${remarkRow}`).font = { name: "Microsoft YaHei", size: 10, bold: true };
     worksheet.getCell(`B${remarkRow}`).alignment = { vertical: "middle", horizontal: "left", wrapText: true };
+    worksheet.getCell(`A${addressRow}`).font = { name: "Microsoft YaHei", size: 10, bold: true };
+    worksheet.getCell(`B${addressRow}`).alignment = { vertical: "middle", horizontal: "left", wrapText: true };
     styleCells(worksheet, noticeTitleRow, noticeTitleRow, {
       font: { name: "Microsoft YaHei", size: 14, bold: true },
       alignment: { horizontal: "left" }

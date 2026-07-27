@@ -13,6 +13,7 @@ const input = {
   logistics: "普通物流(运费到付）",
   delivery: "物流点自提",
   remark: "测试备注",
+  shippingAddress: "测试收货地址",
   quote: {
     rows: [{
       model: "DT-103",
@@ -41,6 +42,7 @@ const input = {
   assert.strictEqual(model.rows[0][0], "DT-103");
   assert.deepStrictEqual(model.totals[2], ["含税报价：", 169.68]);
   assert.strictEqual(model.remark, "测试备注");
+  assert.strictEqual(model.shippingAddress, "测试收货地址");
   assert.deepStrictEqual(model.notices, ["1、测试注意事项"]);
   const dealerModel = buildExcelQuoteModel(Object.assign({}, input, { quoteType: "dealer" }));
   assert.strictEqual(dealerModel.columns[8], "经销商单价");

@@ -658,11 +658,13 @@ select {
   text-align: left;
 }
 
-.summary-remark-control {
+.summary-remark-control,
+.summary-address-control {
   min-width: 220px;
 }
 
-.summary-remark-control textarea {
+.summary-remark-control textarea,
+.summary-address-control textarea {
   width: 100%;
   min-height: 44px;
   resize: vertical;
@@ -672,6 +674,13 @@ select {
   font: inherit;
   color: var(--ink);
   background: #fff;
+}
+
+.summary-remark-control textarea:focus,
+.summary-address-control textarea:focus {
+  outline: none;
+  border-color: var(--brand, #0f766e);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
 }
 
 .summary-date-control {
@@ -880,6 +889,11 @@ select {
     grid-row: 6;
   }
 
+  .summary-toolbar label:nth-of-type(7) {
+    grid-column: 1 / span 2;
+    grid-row: 7;
+  }
+
   .summary-toolbar select {
     width: 100%;
     min-width: 0;
@@ -887,7 +901,7 @@ select {
 
   .summary-toolbar .summary-export-actions {
     grid-column: 1 / span 2;
-    grid-row: 7;
+    grid-row: 8;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;

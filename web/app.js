@@ -104,6 +104,7 @@
     orderDate: "",
     person: "",
     remark: "",
+    shippingAddress: "",
     categoryOrder: loadCategoryOrder()
   };
 
@@ -826,6 +827,7 @@
       <div class="sheet-total"><span class="label">适用税额（${quote.taxRate}%）：</span><span class="value">${formatMoney(quote.tax)}</span></div>
       <div class="sheet-total"><span class="label"><strong>含税总额：</strong></span><span class="value">${formatMoney(quote.total)}</span></div>
       <div class="sheet-remark"><span class="label">备注：</span><span class="value">${escapeHtml(state.remark)}</span></div>
+      <div class="sheet-remark"><span class="label">收货地址：</span><span class="value">${escapeHtml(state.shippingAddress)}</span></div>
     `;
   }
 
@@ -903,7 +905,7 @@
     const noticeTitleHeight = 38;
     const noticeLineHeight = 18;
     const noticePadding = 5;
-    const totalRows = 1 + 1 + quote.rows.length + 4;
+    const totalRows = 1 + 1 + 1 + quote.rows.length + 3 + 2;
 
     // Pre-measure notice items so 2-line / 3-line notices don't overflow the canvas.
     // Use a dedicated measurement canvas so drawText's internal fillText() calls
@@ -984,6 +986,10 @@
     cell(state.remark, widths[0], y, tableWidth - widths[0], rowHeight, "", "left");
     y += rowHeight;
 
+    cell("收货地址：", 0, y, widths[0], rowHeight, "", "center");
+    cell(state.shippingAddress, widths[0], y, tableWidth - widths[0], rowHeight, "", "left");
+    y += rowHeight;
+
     ctx.textAlign = "left";
     ctx.textBaseline = "top";
     ctx.font = "bold 18px Microsoft YaHei, sans-serif";
@@ -1031,6 +1037,7 @@
           orderDate: state.orderDate,
           person: state.person,
           remark: state.remark,
+          shippingAddress: state.shippingAddress,
           quote,
           noticeItems
         },
@@ -1232,6 +1239,10 @@
       state.remark = event.target.value;
       renderSummary();
     });
+    el.shippingAddress.addEventListener("input", (event) => {
+      state.shippingAddress = event.target.value;
+      renderSummary();
+    });
     el.exportImageBtn.addEventListener("click", exportQuoteImage);
     el.exportExcelBtn.addEventListener("click", exportQuoteExcel);
     el.closeExportPreview.addEventListener("click", closeExportPreview);
@@ -1259,6 +1270,7 @@
       orderDate: document.getElementById("orderDate"),
       person: document.getElementById("person"),
       summaryRemark: document.getElementById("summaryRemark"),
+      shippingAddress: document.getElementById("shippingAddress"),
       quoteSheet: document.getElementById("quoteSheet"),
       noticeList: document.getElementById("noticeList"),
       exportImageBtn: document.getElementById("exportImageBtn"),
