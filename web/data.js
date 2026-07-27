@@ -5563,11 +5563,11 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微彩釉",
       "name": "微彩釉",
       "specs": [
-        "6"
+        "6KG"
       ],
       "specOptions": [
         {
-          "spec": "6",
+          "spec": "6KG",
           "workTimes": 2,
           "coverage": 7.5,
           "unit": "组",
