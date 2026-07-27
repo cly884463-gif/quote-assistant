@@ -272,24 +272,42 @@ select {
   display: flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 4px;
   padding-right: 10px;
 }
 
-.category-order-btn {
-  width: 34px;
-  height: 34px;
+.category-drag-handle {
+  width: 38px;
+  height: 38px;
   border: 1px solid rgba(15, 118, 110, 0.16);
   border-radius: 8px;
   background: rgba(15, 118, 110, 0.08);
   color: var(--teal);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 900;
   line-height: 1;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
 }
 
-.category-order-btn:active {
-  transform: translateY(1px);
+.category-drag-handle:active,
+.is-category-dragging .category-drag-handle {
+  cursor: grabbing;
+}
+
+.category-panel.is-dragging,
+.quote-category-panel.is-dragging {
+  opacity: 0.55;
+}
+
+.category-panel.is-drag-over,
+.quote-category-panel.is-drag-over {
+  box-shadow: inset 0 3px 0 var(--teal), 0 8px 24px rgba(22, 31, 28, 0.08);
+}
+
+.category-panel.is-drag-after,
+.quote-category-panel.is-drag-after {
+  box-shadow: inset 0 -3px 0 var(--teal), 0 8px 24px rgba(22, 31, 28, 0.08);
 }
 
 .category-toggle span:last-child {

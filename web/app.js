@@ -109,6 +109,15 @@
 
   const el = {};
   const quoteOpenCategories = {};
+  const categoryDragState = {
+    active: false,
+    category: "",
+    targetCategory: "",
+    placeAfter: false,
+    panel: null,
+    targetPanel: null,
+    suppressClickUntil: 0
+  };
 
   function escapeHtml(value) {
     return String(value == null ? "" : value)
@@ -267,16 +276,17 @@
     return known.concat(fresh);
   }
 
-  function moveCategory(category, direction) {
+  function reorderCategory(category, targetCategory, placeAfter) {
     const allGroups = groupByCategory(buildHomeCards());
     const categories = getOrderedCategories(allGroups);
     const fromIndex = categories.indexOf(category);
-    const toIndex = fromIndex + direction;
-    if (fromIndex < 0 || toIndex < 0 || toIndex >= categories.length) {
+    const targetIndex = categories.indexOf(targetCategory);
+    if (fromIndex < 0 || targetIndex < 0 || category === targetCategory) {
       return;
     }
     categories.splice(fromIndex, 1);
-    categories.splice(toIndex, 0, category);
+    const adjustedTargetIndex = categories.indexOf(targetCategory);
+    categories.splice(adjustedTargetIndex + (placeAfter ? 1 : 0), 0, category);
     state.categoryOrder = categories;
     saveCategoryOrder();
     renderHome();
@@ -290,6 +300,88 @@
         <button class="category-order-btn" type="button" data-category-move="${escapeHtml(category)}" data-category-direction="1" title="Move down">↓</button>
       </span>
     `;
+  }
+
+  function renderCategoryOrderControls(category) {
+    return `
+      <span class="category-order-controls">
+        <button class="category-drag-handle" type="button" data-category-drag-handle data-category-name="${escapeHtml(category)}" title="Drag to reorder">≡</button>
+      </span>
+    `;
+  }
+
+  function clearCategoryDragTarget() {
+    if (categoryDragState.targetPanel) {
+      categoryDragState.targetPanel.classList.remove("is-drag-over", "is-drag-after");
+    }
+    categoryDragState.targetPanel = null;
+    categoryDragState.targetCategory = "";
+    categoryDragState.placeAfter = false;
+  }
+
+  function handleCategoryDragStart(event) {
+    const handle = event.target.closest("[data-category-drag-handle]");
+    if (!handle || event.button > 0) {
+      return;
+    }
+    const panel = handle.closest("[data-category-name]");
+    if (!panel) {
+      return;
+    }
+    event.preventDefault();
+    categoryDragState.active = true;
+    categoryDragState.category = panel.dataset.categoryName;
+    categoryDragState.panel = panel;
+    panel.classList.add("is-dragging");
+    document.body.classList.add("is-category-dragging");
+    if (handle.setPointerCapture) {
+      handle.setPointerCapture(event.pointerId);
+    }
+  }
+
+  function handleCategoryDragMove(event) {
+    if (!categoryDragState.active) {
+      return;
+    }
+    event.preventDefault();
+    const target = document.elementFromPoint(event.clientX, event.clientY);
+    const panel = target && target.closest("[data-category-name]");
+    if (!panel || panel === categoryDragState.panel) {
+      clearCategoryDragTarget();
+      return;
+    }
+    const rect = panel.getBoundingClientRect();
+    const placeAfter = event.clientY > rect.top + rect.height / 2;
+    if (categoryDragState.targetPanel !== panel) {
+      clearCategoryDragTarget();
+      categoryDragState.targetPanel = panel;
+    }
+    categoryDragState.targetCategory = panel.dataset.categoryName;
+    categoryDragState.placeAfter = placeAfter;
+    panel.classList.toggle("is-drag-after", placeAfter);
+    panel.classList.toggle("is-drag-over", !placeAfter);
+  }
+
+  function handleCategoryDragEnd() {
+    if (!categoryDragState.active) {
+      return;
+    }
+    const sourcePanel = categoryDragState.panel;
+    const category = categoryDragState.category;
+    const targetCategory = categoryDragState.targetCategory;
+    const placeAfter = categoryDragState.placeAfter;
+    if (sourcePanel) {
+      sourcePanel.classList.remove("is-dragging");
+    }
+    clearCategoryDragTarget();
+    categoryDragState.active = false;
+    categoryDragState.category = "";
+    categoryDragState.panel = null;
+    categoryDragState.suppressClickUntil = Date.now() + 350;
+    document.body.classList.remove("is-category-dragging");
+    if (targetCategory) {
+      reorderCategory(category, targetCategory, placeAfter);
+    }
   }
 
   function normalizeProductName(name) {
@@ -504,7 +596,7 @@
     const groups = groupByCategory(products);
     const categories = getOrderedCategories(groups);
     el.homeCategories.innerHTML = categories.map((category) => `
-      <article class="category-panel">
+      <article class="category-panel" data-category-name="${escapeHtml(category)}">
         <div class="category-header">
         <button class="category-toggle" data-category-toggle>
           <strong>${escapeHtml(category)}</strong>
@@ -559,7 +651,7 @@
         quoteOpenCategories[category] = false;
       }
       return `
-        <article class="quote-category-panel ${quoteOpenCategories[category] ? "is-open" : ""}" data-quote-category="${escapeHtml(category)}">
+        <article class="quote-category-panel ${quoteOpenCategories[category] ? "is-open" : ""}" data-quote-category="${escapeHtml(category)}" data-category-name="${escapeHtml(category)}">
           <div class="quote-category-header">
           <button class="quote-category-toggle" data-quote-category-toggle="${escapeHtml(category)}">
             <strong>${escapeHtml(category)}</strong>
@@ -991,11 +1083,8 @@
     });
 
     el.homeCategories.addEventListener("click", (event) => {
-      const moveButton = event.target.closest("[data-category-move]");
-      if (moveButton) {
+      if (Date.now() < categoryDragState.suppressClickUntil) {
         event.preventDefault();
-        event.stopPropagation();
-        moveCategory(moveButton.dataset.categoryMove, Number(moveButton.dataset.categoryDirection));
         return;
       }
       const toggle = event.target.closest("[data-category-toggle]");
@@ -1003,6 +1092,7 @@
         toggle.closest(".category-panel").classList.toggle("is-open");
       }
     });
+    el.homeCategories.addEventListener("pointerdown", handleCategoryDragStart);
 
     el.quoteCategoryTabs.addEventListener("click", (event) => {
       const button = event.target.closest("[data-quote-category-target]");
@@ -1020,11 +1110,8 @@
     });
 
     el.quoteProducts.addEventListener("click", (event) => {
-      const moveButton = event.target.closest("[data-category-move]");
-      if (moveButton) {
+      if (Date.now() < categoryDragState.suppressClickUntil) {
         event.preventDefault();
-        event.stopPropagation();
-        moveCategory(moveButton.dataset.categoryMove, Number(moveButton.dataset.categoryDirection));
         return;
       }
       const toggle = event.target.closest("[data-quote-category-toggle]");
@@ -1034,6 +1121,10 @@
         toggle.closest(".quote-category-panel").classList.toggle("is-open", quoteOpenCategories[category]);
       }
     });
+    el.quoteProducts.addEventListener("pointerdown", handleCategoryDragStart);
+    document.addEventListener("pointermove", handleCategoryDragMove);
+    document.addEventListener("pointerup", handleCategoryDragEnd);
+    document.addEventListener("pointercancel", handleCategoryDragEnd);
 
     el.quoteProducts.addEventListener("change", (event) => {
       const card = event.target.closest(".quote-card");
