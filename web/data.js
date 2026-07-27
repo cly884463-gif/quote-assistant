@@ -4302,12 +4302,12 @@ window.__QUOTE_CATALOGS__ = {
         "面釉主漆2.4KG配套",
         "面釉主漆5KG配套",
         "面釉主漆18KG配套",
-        "清瓷水漆4.8KG配套",
-        "清瓷水漆20KG配套",
+        "肤感清釉4.8KG配套",
+        "肤感清釉20KG配套",
         "微瓷釉2.4KG配套",
         "微瓷釉5KG配套",
         "微瓷釉18KG配套",
-        "金刚陶泥/陶砂25KG配套"
+        "微陶泥/陶砂25KG配套"
       ],
       "allowCustomPrice": true,
       "autoFee": {
@@ -4351,21 +4351,21 @@ window.__QUOTE_CATALOGS__ = {
           "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "清瓷水漆4.8KG配套",
+          "spec": "肤感清釉4.8KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "清瓷水漆4.8KG配套",
+          "packageSpec": "肤感清釉4.8KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "清瓷水漆20KG配套",
+          "spec": "肤感清釉20KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "清瓷水漆20KG配套",
+          "packageSpec": "肤感清釉20KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "特调色浆，价格按实际填写"
@@ -4401,11 +4401,11 @@ window.__QUOTE_CATALOGS__ = {
           "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "金刚陶泥/陶砂25KG配套",
+          "spec": "微陶泥/陶砂25KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "金刚陶泥/陶砂25KG配套",
+          "packageSpec": "微陶泥/陶砂25KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "特调色浆，价格按实际填写"
@@ -4414,7 +4414,7 @@ window.__QUOTE_CATALOGS__ = {
       "workTimes": "",
       "coverage": "",
       "unit": "瓶",
-      "packageSpec": "面釉主漆2.4KG配套/面釉主漆5KG配套/面釉主漆18KG配套/清瓷水漆4.8KG配套/清瓷水漆20KG配套/微瓷釉2.4KG配套/微瓷釉5KG配套/微瓷釉18KG配套/金刚陶泥/陶砂25KG配套",
+      "packageSpec": "面釉主漆2.4KG配套/面釉主漆5KG配套/面釉主漆18KG配套/肤感清釉4.8KG配套/肤感清釉20KG配套/微瓷釉2.4KG配套/微瓷釉5KG配套/微瓷釉18KG配套/微陶泥/陶砂25KG配套",
       "dealerPrice": "",
       "costPerSquare": "",
       "remark": "特调色浆，价格按实际填写"
@@ -8877,12 +8877,12 @@ window.__QUOTE_CATALOGS__ = {
         "面釉主漆2.4KG配套",
         "面釉主漆5KG配套",
         "面釉主漆18KG配套",
-        "清瓷水漆4.8KG配套",
-        "清瓷水漆20KG配套",
+        "肤感清釉4.8KG配套",
+        "肤感清釉20KG配套",
         "微瓷釉2.4KG配套",
         "微瓷釉5KG配套",
         "微瓷釉18KG配套",
-        "金刚陶泥/陶砂25KG配套"
+        "微陶泥/陶砂25KG配套"
       ],
       "allowCustomPrice": true,
       "autoFee": {
@@ -8926,21 +8926,21 @@ window.__QUOTE_CATALOGS__ = {
           "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "清瓷水漆4.8KG配套",
+          "spec": "肤感清釉4.8KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "清瓷水漆4.8KG配套",
+          "packageSpec": "肤感清釉4.8KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "清瓷水漆20KG配套",
+          "spec": "肤感清釉20KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "清瓷水漆20KG配套",
+          "packageSpec": "肤感清釉20KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "特调色浆，价格按实际填写"
@@ -8976,11 +8976,11 @@ window.__QUOTE_CATALOGS__ = {
           "remark": "特调色浆，价格按实际填写"
         },
         {
-          "spec": "金刚陶泥/陶砂25KG配套",
+          "spec": "微陶泥/陶砂25KG配套",
           "workTimes": "",
           "coverage": "",
           "unit": "瓶",
-          "packageSpec": "金刚陶泥/陶砂25KG配套",
+          "packageSpec": "微陶泥/陶砂25KG配套",
           "dealerPrice": "",
           "costPerSquare": "",
           "remark": "特调色浆，价格按实际填写"
@@ -8989,7 +8989,7 @@ window.__QUOTE_CATALOGS__ = {
       "workTimes": "",
       "coverage": "",
       "unit": "瓶",
-      "packageSpec": "面釉主漆2.4KG配套/面釉主漆5KG配套/面釉主漆18KG配套/清瓷水漆4.8KG配套/清瓷水漆20KG配套/微瓷釉2.4KG配套/微瓷釉5KG配套/微瓷釉18KG配套/金刚陶泥/陶砂25KG配套",
+      "packageSpec": "面釉主漆2.4KG配套/面釉主漆5KG配套/面釉主漆18KG配套/肤感清釉4.8KG配套/肤感清釉20KG配套/微瓷釉2.4KG配套/微瓷釉5KG配套/微瓷釉18KG配套/微陶泥/陶砂25KG配套",
       "dealerPrice": "",
       "costPerSquare": "",
       "remark": "特调色浆，价格按实际填写"
