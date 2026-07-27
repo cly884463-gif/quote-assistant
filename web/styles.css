@@ -492,6 +492,10 @@ select {
   gap: 10px;
 }
 
+.aggregate-choice-grid.is-single {
+  grid-template-columns: 1fr;
+}
+
 .aggregate-choice-control {
   display: grid;
   gap: 6px;

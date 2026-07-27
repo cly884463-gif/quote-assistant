@@ -62,6 +62,10 @@
     "XCL001", "XCL002", "XCL003", "XCL004", "XCL005", "XCL006",
     "XCL007", "XCL008", "XCL009", "XCL010", "XCL011", "XCL012"
   ];
+  const PRODUCT_COLOR_OPTIONS = {
+    "DP-1014": ["冰川", "轻奢灰", "薄荷绿", "浅水绿", "杏子灰", "烟灰", "纯净灰", "海兰玻", "暗流"],
+    "DP-1015": ["海灰", "芝麻白", "雅蓝", "纯净灰", "浅水绿", "翡红", "天兰", "雅黄"]
+  };
   const EXCEL_PROTECTION_PASSWORD = "XCL995511";
   const CATEGORY_ORDER_STORAGE_KEY = "quoteAssistant.categoryOrder.v1";
   const CUSTOM_TINTING_FEE_ITEM = {
@@ -163,6 +167,18 @@
     return product && product.model === AGGREGATE_PRODUCT_MODEL;
   }
 
+  function getProductColorOptions(product) {
+    return PRODUCT_COLOR_OPTIONS[product && product.model] || [];
+  }
+
+  function isColorChoiceProduct(product) {
+    return getProductColorOptions(product).length > 0;
+  }
+
+  function isProductChoiceProduct(product) {
+    return isAggregateChoiceProduct(product) || isColorChoiceProduct(product);
+  }
+
   function normalizeAggregateMesh(value) {
     const normalized = String(value || "").trim();
     return AGGREGATE_MESH_OPTIONS.includes(normalized) ? normalized : AGGREGATE_MESH_OPTIONS[0];
@@ -173,8 +189,22 @@
     return AGGREGATE_COLOR_OPTIONS.includes(normalized) ? normalized : AGGREGATE_COLOR_OPTIONS[0];
   }
 
+  function normalizeProductColor(product, value) {
+    const options = getProductColorOptions(product);
+    const normalized = String(value || "").trim();
+    return options.includes(normalized) ? normalized : options[0];
+  }
+
+  function normalizeChoiceColor(product, value) {
+    return isColorChoiceProduct(product) ? normalizeProductColor(product, value) : normalizeAggregateColor(value);
+  }
+
   function formatAggregateSpec(baseSpec, mesh, color) {
     return `${baseSpec || ""} / ${normalizeAggregateMesh(mesh)} / ${normalizeAggregateColor(color)}`;
+  }
+
+  function formatColorChoiceSpec(product, baseSpec, color) {
+    return `${baseSpec || ""} / ${normalizeProductColor(product, color)}`;
   }
 
   function getAggregateItemSpec(item) {
@@ -183,6 +213,17 @@
       return rawSpec;
     }
     return formatAggregateSpec(item.selectedSpec || rawSpec, item.aggregateMesh, item.aggregateColor);
+  }
+
+  function getChoiceItemSpec(item) {
+    if (isColorChoiceProduct(item)) {
+      const rawSpec = String(item.spec || "").trim();
+      if (rawSpec.includes("/")) {
+        return rawSpec;
+      }
+      return formatColorChoiceSpec(item, item.selectedSpec || rawSpec, item.aggregateColor);
+    }
+    return getAggregateItemSpec(item);
   }
 
   function parseAggregateSpec(spec) {
@@ -194,9 +235,17 @@
     };
   }
 
+  function parseColorChoiceSpec(product, spec) {
+    const parts = String(spec || "").split("/").map((part) => part.trim());
+    return {
+      baseSpec: parts[0] || "",
+      color: normalizeProductColor(product, parts[1])
+    };
+  }
+
   function getItemKey(item) {
-    const itemSpec = isAggregateChoiceProduct(item)
-      ? getAggregateItemSpec(item)
+    const itemSpec = isProductChoiceProduct(item)
+      ? getChoiceItemSpec(item)
       : (item.spec || item.selectedSpec || "");
     const baseKey = `${item.id}|${itemSpec}`;
     if (item.id !== CUSTOM_TINTING_PRODUCT_ID) {
@@ -535,7 +584,7 @@
   }
 
   function firstAddedSpecItem(product) {
-    if (isAggregateChoiceProduct(product)) {
+    if (isProductChoiceProduct(product)) {
       return state.quoteItems.find((item) => item.id === product.id);
     }
     return state.quoteItems.find((item) => item.id === product.id && (product.specs || []).includes(item.spec));
@@ -545,12 +594,13 @@
     return filterProducts(getCatalog().products, state.quoteKeyword).map((product) => {
       const addedItem = firstAddedSpecItem(product);
       const aggregateSpec = isAggregateChoiceProduct(product) && addedItem ? parseAggregateSpec(addedItem.spec) : null;
-      const selectedSpec = aggregateSpec ? aggregateSpec.baseSpec : (addedItem ? addedItem.spec : product.specs[0]);
+      const colorChoiceSpec = isColorChoiceProduct(product) && addedItem ? parseColorChoiceSpec(product, addedItem.spec) : null;
+      const selectedSpec = aggregateSpec ? aggregateSpec.baseSpec : (colorChoiceSpec ? colorChoiceSpec.baseSpec : (addedItem ? addedItem.spec : product.specs[0]));
       const selectedSpecIndex = Math.max(0, product.specs.indexOf(selectedSpec));
       return applyAddedState(selectSpecOption(Object.assign({}, product, {
         referenceColor: addedItem ? addedItem.referenceColor : product.referenceColor,
         aggregateMesh: aggregateSpec ? aggregateSpec.mesh : product.aggregateMesh,
-        aggregateColor: aggregateSpec ? aggregateSpec.color : product.aggregateColor,
+        aggregateColor: aggregateSpec ? aggregateSpec.color : (colorChoiceSpec ? colorChoiceSpec.color : product.aggregateColor),
         selectedSpec,
         selectedSpecIndex
       }), selectedSpecIndex));
@@ -558,8 +608,10 @@
   }
 
   function normalizeQuoteItem(product) {
-    const selectedSpec = isAggregateChoiceProduct(product)
-      ? formatAggregateSpec(product.selectedSpec || product.spec, product.aggregateMesh, product.aggregateColor)
+    const selectedSpec = isColorChoiceProduct(product)
+      ? formatColorChoiceSpec(product, product.selectedSpec || product.spec, product.aggregateColor)
+      : isAggregateChoiceProduct(product)
+        ? formatAggregateSpec(product.selectedSpec || product.spec, product.aggregateMesh, product.aggregateColor)
       : (product.selectedSpec || product.spec);
     return Object.assign({}, product, {
       spec: selectedSpec,
@@ -738,17 +790,20 @@
       `<option value="${index}" ${index === product.selectedSpecIndex ? "selected" : ""}>${escapeHtml(spec)}</option>`
     )).join("");
     const meshValue = normalizeAggregateMesh(product.aggregateMesh);
-    const colorValue = normalizeAggregateColor(product.aggregateColor);
-    const aggregateChoiceHtml = isAggregateChoiceProduct(product) ? `
-      <div class="aggregate-choice-grid">
-        <label class="aggregate-choice-control">目数
-          <select data-action="aggregate-mesh">
-            ${AGGREGATE_MESH_OPTIONS.map((option) => `<option value="${escapeHtml(option)}" ${option === meshValue ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}
-          </select>
-        </label>
+    const colorOptions = isColorChoiceProduct(product) ? getProductColorOptions(product) : AGGREGATE_COLOR_OPTIONS;
+    const colorValue = normalizeChoiceColor(product, product.aggregateColor);
+    const aggregateChoiceHtml = isProductChoiceProduct(product) ? `
+      <div class="aggregate-choice-grid ${isColorChoiceProduct(product) ? "is-single" : ""}">
+        ${isAggregateChoiceProduct(product) ? `
+          <label class="aggregate-choice-control">目数
+            <select data-action="aggregate-mesh">
+              ${AGGREGATE_MESH_OPTIONS.map((option) => `<option value="${escapeHtml(option)}" ${option === meshValue ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}
+            </select>
+          </label>
+        ` : ""}
         <label class="aggregate-choice-control">颜色
           <select data-action="aggregate-color">
-            ${AGGREGATE_COLOR_OPTIONS.map((option) => `<option value="${escapeHtml(option)}" ${option === colorValue ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}
+            ${colorOptions.map((option) => `<option value="${escapeHtml(option)}" ${option === colorValue ? "selected" : ""}>${escapeHtml(option)}</option>`).join("")}
           </select>
         </label>
       </div>
@@ -837,7 +892,7 @@
     }
     const aggregateColorInput = card.querySelector("[data-action='aggregate-color']");
     if (aggregateColorInput) {
-      aggregateColorInput.value = normalizeAggregateColor(product.aggregateColor);
+      aggregateColorInput.value = normalizeChoiceColor(product, product.aggregateColor);
     }
     if (addedProduct.isAdded && quantity === 0) {
       button.textContent = "删除";
