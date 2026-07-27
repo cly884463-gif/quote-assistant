@@ -278,7 +278,7 @@ select {
 .category-toggle,
 .quote-category-toggle {
   cursor: grab;
-  touch-action: none;
+  touch-action: pan-y;
   user-select: none;
 }
 

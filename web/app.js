@@ -556,7 +556,10 @@
   function handleCategoryDragMove(event) {
     categoryDragState.lastPointerEvent = event;
     if (categoryDragState.pending) {
-      event.preventDefault();
+      const moved = Math.hypot(event.clientX - categoryDragState.startX, event.clientY - categoryDragState.startY);
+      if (moved > 18) {
+        cancelPendingCategoryDrag();
+      }
       return;
     }
     if (!categoryDragState.active) {
