@@ -486,6 +486,25 @@ select {
   width: 100%;
 }
 
+.aggregate-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.aggregate-choice-control {
+  display: grid;
+  gap: 6px;
+  color: #64736f;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.aggregate-choice-control select {
+  min-width: 0;
+  width: 100%;
+}
+
 .custom-price-control,
 .custom-reference-control {
   display: grid;
