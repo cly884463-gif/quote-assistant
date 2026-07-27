@@ -553,6 +553,25 @@
     }
   }
 
+  function findCategoryDropTarget(event) {
+    const container = categoryDragState.container;
+    if (!container) {
+      return null;
+    }
+    const panels = Array.from(container.querySelectorAll("[data-category-name]"))
+      .filter((panel) => panel !== categoryDragState.panel && !panel.classList.contains("is-dragging"));
+    if (!panels.length) {
+      return null;
+    }
+    for (const panel of panels) {
+      const rect = panel.getBoundingClientRect();
+      if (event.clientY < rect.top + rect.height / 2) {
+        return { panel, placeAfter: false };
+      }
+    }
+    return { panel: panels[panels.length - 1], placeAfter: true };
+  }
+
   function handleCategoryDragMove(event) {
     categoryDragState.lastPointerEvent = event;
     if (categoryDragState.pending) {
@@ -568,14 +587,13 @@
     event.preventDefault();
     autoScrollForCategoryDrag(event);
     updateFloatingCategoryPanel(event);
-    const target = document.elementFromPoint(event.clientX, event.clientY);
-    const panel = target && target.closest("[data-category-name]");
-    if (!panel || panel === categoryDragState.panel) {
+    const dropTarget = findCategoryDropTarget(event);
+    if (!dropTarget) {
       clearCategoryDragTarget();
       return;
     }
-    const rect = panel.getBoundingClientRect();
-    const placeAfter = event.clientY > rect.top + rect.height / 2;
+    const panel = dropTarget.panel;
+    const placeAfter = dropTarget.placeAfter;
     if (categoryDragState.targetPanel !== panel) {
       clearCategoryDragTarget();
       categoryDragState.targetPanel = panel;
