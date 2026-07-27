@@ -137,6 +137,7 @@
     offsetX: 0,
     offsetY: 0,
     lastTickKey: "",
+    lastPointerEvent: null,
     completedCategory: "",
     suppressClickUntil: 0
   };
@@ -437,12 +438,13 @@
     categoryDragState.pointerId = event.pointerId;
     categoryDragState.startX = event.clientX;
     categoryDragState.startY = event.clientY;
+    categoryDragState.lastPointerEvent = event;
     categoryDragState.lastTickKey = "";
     if (header.setPointerCapture) {
       header.setPointerCapture(event.pointerId);
     }
     categoryDragState.holdTimer = window.setTimeout(() => {
-      activateCategoryDrag(event);
+      activateCategoryDrag(categoryDragState.lastPointerEvent || event);
     }, 3000);
   }
 
@@ -521,8 +523,8 @@
     categoryDragState.active = true;
     categoryDragState.category = panel.dataset.categoryName;
     categoryDragState.container = panel.parentElement;
-    categoryDragState.offsetX = categoryDragState.startX - rect.left;
-    categoryDragState.offsetY = categoryDragState.startY - rect.top;
+    categoryDragState.offsetX = event.clientX - rect.left;
+    categoryDragState.offsetY = event.clientY - rect.top;
     categoryDragState.placeholder = createCategoryPlaceholder(panel);
     panel.parentElement.insertBefore(categoryDragState.placeholder, panel.nextSibling);
     panel.classList.add("is-dragging", "is-floating-bubble");
@@ -537,18 +539,31 @@
     updateFloatingCategoryPanel(event);
   }
 
+  function autoScrollForCategoryDrag(event) {
+    const edgeSize = 86;
+    const maxStep = 18;
+    let delta = 0;
+    if (event.clientY < edgeSize) {
+      delta = -Math.round(maxStep * (1 - event.clientY / edgeSize));
+    } else if (window.innerHeight - event.clientY < edgeSize) {
+      delta = Math.round(maxStep * (1 - (window.innerHeight - event.clientY) / edgeSize));
+    }
+    if (delta) {
+      window.scrollBy({ top: delta, behavior: "auto" });
+    }
+  }
+
   function handleCategoryDragMove(event) {
+    categoryDragState.lastPointerEvent = event;
     if (categoryDragState.pending) {
-      const moved = Math.hypot(event.clientX - categoryDragState.startX, event.clientY - categoryDragState.startY);
-      if (moved > 10) {
-        cancelPendingCategoryDrag();
-      }
+      event.preventDefault();
       return;
     }
     if (!categoryDragState.active) {
       return;
     }
     event.preventDefault();
+    autoScrollForCategoryDrag(event);
     updateFloatingCategoryPanel(event);
     const target = document.elementFromPoint(event.clientX, event.clientY);
     const panel = target && target.closest("[data-category-name]");
@@ -609,6 +624,7 @@
     categoryDragState.placeholder = null;
     categoryDragState.holdTimer = null;
     categoryDragState.pointerId = null;
+    categoryDragState.lastPointerEvent = null;
     categoryDragState.lastTickKey = "";
     categoryDragState.suppressClickUntil = Date.now() + 350;
     document.body.classList.remove("is-category-dragging");

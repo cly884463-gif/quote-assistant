@@ -274,15 +274,24 @@ select {
 }
 
 .category-header,
-.quote-category-header {
+.quote-category-header,
+.category-toggle,
+.quote-category-toggle {
   cursor: grab;
   touch-action: none;
   user-select: none;
 }
 
 .is-category-dragging .category-header,
-.is-category-dragging .quote-category-header {
+.is-category-dragging .quote-category-header,
+.is-category-dragging .category-toggle,
+.is-category-dragging .quote-category-toggle {
   cursor: grabbing;
+}
+
+body.is-category-dragging {
+  user-select: none;
+  overscroll-behavior: contain;
 }
 
 .category-panel,
