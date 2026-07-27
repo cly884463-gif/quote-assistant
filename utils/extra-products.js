@@ -108,8 +108,8 @@ const hColorPasteSpecOptions = hColorPasteRows.flatMap(([code, name, price100, p
 const hColorPasteProduct = {
   id: "cc-h-sj-彩瓷h系列色浆",
   model: "CC-H-SJ",
-  category: "彩瓷H系列色浆",
-  name: "彩瓷H系列色浆",
+  category: "H系列色浆",
+  name: "H系列色浆",
   specs: hColorPasteSpecOptions.map((option) => option.spec),
   specOptions: hColorPasteSpecOptions,
   workTimes: "",
@@ -118,20 +118,20 @@ const hColorPasteProduct = {
   packageSpec: "100ml/瓶、250ml/瓶",
   dealerPrice: 10,
   costPerSquare: "",
-  remark: "彩瓷H系列色浆，含100ml/瓶和250ml/瓶两种规格"
+  remark: "H系列色浆，含100ml/瓶和250ml/瓶两种规格"
 };
 
 const customTintingPasteProduct = {
   id: "custom-tinting-paste",
   model: "TY-TT-SJ",
-  category: "陶釉特调色浆",
-  name: "陶釉特调色浆",
+  category: "特调色浆",
+  name: "特调色浆",
   specs: ["2.4KG配套", "5KG配套", "18KG配套"],
   allowCustomPrice: true,
   autoFee: {
     id: "fee-custom-tinting",
     model: "FEE-001",
-    category: "陶釉特调色浆",
+    category: "特调色浆",
     name: "特调调色费",
     spec: "人工费",
     unit: "项",
@@ -146,7 +146,7 @@ const customTintingPasteProduct = {
       packageSpec: "2.4KG配套",
       dealerPrice: "",
       costPerSquare: "",
-      remark: "陶釉特调色浆，价格按实际填写"
+      remark: "特调色浆，价格按实际填写"
     },
     {
       spec: "5KG配套",
@@ -156,7 +156,7 @@ const customTintingPasteProduct = {
       packageSpec: "5KG配套",
       dealerPrice: "",
       costPerSquare: "",
-      remark: "陶釉特调色浆，价格按实际填写"
+      remark: "特调色浆，价格按实际填写"
     },
     {
       spec: "18KG配套",
@@ -166,7 +166,7 @@ const customTintingPasteProduct = {
       packageSpec: "18KG配套",
       dealerPrice: "",
       costPerSquare: "",
-      remark: "陶釉特调色浆，价格按实际填写"
+      remark: "特调色浆，价格按实际填写"
     }
   ],
   workTimes: "",
@@ -175,7 +175,7 @@ const customTintingPasteProduct = {
   packageSpec: "2.4KG配套/5KG配套/18KG配套",
   dealerPrice: "",
   costPerSquare: "",
-  remark: "陶釉特调色浆，价格按实际填写"
+  remark: "特调色浆，价格按实际填写"
 };
 
 module.exports = {

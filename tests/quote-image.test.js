@@ -10,7 +10,7 @@ const model = buildQuoteImageModel({
       {
         model: "DT-103",
         category: "底漆",
-        name: "金刚底固宝",
+        name: "加固剂",
         spec: "3.2KG",
         workTimes: 1,
         coverage: 32,
@@ -49,12 +49,12 @@ assert.strictEqual(model.notices[0], "1、测试注意事项");
 assert.ok(model.height > 260);
 
 assert.strictEqual(
-  formatQuoteItemName({ id: "custom-tinting-paste", name: "陶釉特调色浆", referenceColor: "暖灰色 NCS S 2002-Y" }),
-  "陶釉特调色浆（参考颜色及色号：暖灰色 NCS S 2002-Y）"
+  formatQuoteItemName({ id: "custom-tinting-paste", name: "特调色浆", referenceColor: "暖灰色 NCS S 2002-Y" }),
+  "特调色浆（参考颜色及色号：暖灰色 NCS S 2002-Y）"
 );
 assert.strictEqual(
-  formatQuoteItemName({ id: "custom-tinting-paste", name: "陶釉特调色浆", referenceColor: "" }),
-  "陶釉特调色浆"
+  formatQuoteItemName({ id: "custom-tinting-paste", name: "特调色浆", referenceColor: "" }),
+  "特调色浆"
 );
 assert.strictEqual(
   formatQuoteItemName({ id: "other-product", name: "普通产品", referenceColor: "不应显示" }),

@@ -37,10 +37,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "dt-103-金刚底固宝",
+      "id": "dt-103-加固剂",
       "model": "DT-103",
       "category": "底漆",
-      "name": "金刚底固宝",
+      "name": "加固剂",
       "specs": [
         "3.2KG",
         "16KG"
@@ -76,7 +76,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "dt-104-彩瓷水漆-抗碱底漆",
       "model": "DT-104",
       "category": "底漆",
-      "name": "彩瓷水漆（抗碱底漆）",
+      "name": "微晶瓷（抗碱底漆）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -109,10 +109,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "dt-105-含沙中涂底漆",
+      "id": "dt-105-陶砂中涂",
       "model": "DT-105",
       "category": "底漆",
-      "name": "含沙中涂底漆",
+      "name": "陶砂中涂",
       "specs": [
         "5KG",
         "20KG"
@@ -230,7 +230,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-305-金刚陶砂-粗砂",
       "model": "TN-305",
       "category": "陶泥系列",
-      "name": "金刚陶砂（粗砂）",
+      "name": "微陶泥（粗砂）",
       "specs": [
         "25KG"
       ],
@@ -256,7 +256,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-304-金刚陶砂-细砂",
       "model": "TN-304",
       "category": "陶泥系列",
-      "name": "金刚陶砂（细砂）",
+      "name": "微陶泥（细砂）",
       "specs": [
         "5KG",
         "25KG"
@@ -292,7 +292,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-303-金刚陶泥-粗泥",
       "model": "TN-303",
       "category": "陶泥系列",
-      "name": "金刚陶泥（粗泥）",
+      "name": "微陶泥（粗泥）",
       "specs": [
         "25KG",
         "5KG"
@@ -328,7 +328,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-302-金刚陶泥-细泥",
       "model": "TN-302",
       "category": "陶泥系列",
-      "name": "金刚陶泥（细泥）",
+      "name": "微陶泥（细泥）",
       "specs": [
         "25KG",
         "3.5KG"
@@ -400,7 +400,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-231-yc-y-陶釉哑光白漆-a组份-b组份",
       "model": "YC-231+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光白漆罩面（A组份）+（B组份）",
+      "name": "面釉哑光白漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
@@ -446,7 +446,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-232-yc-y-陶釉哑光清漆罩面-a组份-b组份",
       "model": "YC-232+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光清漆罩面（A组份）+（B组份）",
+      "name": "面釉哑光清漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
@@ -492,7 +492,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-401-清瓷水漆-蛋壳光白",
       "model": "QC-401",
       "category": "清瓷主漆",
-      "name": "清瓷水漆（蛋壳光白）",
+      "name": "肤感清釉（蛋壳光白）",
       "specs": [
         "4.8KG",
         "20KG"
@@ -528,7 +528,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-402-清瓷水漆-蛋壳光清",
       "model": "QC-402",
       "category": "清瓷主漆",
-      "name": "清瓷水漆（蛋壳光清）",
+      "name": "肤感清釉（蛋壳光清）",
       "specs": [
         "4.8KG"
       ],
@@ -554,7 +554,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-403-清瓷水漆-纯哑白",
       "model": "QC-403",
       "category": "清瓷主漆",
-      "name": "清瓷水漆（纯哑白）",
+      "name": "肤感清釉（纯哑白）",
       "specs": [
         "20KG",
         "4.8KG"
@@ -590,7 +590,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-404-清瓷罩面清漆-超级哑",
       "model": "QC-404",
       "category": "清瓷墙面罩面漆",
-      "name": "清瓷罩面清漆（超级哑）",
+      "name": "清釉罩面清漆（超级哑）",
       "specs": [
         "4.5KG"
       ],
@@ -616,7 +616,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-405-清瓷罩面清漆-哑光",
       "model": "QC-405",
       "category": "清瓷墙面罩面漆",
-      "name": "清瓷罩面清漆（哑光）",
+      "name": "清釉罩面清漆（哑光）",
       "specs": [
         "16KG",
         "4.8KG"
@@ -776,7 +776,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-201-金钢瓷釉-半光白",
       "model": "YC-201",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（半光白）",
+      "name": "微瓷釉（半光白）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -822,7 +822,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-202-金钢瓷釉-半光清",
       "model": "YC-202",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（半光清）",
+      "name": "微瓷釉（半光清）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -868,7 +868,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-203-金钢瓷釉-蛋壳光白",
       "model": "YC-203",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（蛋壳光白）",
+      "name": "微瓷釉（蛋壳光白）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -914,7 +914,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-204-金钢瓷釉-蛋壳光清",
       "model": "YC-204",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（蛋壳光清）",
+      "name": "微瓷釉（蛋壳光清）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -960,7 +960,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-205-金钢瓷釉-70-亮光",
       "model": "YC-205",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（70°亮光）",
+      "name": "微瓷釉（70°亮光）",
       "specs": [
         "5KG"
       ],
@@ -983,10 +983,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "yc-211-金钢彩釉",
+      "id": "yc-211-微彩釉",
       "model": "YC-211",
       "category": "彩釉",
-      "name": "金钢彩釉",
+      "name": "微彩釉",
       "specs": [
         "6KG"
       ],
@@ -1012,7 +1012,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-201-彩瓷水漆-亮光白",
       "model": "CC-201",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（亮光白）",
+      "name": "微晶瓷（亮光白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1048,7 +1048,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-202-彩瓷水漆-半光白",
       "model": "CC-202",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（半光白）",
+      "name": "微晶瓷（半光白）",
       "specs": [
         "12KG"
       ],
@@ -1074,7 +1074,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-203-彩瓷水漆-哑光白",
       "model": "CC-203",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（哑光白）",
+      "name": "微晶瓷（哑光白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1110,7 +1110,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-204-彩瓷水漆-蛋壳光白",
       "model": "CC-204",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（蛋壳光白）",
+      "name": "微晶瓷（蛋壳光白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1146,7 +1146,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-205-彩瓷水漆-纯哑白",
       "model": "CC-205",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（纯哑白）",
+      "name": "微晶瓷（纯哑白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1182,7 +1182,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-206-彩瓷水漆-亮光清",
       "model": "CC-206",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（亮光清）",
+      "name": "微晶瓷（亮光清）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1218,7 +1218,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-207-彩瓷水漆-哑光清",
       "model": "CC-207",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（哑光清）",
+      "name": "微晶瓷（哑光清）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1254,7 +1254,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2209-彩瓷水漆-银色-成品色",
       "model": "CC-2209",
       "category": "彩瓷水漆成品色",
-      "name": "彩瓷水漆（银色）成品色",
+      "name": "微晶瓷（银色）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1290,7 +1290,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2210-彩瓷水漆-古铜色-成品色",
       "model": "CC-2210",
       "category": "彩瓷水漆成品色",
-      "name": "彩瓷水漆（古铜色）成品色",
+      "name": "微晶瓷（古铜色）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1326,7 +1326,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2211-彩瓷水漆-金色-成品色",
       "model": "CC-2211",
       "category": "彩瓷水漆成品色",
-      "name": "彩瓷水漆（金色）成品色",
+      "name": "微晶瓷（金色）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1362,7 +1362,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2212-彩瓷水漆-金箔-成品色",
       "model": "CC-2212",
       "category": "彩瓷水漆成品色",
-      "name": "彩瓷水漆（金箔）成品色",
+      "name": "微晶瓷（金箔）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -1601,10 +1601,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "wz01-1807-微软瓷白漆",
+      "id": "wz01-1807-无缝软瓷（白色漆）",
       "model": "WZ01-1807",
       "category": "微软瓷",
-      "name": "微软瓷白漆",
+      "name": "无缝软瓷（白色漆）",
       "specs": [
         "5KG",
         "20KG"
@@ -1637,10 +1637,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "wz01-1808-微软瓷清漆",
+      "id": "wz01-1808-无缝软瓷（透明漆）",
       "model": "WZ01-1808",
       "category": "微软瓷",
-      "name": "微软瓷清漆",
+      "name": "无缝软瓷（透明漆）",
       "specs": [
         "5KG",
         "20KG"
@@ -1673,10 +1673,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "wz01-1806-微软瓷仿石漆",
+      "id": "wz01-1806-无缝软瓷（仿石漆）",
       "model": "WZ01-1806",
       "category": "微软瓷",
-      "name": "微软瓷仿石漆",
+      "name": "无缝软瓷（仿石漆）",
       "specs": [
         "20KG"
       ],
@@ -1884,7 +1884,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "dp-1014-磨石地坪-18kg-3kg-颜色待定",
       "model": "DP-1014",
       "category": "磨石地坪",
-      "name": "磨石地坪(18KG+3KG)颜色待定",
+      "name": "微磨石（18KG+3KG）颜色待定",
       "specs": [
         "21KG"
       ],
@@ -2436,8 +2436,8 @@ window.__QUOTE_CATALOGS__ = {
     {
       "id": "cc-h-sj-彩瓷h系列色浆",
       "model": "CC-H-SJ",
-      "category": "彩瓷H系列色浆",
-      "name": "彩瓷H系列色浆",
+      "category": "H系列色浆",
+      "name": "H系列色浆",
       "specs": [
         "H-002 黑色色浆 100ml/瓶",
         "H-002 黑色色浆 250ml/瓶",
@@ -3218,7 +3218,7 @@ window.__QUOTE_CATALOGS__ = {
       "packageSpec": "100ml/瓶、250ml/瓶",
       "dealerPrice": 10,
       "costPerSquare": "",
-      "remark": "彩瓷H系列色浆，含100ml/瓶和250ml/瓶两种规格"
+      "remark": "H系列色浆，含100ml/瓶和250ml/瓶两种规格"
     },
     {
       "id": "gn-s-sj-高浓度s系列色浆",
@@ -4296,7 +4296,7 @@ window.__QUOTE_CATALOGS__ = {
     {
       "id": "custom-tinting-paste",
       "model": "TT-SJ",
-      "category": "陶釉特调色浆",
+      "category": "特调色浆",
       "name": "特调色浆",
       "specs": [
         "陶釉主漆2.4KG配套",
@@ -4313,7 +4313,7 @@ window.__QUOTE_CATALOGS__ = {
       "autoFee": {
         "id": "fee-custom-tinting",
         "model": "FEE-001",
-        "category": "陶釉特调色浆",
+        "category": "特调色浆",
         "name": "特调调色费",
         "spec": "人工费",
         "unit": "项",
@@ -4612,10 +4612,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "dt-103-金刚底固宝",
+      "id": "dt-103-加固剂",
       "model": "DT-103",
       "category": "底漆",
-      "name": "金刚底固宝",
+      "name": "加固剂",
       "specs": [
         "3.2KG",
         "16KG"
@@ -4651,7 +4651,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "dt-104-彩瓷水漆-抗碱底漆",
       "model": "DT-104",
       "category": "底漆",
-      "name": "彩瓷水漆（抗碱底漆）",
+      "name": "微晶瓷（抗碱底漆）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -4684,10 +4684,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "dt-105-含沙中涂底漆",
+      "id": "dt-105-陶砂中涂",
       "model": "DT-105",
       "category": "底漆",
-      "name": "含沙中涂底漆",
+      "name": "陶砂中涂",
       "specs": [
         "5KG",
         "20KG"
@@ -4805,7 +4805,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-305-金刚陶砂-粗砂",
       "model": "TN-305",
       "category": "陶泥系列",
-      "name": "金刚陶砂（粗砂）",
+      "name": "微陶泥（粗砂）",
       "specs": [
         "25KG"
       ],
@@ -4831,7 +4831,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-304-金刚陶砂-细砂",
       "model": "TN-304",
       "category": "陶泥系列",
-      "name": "金刚陶砂（细砂）",
+      "name": "微陶泥（细砂）",
       "specs": [
         "5KG",
         "25KG"
@@ -4867,7 +4867,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-303-金刚陶泥-粗泥",
       "model": "TN-303",
       "category": "陶泥系列",
-      "name": "金刚陶泥（粗泥）",
+      "name": "微陶泥（粗泥）",
       "specs": [
         "25KG",
         "5KG"
@@ -4903,7 +4903,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "tn-302-金刚陶泥-细泥",
       "model": "TN-302",
       "category": "陶泥系列",
-      "name": "金刚陶泥（细泥）",
+      "name": "微陶泥（细泥）",
       "specs": [
         "25KG",
         "3.5KG"
@@ -4975,7 +4975,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-231-yc-y-陶釉哑光白漆-a组份-b组份",
       "model": "YC-231+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光白漆罩面（A组份）+（B组份）",
+      "name": "面釉哑光白漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
@@ -5021,7 +5021,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-232-yc-y-陶釉哑光清漆-a组份-b组份",
       "model": "YC-232+YC-Y",
       "category": "陶釉",
-      "name": "陶釉哑光清漆罩面（A组份）+（B组份）",
+      "name": "面釉哑光清漆罩面（A组份）+（B组份）",
       "specs": [
         "2.88KG",
         "6KG",
@@ -5067,7 +5067,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-401-清瓷水漆-蛋壳光白",
       "model": "QC-401",
       "category": "清瓷主漆",
-      "name": "清瓷水漆（蛋壳光白）",
+      "name": "肤感清釉（蛋壳光白）",
       "specs": [
         "4.8KG",
         "20KG"
@@ -5103,7 +5103,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-402-清瓷水漆-蛋壳光清",
       "model": "QC-402",
       "category": "清瓷主漆",
-      "name": "清瓷水漆（蛋壳光清）",
+      "name": "肤感清釉（蛋壳光清）",
       "specs": [
         "4.8KG"
       ],
@@ -5129,7 +5129,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-403-清瓷水漆-纯哑白",
       "model": "QC-403",
       "category": "清瓷主漆",
-      "name": "清瓷水漆（纯哑白）",
+      "name": "肤感清釉（纯哑白）",
       "specs": [
         "20KG",
         "4.8KG"
@@ -5165,7 +5165,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-404-清瓷罩面清漆-超级哑",
       "model": "QC-404",
       "category": "清瓷墙面罩面漆",
-      "name": "清瓷罩面清漆（超级哑）",
+      "name": "清釉罩面清漆（超级哑）",
       "specs": [
         "4.5KG"
       ],
@@ -5191,7 +5191,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "qc-405-清瓷罩面清漆-哑光",
       "model": "QC-405",
       "category": "清瓷墙面罩面漆",
-      "name": "清瓷罩面清漆（哑光）",
+      "name": "清釉罩面清漆（哑光）",
       "specs": [
         "16KG",
         "4.8KG"
@@ -5351,7 +5351,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-201-金钢瓷釉-半光白",
       "model": "YC-201",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（半光白）",
+      "name": "微瓷釉（半光白）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -5397,7 +5397,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-202-金钢瓷釉-半光清",
       "model": "YC-202",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（半光清）",
+      "name": "微瓷釉（半光清）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -5443,7 +5443,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-203-金钢瓷釉-蛋壳光白",
       "model": "YC-203",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（蛋壳光白）",
+      "name": "微瓷釉（蛋壳光白）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -5489,7 +5489,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-204-金钢瓷釉-蛋壳光清",
       "model": "YC-204",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（蛋壳光清）",
+      "name": "微瓷釉（蛋壳光清）",
       "specs": [
         "2.4KG",
         "5KG",
@@ -5535,7 +5535,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "yc-205-金钢瓷釉-70-亮光",
       "model": "YC-205",
       "category": "瓷釉主漆",
-      "name": "金钢瓷釉（70°亮光）",
+      "name": "微瓷釉（70°亮光）",
       "specs": [
         "5KG"
       ],
@@ -5558,10 +5558,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "yc-211-金钢彩釉",
+      "id": "yc-211-微彩釉",
       "model": "YC-211",
       "category": "彩釉",
-      "name": "金钢彩釉",
+      "name": "微彩釉",
       "specs": [
         "6"
       ],
@@ -5587,7 +5587,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-201-彩瓷水漆-亮光白",
       "model": "CC-201",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（亮光白）",
+      "name": "微晶瓷（亮光白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5623,7 +5623,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-202-彩瓷水漆-半光白",
       "model": "CC-202",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（半光白）",
+      "name": "微晶瓷（半光白）",
       "specs": [
         "12KG"
       ],
@@ -5649,7 +5649,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-203-彩瓷水漆-哑光白",
       "model": "CC-203",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（哑光白）",
+      "name": "微晶瓷（哑光白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5685,7 +5685,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-204-彩瓷水漆-蛋壳光白",
       "model": "CC-204",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（蛋壳光白）",
+      "name": "微晶瓷（蛋壳光白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5721,7 +5721,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-205-彩瓷水漆-纯哑白",
       "model": "CC-205",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（纯哑白）",
+      "name": "微晶瓷（纯哑白）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5757,7 +5757,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-206-彩瓷水漆-亮光清",
       "model": "CC-206",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（亮光清）",
+      "name": "微晶瓷（亮光清）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5793,7 +5793,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-207-彩瓷水漆-哑光清",
       "model": "CC-207",
       "category": "彩瓷水漆（DIY调色）",
-      "name": "彩瓷水漆（哑光清）",
+      "name": "微晶瓷（哑光清）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5829,7 +5829,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2209-彩瓷水漆-银色-成品色",
       "model": "CC-2209",
       "category": "彩瓷水漆成品金属色",
-      "name": "彩瓷水漆（银色）成品色",
+      "name": "微晶瓷（银色）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5865,7 +5865,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2210-彩瓷水漆-古铜色-成品色",
       "model": "CC-2210",
       "category": "彩瓷水漆成品金属色",
-      "name": "彩瓷水漆（古铜色）成品色",
+      "name": "微晶瓷（古铜色）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5901,7 +5901,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2211-彩瓷水漆-金色-成品色",
       "model": "CC-2211",
       "category": "彩瓷水漆成品金属色",
-      "name": "彩瓷水漆（金色）成品色",
+      "name": "微晶瓷（金色）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -5937,7 +5937,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "cc-2212-彩瓷水漆-金箔-成品色",
       "model": "CC-2212",
       "category": "彩瓷水漆成品金属色",
-      "name": "彩瓷水漆（金箔）成品色",
+      "name": "微晶瓷（金箔）",
       "specs": [
         "4.8KG",
         "12KG"
@@ -6176,10 +6176,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "wz01-1807-微软瓷白漆",
+      "id": "wz01-1807-无缝软瓷（白色漆）",
       "model": "WZ01-1807",
       "category": "微软瓷",
-      "name": "微软瓷白漆",
+      "name": "无缝软瓷（白色漆）",
       "specs": [
         "5KG",
         "20KG"
@@ -6212,10 +6212,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "wz01-1808-微软瓷清漆",
+      "id": "wz01-1808-无缝软瓷（透明漆）",
       "model": "WZ01-1808",
       "category": "微软瓷",
-      "name": "微软瓷清漆",
+      "name": "无缝软瓷（透明漆）",
       "specs": [
         "5KG",
         "20KG"
@@ -6248,10 +6248,10 @@ window.__QUOTE_CATALOGS__ = {
       "remark": ""
     },
     {
-      "id": "wz01-1806-微软瓷仿石漆",
+      "id": "wz01-1806-无缝软瓷（仿石漆）",
       "model": "WZ01-1806",
       "category": "微软瓷",
-      "name": "微软瓷仿石漆",
+      "name": "无缝软瓷（仿石漆）",
       "specs": [
         "20KG"
       ],
@@ -6459,7 +6459,7 @@ window.__QUOTE_CATALOGS__ = {
       "id": "dp-1014-磨石地坪-18kg-3kg-颜色待定",
       "model": "DP-1014",
       "category": "磨石地坪",
-      "name": "磨石地坪(18KG+3KG)颜色待定",
+      "name": "微磨石（18KG+3KG）颜色待定",
       "specs": [
         "21KG"
       ],
@@ -7011,8 +7011,8 @@ window.__QUOTE_CATALOGS__ = {
     {
       "id": "cc-h-sj-彩瓷h系列色浆",
       "model": "CC-H-SJ",
-      "category": "彩瓷H系列色浆",
-      "name": "彩瓷H系列色浆",
+      "category": "H系列色浆",
+      "name": "H系列色浆",
       "specs": [
         "H-002 黑色色浆 100ml/瓶",
         "H-002 黑色色浆 250ml/瓶",
@@ -7793,7 +7793,7 @@ window.__QUOTE_CATALOGS__ = {
       "packageSpec": "100ml/瓶、250ml/瓶",
       "dealerPrice": 10,
       "costPerSquare": "",
-      "remark": "彩瓷H系列色浆，含100ml/瓶和250ml/瓶两种规格"
+      "remark": "H系列色浆，含100ml/瓶和250ml/瓶两种规格"
     },
     {
       "id": "gn-s-sj-高浓度s系列色浆",
@@ -8871,7 +8871,7 @@ window.__QUOTE_CATALOGS__ = {
     {
       "id": "custom-tinting-paste",
       "model": "TT-SJ",
-      "category": "陶釉特调色浆",
+      "category": "特调色浆",
       "name": "特调色浆",
       "specs": [
         "陶釉主漆2.4KG配套",
@@ -8888,7 +8888,7 @@ window.__QUOTE_CATALOGS__ = {
       "autoFee": {
         "id": "fee-custom-tinting",
         "model": "FEE-001",
-        "category": "陶釉特调色浆",
+        "category": "特调色浆",
         "name": "特调调色费",
         "spec": "人工费",
         "unit": "项",

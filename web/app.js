@@ -61,7 +61,7 @@
   const CUSTOM_TINTING_FEE_ITEM = {
     id: CUSTOM_TINTING_FEE_ID,
     model: "FEE-001",
-    category: "陶釉特调色浆",
+    category: "特调色浆",
     name: "特调调色费",
     spec: "人工费",
     selectedSpec: "人工费",
@@ -71,7 +71,7 @@
     quantity: 1,
     dealerPrice: 50,
     costPerSquare: "",
-    remark: "陶釉特调色浆自动调色费"
+    remark: "特调色浆自动调色费"
   };
 
   const summaryColumnKeys = [

@@ -18,7 +18,7 @@ const input = {
     rows: [{
       model: "DT-103",
       category: "底漆",
-      name: "金刚底固宝",
+      name: "加固剂",
       spec: "3.2KG",
       workTimes: 1,
       coverage: 32,
@@ -40,7 +40,7 @@ const input = {
   assert.strictEqual(model.columns[8], "渠道合作单价");
   assert.strictEqual(model.columns[9], "渠道价合计");
   assert.strictEqual(model.rows[0][0], "DT-103");
-  assert.deepStrictEqual(model.totals[2], ["含税报价：", 169.68]);
+  assert.deepStrictEqual(model.totals[2], ["含税总额：", 169.68]);
   assert.strictEqual(model.remark, "测试备注");
   assert.strictEqual(model.shippingAddress, "测试收货地址");
   assert.deepStrictEqual(model.notices, ["1、测试注意事项"]);
@@ -60,9 +60,9 @@ const input = {
   assert.strictEqual(sheet.sheetProtection.objects, false);
   assert.strictEqual(sheet.sheetProtection.scenarios, false);
   assert.ok(sheet.sheetProtection.hashValue);
-  assert.strictEqual(sheet.getCell("A3").value, "DT-103");
-  assert.strictEqual(sheet.getCell("A3").protection.locked, true);
-  assert.strictEqual(sheet.getCell("I3").value, 84);
+  assert.strictEqual(sheet.getCell("A4").value, "DT-103");
+  assert.strictEqual(sheet.getCell("A4").protection.locked, true);
+  assert.strictEqual(sheet.getCell("I4").value, 84);
   const images = sheet.getImages();
   assert.strictEqual(images.length, 1);
   assert.strictEqual(images[0].range.tl.nativeCol, 0);
@@ -77,7 +77,7 @@ const input = {
   await reopened.xlsx.load(buffer);
   assert.strictEqual(reopened.worksheets[0].sheetProtection.sheet, true);
   assert.strictEqual(reopened.worksheets[0].sheetProtection.objects, false);
-  assert.strictEqual(reopened.worksheets[0].getCell("J3").value, 168);
+  assert.strictEqual(reopened.worksheets[0].getCell("J4").value, 168);
 
   console.log("excel export ok");
 })().catch((error) => {
