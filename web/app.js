@@ -117,6 +117,7 @@
     placeAfter: false,
     panel: null,
     targetPanel: null,
+    completedCategory: "",
     suppressClickUntil: 0
   };
 
@@ -290,8 +291,15 @@
     categories.splice(adjustedTargetIndex + (placeAfter ? 1 : 0), 0, category);
     state.categoryOrder = categories;
     saveCategoryOrder();
+    categoryDragState.completedCategory = category;
     renderHome();
     renderQuote();
+    window.setTimeout(() => {
+      categoryDragState.completedCategory = "";
+      document.querySelectorAll(".is-drag-complete").forEach((node) => {
+        node.classList.remove("is-drag-complete");
+      });
+    }, 900);
   }
 
   function renderCategoryOrderControls(category) {
@@ -309,6 +317,10 @@
         <button class="category-drag-handle" type="button" data-category-drag-handle data-category-name="${escapeHtml(category)}" title="Drag to reorder">≡</button>
       </span>
     `;
+  }
+
+  function getCategoryPanelClass(category) {
+    return categoryDragState.completedCategory === category ? " is-drag-complete" : "";
   }
 
   function clearCategoryDragTarget() {
@@ -597,7 +609,7 @@
     const groups = groupByCategory(products);
     const categories = getOrderedCategories(groups);
     el.homeCategories.innerHTML = categories.map((category) => `
-      <article class="category-panel" data-category-name="${escapeHtml(category)}">
+      <article class="category-panel${getCategoryPanelClass(category)}" data-category-name="${escapeHtml(category)}">
         <div class="category-header">
         <button class="category-toggle" data-category-toggle>
           <strong>${escapeHtml(category)}</strong>
@@ -652,7 +664,7 @@
         quoteOpenCategories[category] = false;
       }
       return `
-        <article class="quote-category-panel ${quoteOpenCategories[category] ? "is-open" : ""}" data-quote-category="${escapeHtml(category)}" data-category-name="${escapeHtml(category)}">
+        <article class="quote-category-panel ${quoteOpenCategories[category] ? "is-open" : ""}${getCategoryPanelClass(category)}" data-quote-category="${escapeHtml(category)}" data-category-name="${escapeHtml(category)}">
           <div class="quote-category-header">
           <button class="quote-category-toggle" data-quote-category-toggle="${escapeHtml(category)}">
             <strong>${escapeHtml(category)}</strong>

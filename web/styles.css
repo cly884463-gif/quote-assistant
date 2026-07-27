@@ -182,6 +182,11 @@ select {
   box-shadow: 0 8px 24px rgba(22, 31, 28, 0.08);
 }
 
+.category-panel,
+.quote-category-panel {
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, opacity 160ms ease;
+}
+
 .category-list,
 .quote-list {
   display: grid;
@@ -297,17 +302,47 @@ select {
 
 .category-panel.is-dragging,
 .quote-category-panel.is-dragging {
-  opacity: 0.55;
+  opacity: 0.68;
+  transform: scale(1.015);
+  box-shadow: 0 14px 30px rgba(15, 118, 110, 0.18);
+  background: rgba(236, 253, 245, 0.96);
 }
 
 .category-panel.is-drag-over,
 .quote-category-panel.is-drag-over {
-  box-shadow: inset 0 3px 0 var(--teal), 0 8px 24px rgba(22, 31, 28, 0.08);
+  transform: translateY(2px);
+  box-shadow: inset 0 6px 0 var(--teal), 0 10px 26px rgba(15, 118, 110, 0.16);
+  background: rgba(240, 253, 250, 0.98);
 }
 
 .category-panel.is-drag-after,
 .quote-category-panel.is-drag-after {
-  box-shadow: inset 0 -3px 0 var(--teal), 0 8px 24px rgba(22, 31, 28, 0.08);
+  transform: translateY(-2px);
+  box-shadow: inset 0 -6px 0 var(--teal), 0 10px 26px rgba(15, 118, 110, 0.16);
+  background: rgba(240, 253, 250, 0.98);
+}
+
+.category-panel.is-drag-complete,
+.quote-category-panel.is-drag-complete {
+  animation: category-drop-flash 860ms ease-out;
+}
+
+@keyframes category-drop-flash {
+  0% {
+    background: rgba(209, 250, 229, 0.98);
+    transform: scale(1.012);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.28), 0 12px 30px rgba(15, 118, 110, 0.18);
+  }
+  55% {
+    background: rgba(236, 253, 245, 0.98);
+    transform: scale(1);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.18), 0 8px 24px rgba(22, 31, 28, 0.08);
+  }
+  100% {
+    background: var(--panel);
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(22, 31, 28, 0.08);
+  }
 }
 
 .category-toggle span:last-child {
