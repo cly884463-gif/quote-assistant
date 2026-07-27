@@ -445,7 +445,7 @@
     }
     categoryDragState.holdTimer = window.setTimeout(() => {
       activateCategoryDrag(categoryDragState.lastPointerEvent || event);
-    }, 3000);
+    }, 1000);
   }
 
   function cancelPendingCategoryDrag() {
