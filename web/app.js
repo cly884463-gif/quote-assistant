@@ -1407,9 +1407,9 @@
         event.preventDefault();
         return;
       }
-      const toggle = event.target.closest("[data-category-toggle]");
-      if (toggle) {
-        toggle.closest(".category-panel").classList.toggle("is-open");
+      const header = event.target.closest(".category-header");
+      if (header) {
+        header.closest(".category-panel").classList.toggle("is-open");
       }
     });
     el.homeCategories.addEventListener("pointerdown", handleCategoryDragStart);
@@ -1439,11 +1439,11 @@
         event.preventDefault();
         return;
       }
-      const toggle = event.target.closest("[data-quote-category-toggle]");
-      if (toggle) {
-        const category = toggle.dataset.quoteCategoryToggle;
+      const header = event.target.closest(".quote-category-header");
+      if (header) {
+        const category = header.closest("[data-category-name]").dataset.categoryName;
         quoteOpenCategories[category] = !quoteOpenCategories[category];
-        toggle.closest(".quote-category-panel").classList.toggle("is-open", quoteOpenCategories[category]);
+        header.closest(".quote-category-panel").classList.toggle("is-open", quoteOpenCategories[category]);
       }
     });
     el.quoteProducts.addEventListener("pointerdown", handleCategoryDragStart);
