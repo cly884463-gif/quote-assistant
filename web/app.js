@@ -721,12 +721,26 @@
     return `${option.coverage}㎡/${option.unit || ""}`;
   }
 
-  function formatQuoteItemName(item) {
-    const referenceColor = String(item.referenceColor || "").trim();
-    if (!isCustomTintingProduct(item) || !referenceColor) {
-      return item.name;
+  function getSColorRatioText(option) {
+    if (!option) {
+      return "";
     }
-    return `${item.name}（参考颜色及色号：${referenceColor}）`;
+    const remark = String(option.remark || "");
+    const ratioStart = remark.indexOf("配比");
+    return ratioStart >= 0 ? remark.slice(ratioStart) : "";
+  }
+
+  function formatQuoteItemName(item) {
+    const sColorRatio = item.model === "GN-S-SJ" ? getSColorRatioText(item) : "";
+    const referenceColor = String(item.referenceColor || "").trim();
+    let name = item.name;
+    if (sColorRatio) {
+      name += `（配比：${sColorRatio}）`;
+    }
+    if (isCustomTintingProduct(item) && referenceColor) {
+      name += `（参考颜色及色号：${referenceColor}）`;
+    }
+    return name;
   }
 
   function buildHomeCards() {
@@ -973,9 +987,14 @@
   }
 
   function renderQuoteCard(product) {
-    const optionHtml = (product.specs || []).map((spec, index) => (
-      `<option value="${index}" ${index === product.selectedSpecIndex ? "selected" : ""}>${escapeHtml(spec)}</option>`
-    )).join("");
+    const optionHtml = (product.specs || []).map((spec, index) => {
+      const option = product.specOptions && product.specOptions[index];
+      const ratioText = product.model === "GN-S-SJ" ? getSColorRatioText(option) : "";
+      const label = ratioText ? `${spec}｜${ratioText}` : spec;
+      return `<option value="${index}" ${index === product.selectedSpecIndex ? "selected" : ""}>${escapeHtml(label)}</option>`;
+    }).join("");
+    const selectedOption = product.specOptions && product.specOptions[product.selectedSpecIndex];
+    const selectedRatio = product.model === "GN-S-SJ" ? getSColorRatioText(selectedOption) : "";
     const meshValue = normalizeAggregateMesh(product.aggregateMesh);
     const colorOptions = isColorChoiceProduct(product)
       ? getProductColorOptions(product)
@@ -1005,6 +1024,7 @@
         </div>
         <div class="quote-name">${escapeHtml(product.name)}</div>
         <div class="quote-desc" data-role="desc">${escapeHtml(product.category)} · 施工${escapeHtml(product.workTimes)}次 · ${escapeHtml(formatCoverage(product))}</div>
+        ${selectedRatio ? `<div class="choice-ratio" data-role="choice-ratio">配比：${escapeHtml(selectedRatio)}</div>` : ""}
         <div class="quote-controls">
           <select class="spec-select" data-action="spec">${optionHtml}</select>
           ${aggregateChoiceHtml}
@@ -1073,6 +1093,10 @@
     card.querySelector("[data-role='model']").textContent = product.model;
     card.querySelector("[data-role='price']").textContent = `${formatMoney(product.dealerPrice)}/${product.unit}`;
     card.querySelector("[data-role='desc']").textContent = `${product.category} · 施工${product.workTimes}次 · ${formatCoverage(product)}`;
+    const ratioElement = card.querySelector("[data-role='choice-ratio']");
+    if (ratioElement) {
+      ratioElement.textContent = `配比：${getSColorRatioText(product)}`;
+    }
     const referenceColorInput = card.querySelector("[data-action='reference-color']");
     if (referenceColorInput) {
       referenceColorInput.value = addedProduct.referenceColor || "";

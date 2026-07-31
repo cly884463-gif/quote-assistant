@@ -497,6 +497,13 @@ body.is-category-dragging {
   font-size: 13px;
 }
 
+.choice-ratio {
+  margin-top: 7px;
+  color: #697873;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
 .quote-controls {
   display: grid;
   grid-template-columns: 1fr;
