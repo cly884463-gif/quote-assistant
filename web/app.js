@@ -726,8 +726,12 @@
       return "";
     }
     const remark = String(option.remark || "");
-    const ratioStart = remark.indexOf("配比");
-    return ratioStart >= 0 ? remark.slice(ratioStart) : "";
+    const mlMatch = remark.match(/配比\(g:ml\)：[^=]+=\d+：([\d.]+)/);
+    const gramMatch = remark.match(/配比\(g:g\)：[^=]+=\d+：([\d.]+)/);
+    if (!mlMatch || !gramMatch) {
+      return "";
+    }
+    return `1KG:${mlMatch[1]}ml；1KG:${gramMatch[1]}g`;
   }
 
   function formatQuoteItemName(item) {
