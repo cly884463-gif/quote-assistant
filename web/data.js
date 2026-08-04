@@ -4620,29 +4620,29 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微岩石体系",
       "name": "分割条",
       "specs": [
-        "1.5T3H 3米/根",
-        "2T5H 3米/根"
+        "1.5T3H 2米/支",
+        "2T5H 2米/支"
       ],
       "specOptions": [
         {
           "model": "1.5T3H",
-          "spec": "1.5T3H 3米/根",
-          "packageSpec": "3米/根",
+          "spec": "1.5T3H 2米/支",
+          "packageSpec": "2米/支",
           "workTimes": "",
           "coverage": "",
           "unit": "支",
-          "dealerPrice": 10,
+          "dealerPrice": 7,
           "costPerSquare": "",
           "remark": "收口分割条，报价单统一收取一次30元打包费"
         },
         {
           "model": "2T5H",
-          "spec": "2T5H 3米/根",
-          "packageSpec": "3米/根",
+          "spec": "2T5H 2米/支",
+          "packageSpec": "2米/支",
           "workTimes": "",
           "coverage": "",
           "unit": "支",
-          "dealerPrice": 10,
+          "dealerPrice": 7,
           "costPerSquare": "",
           "remark": "收口分割条，报价单统一收取一次30元打包费"
         }
@@ -4651,7 +4651,7 @@ window.__QUOTE_CATALOGS__ = {
       "workTimes": "",
       "coverage": "",
       "unit": "支",
-      "dealerPrice": 10,
+      "dealerPrice": 7,
       "costPerSquare": "",
       "remark": "收口分割条，报价单统一收取一次30元打包费"
     }
@@ -9277,29 +9277,29 @@ window.__QUOTE_CATALOGS__ = {
       "category": "微岩石体系",
       "name": "分割条",
       "specs": [
-        "1.5T3H 3米/根",
-        "2T5H 3米/根"
+        "1.5T3H 2米/支",
+        "2T5H 2米/支"
       ],
       "specOptions": [
         {
           "model": "1.5T3H",
-          "spec": "1.5T3H 3米/根",
-          "packageSpec": "3米/根",
+          "spec": "1.5T3H 2米/支",
+          "packageSpec": "2米/支",
           "workTimes": "",
           "coverage": "",
           "unit": "支",
-          "dealerPrice": 13,
+          "dealerPrice": 10,
           "costPerSquare": "",
           "remark": "收口分割条，报价单统一收取一次30元打包费"
         },
         {
           "model": "2T5H",
-          "spec": "2T5H 3米/根",
-          "packageSpec": "3米/根",
+          "spec": "2T5H 2米/支",
+          "packageSpec": "2米/支",
           "workTimes": "",
           "coverage": "",
           "unit": "支",
-          "dealerPrice": 13,
+          "dealerPrice": 10,
           "costPerSquare": "",
           "remark": "收口分割条，报价单统一收取一次30元打包费"
         }
@@ -9308,7 +9308,7 @@ window.__QUOTE_CATALOGS__ = {
       "workTimes": "",
       "coverage": "",
       "unit": "支",
-      "dealerPrice": 13,
+      "dealerPrice": 10,
       "costPerSquare": "",
       "remark": "收口分割条，报价单统一收取一次30元打包费"
     }

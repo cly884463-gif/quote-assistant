@@ -80,9 +80,10 @@ assert.deepStrictEqual(dealerLiquidTileProducts.map((item) => item.workTimes), [
 assert.strictEqual(dealerCatalogView.filterProducts("DP-1022")[0].name, "墙砖补缝膏（AB组份）");
 assert.deepStrictEqual(dealerTrimStripProducts.map((item) => item.name), ["阳角条", "分割条"]);
 assert.deepStrictEqual(dealerTrimStripProducts[0].specOptions.map((option) => [option.model, option.dealerPrice]), [["YA096", 24], ["YA097", 24]]);
-assert.deepStrictEqual(dealerTrimStripProducts[1].specOptions.map((option) => [option.model, option.dealerPrice]), [["1.5T3H", 10], ["2T5H", 10]]);
+assert.deepStrictEqual(dealerTrimStripProducts[1].specOptions.map((option) => [option.model, option.dealerPrice]), [["1.5T3H", 7], ["2T5H", 7]]);
 assert.deepStrictEqual(channelTrimStripProducts[0].specOptions.map((option) => option.dealerPrice), [30, 30]);
-assert.deepStrictEqual(channelTrimStripProducts[1].specOptions.map((option) => option.dealerPrice), [13, 13]);
+assert.deepStrictEqual(channelTrimStripProducts[1].specOptions.map((option) => option.dealerPrice), [10, 10]);
+assert.deepStrictEqual(dealerTrimStripProducts[1].specOptions.map((option) => option.packageSpec), ["2米/支", "2米/支"]);
 assert.ok(dealerTrimStripProducts.every((item) => item.autoPackagingFee));
 assert.strictEqual(getCatalogByQuoteType("unknown").products.length, dealerCatalogView.products.length);
 
