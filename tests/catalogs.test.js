@@ -19,6 +19,8 @@ const dealerFemaProducts = dealerCatalogView.products.filter((item) => item.cate
 const channelFemaProducts = channelCatalogView.products.filter((item) => item.category === "菲玛");
 const dealerLiquidTileProducts = dealerCatalogView.products.filter((item) => item.category === "液态瓷砖");
 const channelLiquidTileProducts = channelCatalogView.products.filter((item) => item.category === "液态瓷砖");
+const dealerTrimStripProducts = dealerCatalogView.products.filter((item) => ["edge-trim-corner", "divider-trim"].includes(item.id));
+const channelTrimStripProducts = channelCatalogView.products.filter((item) => ["edge-trim-corner", "divider-trim"].includes(item.id));
 
 assert.ok(!dealerCatalog.products.some((item) => item.model === "DT-107"));
 assert.ok(!channelCatalog.products.some((item) => item.model === "DT-107"));
@@ -76,6 +78,12 @@ assert.deepStrictEqual(dealerLiquidTileProducts.map((item) => item.dealerPrice),
 assert.deepStrictEqual(channelLiquidTileProducts.map((item) => item.dealerPrice), [67, 67, 370]);
 assert.deepStrictEqual(dealerLiquidTileProducts.map((item) => item.workTimes), [1, 1, 1]);
 assert.strictEqual(dealerCatalogView.filterProducts("DP-1022")[0].name, "墙砖补缝膏（AB组份）");
+assert.deepStrictEqual(dealerTrimStripProducts.map((item) => item.name), ["阳角条", "分割条"]);
+assert.deepStrictEqual(dealerTrimStripProducts[0].specOptions.map((option) => [option.model, option.dealerPrice]), [["YA096", 24], ["YA097", 24]]);
+assert.deepStrictEqual(dealerTrimStripProducts[1].specOptions.map((option) => [option.model, option.dealerPrice]), [["1.5T3H", 10], ["2T5H", 10]]);
+assert.deepStrictEqual(channelTrimStripProducts[0].specOptions.map((option) => option.dealerPrice), [30, 30]);
+assert.deepStrictEqual(channelTrimStripProducts[1].specOptions.map((option) => option.dealerPrice), [13, 13]);
+assert.ok(dealerTrimStripProducts.every((item) => item.autoPackagingFee));
 assert.strictEqual(getCatalogByQuoteType("unknown").products.length, dealerCatalogView.products.length);
 
 console.log("catalog selection ok");

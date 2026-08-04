@@ -4572,6 +4572,88 @@ window.__QUOTE_CATALOGS__ = {
       "dealerPrice": 308,
       "costPerSquare": 88,
       "remark": "液态陶泥"
+    },
+    {
+      "id": "edge-trim-corner",
+      "model": "YA096",
+      "category": "微岩石体系",
+      "name": "阳角条",
+      "specs": [
+        "YA096 2.7米/支",
+        "YA097 2.7米/支"
+      ],
+      "specOptions": [
+        {
+          "model": "YA096",
+          "spec": "YA096 2.7米/支",
+          "packageSpec": "2.7米/支",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 24,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        },
+        {
+          "model": "YA097",
+          "spec": "YA097 2.7米/支",
+          "packageSpec": "2.7米/支",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 24,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        }
+      ],
+      "autoPackagingFee": true,
+      "workTimes": "",
+      "coverage": "",
+      "unit": "支",
+      "dealerPrice": 24,
+      "costPerSquare": "",
+      "remark": "收口分割条，报价单统一收取一次30元打包费"
+    },
+    {
+      "id": "divider-trim",
+      "model": "1.5T3H",
+      "category": "微岩石体系",
+      "name": "分割条",
+      "specs": [
+        "1.5T3H 3米/根",
+        "2T5H 3米/根"
+      ],
+      "specOptions": [
+        {
+          "model": "1.5T3H",
+          "spec": "1.5T3H 3米/根",
+          "packageSpec": "3米/根",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 10,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        },
+        {
+          "model": "2T5H",
+          "spec": "2T5H 3米/根",
+          "packageSpec": "3米/根",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 10,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        }
+      ],
+      "autoPackagingFee": true,
+      "workTimes": "",
+      "coverage": "",
+      "unit": "支",
+      "dealerPrice": 10,
+      "costPerSquare": "",
+      "remark": "收口分割条，报价单统一收取一次30元打包费"
     }
   ],
   "channel": [
@@ -9147,6 +9229,88 @@ window.__QUOTE_CATALOGS__ = {
       "dealerPrice": 370,
       "costPerSquare": 105.71428571428571,
       "remark": "液态陶泥"
+    },
+    {
+      "id": "edge-trim-corner",
+      "model": "YA096",
+      "category": "微岩石体系",
+      "name": "阳角条",
+      "specs": [
+        "YA096 2.7米/支",
+        "YA097 2.7米/支"
+      ],
+      "specOptions": [
+        {
+          "model": "YA096",
+          "spec": "YA096 2.7米/支",
+          "packageSpec": "2.7米/支",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 30,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        },
+        {
+          "model": "YA097",
+          "spec": "YA097 2.7米/支",
+          "packageSpec": "2.7米/支",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 30,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        }
+      ],
+      "autoPackagingFee": true,
+      "workTimes": "",
+      "coverage": "",
+      "unit": "支",
+      "dealerPrice": 30,
+      "costPerSquare": "",
+      "remark": "收口分割条，报价单统一收取一次30元打包费"
+    },
+    {
+      "id": "divider-trim",
+      "model": "1.5T3H",
+      "category": "微岩石体系",
+      "name": "分割条",
+      "specs": [
+        "1.5T3H 3米/根",
+        "2T5H 3米/根"
+      ],
+      "specOptions": [
+        {
+          "model": "1.5T3H",
+          "spec": "1.5T3H 3米/根",
+          "packageSpec": "3米/根",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 13,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        },
+        {
+          "model": "2T5H",
+          "spec": "2T5H 3米/根",
+          "packageSpec": "3米/根",
+          "workTimes": "",
+          "coverage": "",
+          "unit": "支",
+          "dealerPrice": 13,
+          "costPerSquare": "",
+          "remark": "收口分割条，报价单统一收取一次30元打包费"
+        }
+      ],
+      "autoPackagingFee": true,
+      "workTimes": "",
+      "coverage": "",
+      "unit": "支",
+      "dealerPrice": 13,
+      "costPerSquare": "",
+      "remark": "收口分割条，报价单统一收取一次30元打包费"
     }
   ]
 };

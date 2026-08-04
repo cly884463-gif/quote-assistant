@@ -113,6 +113,16 @@ function removeQuoteItem(items, id, spec) {
   return (items || []).filter((item) => getQuoteItemKey(item) !== removeKey);
 }
 
+function syncPackagingFee(items, feeTemplate) {
+  const productItems = (items || []).filter((item) => item.id !== feeTemplate.id);
+  const requiresPackaging = productItems.some((item) => (
+    item.autoPackagingFee && Number(item.quantity) > 0
+  ));
+
+  return requiresPackaging
+    ? productItems.concat(Object.assign({}, feeTemplate, { quantity: 1 }))
+    : productItems;
+}
 function syncCustomTintingFees(items, feeTemplate) {
   const productItems = (items || []).filter((item) => item.id !== CUSTOM_TINTING_FEE_ID);
   const selectedColors = new Map();
@@ -153,6 +163,7 @@ module.exports = {
   getQuantityOnBlur,
   removeQuoteItem,
   selectSpecOption,
+  syncPackagingFee,
   syncCustomTintingFees,
   upsertQuoteItem
 };

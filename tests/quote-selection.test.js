@@ -8,6 +8,7 @@ const {
   getQuantityOnBlur,
   removeQuoteItem,
   selectSpecOption,
+  syncPackagingFee,
   syncCustomTintingFees,
   upsertQuoteItem
 } = require("../utils/quote-selection");
@@ -214,4 +215,21 @@ assert.ok(tintingFees.some((item) => item.name.includes("暖灰色 NCS S 2002-Y"
 assert.ok(tintingFees.some((item) => item.name.includes("深灰色 NCS S 6000-N")));
 assert.ok(!tintingFees.some((item) => item.name.includes("米白色 NCS S 0502-Y")));
 
+const packagingFeeTemplate = {
+  id: "fee-trim-packaging",
+  name: "收口分割条打包费",
+  quantity: 1,
+  dealerPrice: 30
+};
+const packagedItems = syncPackagingFee([
+  { id: "edge-trim-corner", quantity: 1, autoPackagingFee: true },
+  { id: "divider-trim", quantity: 2, autoPackagingFee: true },
+  { id: "dt-101", quantity: 1 }
+], packagingFeeTemplate);
+assert.strictEqual(packagedItems.filter((item) => item.id === "fee-trim-packaging").length, 1);
+assert.strictEqual(packagedItems.find((item) => item.id === "fee-trim-packaging").dealerPrice, 30);
+assert.strictEqual(syncPackagingFee([
+  { id: "dt-101", quantity: 1 },
+  packagingFeeTemplate
+], packagingFeeTemplate).some((item) => item.id === "fee-trim-packaging"), false);
 console.log("quote selection behavior ok");

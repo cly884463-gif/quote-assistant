@@ -56,6 +56,7 @@
 
   const CUSTOM_TINTING_PRODUCT_ID = "custom-tinting-paste";
   const CUSTOM_TINTING_FEE_ID = "fee-custom-tinting";
+  const TRIM_PACKAGING_FEE_ID = "fee-trim-packaging";
   const AGGREGATE_PRODUCT_MODEL = "TJ-001";
   const AGGREGATE_MESH_OPTIONS = ["20目", "40目", "60目", "其他"];
   const AGGREGATE_COLOR_OPTIONS = [
@@ -95,6 +96,21 @@
     remark: "特调色浆自动调色费"
   };
 
+  const TRIM_PACKAGING_FEE_ITEM = {
+    id: TRIM_PACKAGING_FEE_ID,
+    model: "FEE-PACK-001",
+    category: "微岩石体系",
+    name: "收口分割条打包费",
+    spec: "打包费用",
+    selectedSpec: "打包费用",
+    workTimes: "",
+    coverage: "",
+    unit: "项",
+    quantity: 1,
+    dealerPrice: 30,
+    costPerSquare: "",
+    remark: "收口分割条整份报价单只收一次"
+  };
   const summaryColumnKeys = [
     "model",
     "category",
@@ -867,6 +883,17 @@
       })
     ));
     state.quoteItems = productItems.concat(feeItems);
+    syncTrimPackagingFee();
+  }
+
+  function syncTrimPackagingFee() {
+    const productItems = state.quoteItems.filter((item) => item.id !== TRIM_PACKAGING_FEE_ID);
+    const requiresPackaging = productItems.some((item) => (
+      item.autoPackagingFee && Number(item.quantity) > 0
+    ));
+    state.quoteItems = requiresPackaging
+      ? productItems.concat(Object.assign({}, TRIM_PACKAGING_FEE_ITEM, { quantity: 1 }))
+      : productItems;
   }
 
   function isCustomTintingProduct(product) {
